@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+    <!--starting gear -->
+    <!--Cloth -->
+    <Armor>
+        <Slot>Chest</Slot>
+        <Type>Cloth</Type>
+        <Name>Starting Cloth Chest</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>1</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>1</Intellect>
+    </Armor>
+    <Armor>
+        <Slot>Helm</Slot>
+        <Type>Cloth</Type>
+        <Name>Starting Cloth Helm</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>1</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>1</Intellect>
+    </Armor>
+    <Armor>
+        <Slot>Legs</Slot>
+        <Type>Cloth</Type>
+        <Name>Starting Cloth Legs</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>1</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>1</Intellect>
+    </Armor>
+    <Armor>
+        <Slot>Boots</Slot>
+        <Type>Cloth</Type>
+        <Name>Starting Cloth Boots</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>1</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>1</Intellect>
+    </Armor>
+
+    <!--Leather -->
+    <Armor>
+        <Slot>Chest</Slot>
+        <Type>Leather</Type>
+        <Name>Starting Leather Chest</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>2</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Agility>1</Agility>
+        <Intellect>0</Intellect>
+    </Armor>
+    <Armor>
+        <Slot>Helm</Slot>
+        <Type>Leather</Type>
+        <Name>Starting Leather Helm</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>2</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Agility>1</Agility>
+        <Intellect>0</Intellect>
+    </Armor>
+    <Armor>
+        <Slot>Legs</Slot>
+        <Type>Leather</Type>
+        <Name>Starting Leather Legs</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>2</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Agility>1</Agility>
+        <Intellect>0</Intellect>
+    </Armor>
+    <Armor>
+        <Slot>Boots</Slot>
+        <Type>Leather</Type>
+        <Name>Starting Leather Boots</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>2</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Agility>1</Agility>
+        <Intellect>0</Intellect>
+    </Armor>
+    <!--Plate -->
+    <Armor>
+        <Slot>Chest</Slot>
+        <Type>Plate</Type>
+        <Name>Starting Plate Chest</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>3</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>1</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+    </Armor>
+    <Armor>
+        <Slot>Helm</Slot>
+        <Type>Plate</Type>
+        <Name>Starting Plate Helm</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>3</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>1</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+    </Armor>
+    <Armor>
+        <Slot>Legs</Slot>
+        <Type>Plate</Type>
+        <Name>Starting Plate Legs</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>3</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>1</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+    </Armor>
+    <Armor>
+        <Slot>Boots</Slot>
+        <Type>Plate</Type>
+        <Name>Starting Plate Boots</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>3</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>1</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+    </Armor>
+    <!--Starting Weapons -->
+    <Weapon>
+        <Name>Starting Sword</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <DamageLow>1</DamageLow>
+        <DamageHigh>5</DamageHigh>
+        <Type>Sword</Type>
+        <Agility>0</Agility>
+        <Stamina>1</Stamina>
+        <Strength>1</Strength>
+        <Intellect>0</Intellect>
+    </Weapon>
+    <Weapon>
+        <Name>Starting Dagger</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <DamageLow>1</DamageLow>
+        <DamageHigh>5</DamageHigh>
+        <Type>Dagger</Type>
+        <Agility>1</Agility>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Intellect>0</Intellect>
+    </Weapon>
+    <Weapon>
+        <Name>Starting Staff</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <DamageLow>1</DamageLow>
+        <DamageHigh>5</DamageHigh>
+        <Type>Sword</Type>
+        <Agility>0</Agility>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Intellect>1</Intellect>
+    </Weapon>
+    <!-- End Starting Gear -->
+
+</Items>

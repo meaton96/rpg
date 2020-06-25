@@ -1,0 +1,29 @@
+#hills_battle{
+    -fx-background-image: url("images/hills.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 1440 810;
+    -fx-background-position: center center;
+}
+#main_menu {
+    -fx-background-image: url("images/menuBackground.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 1440 810;
+    -fx-background-position: center center;
+}
+
+#start_button {
+    -fx-background-image: url("images/start_button.png");
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-font-smoothing-type: lcd;
+    -fx-background-position: center;
+    -fx-background-size: stretch;
+}
+
+#start_button:hover {
+    -fx-background-image: url("images/start_button_highlight.png");
+}
+
+
+
+

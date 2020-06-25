@@ -1,0 +1,42 @@
+#warrior_button {
+    -fx-background-image: url("images/sword.png");
+    -fx-background-size: stretch;
+    -fx-background-color: transparent;
+}
+
+#warrior_button:hover {
+    -fx-background-image: url("images/sword_highlight.png");
+}
+
+#rogue_button {
+    -fx-background-image: url("images/daggers.png");
+    -fx-background-size: stretch;
+    -fx-background-color: transparent;
+}
+
+#rogue_button:hover {
+    -fx-background-image: url("images/daggers_highlight.png");
+}
+
+#mage_button {
+    -fx-background-image: url("images/staff.png");
+    -fx-background-size: stretch;
+    -fx-background-color: transparent;
+}
+
+#mage_button:hover {
+    -fx-background-image: url("images/staff_highlight.png");
+}
+
+#warrior_name_label, #mage_name_label, #rogue_name_label {
+    -fx-font-family: Immortal;
+    -fx-font-size: 60;
+    -fx-fill: darkgray;
+    -fx-stroke: white;
+    -fx-stroke-width: 2px;
+}
+
+@font-face {
+    -fx-font-family: Immortal;
+    src: url("immortal.ttf");
+}
