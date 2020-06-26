@@ -23,13 +23,16 @@ public class Enemy extends Entity {
     private List<Item> drops;
     private int level;
     private final Random rand;
+    
+    private final Image model;
 
     @Builder
     public Enemy(Class entityClass, String name, int maxHealth, ArrayList<Spell> availableSpells, ArrayList<Item> drops, int level, Image model) {
-        super(entityClass, name, maxHealth, maxHealth, null, model);
+        super(entityClass, name, maxHealth, maxHealth, null);
         this.availableSpells = Collections.unmodifiableList(availableSpells);
         this.drops = Collections.unmodifiableList(drops);
         this.level = level;
+        this.model = model;
         rand = new Random();
     }
 

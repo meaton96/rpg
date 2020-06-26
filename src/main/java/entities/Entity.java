@@ -21,7 +21,6 @@ public abstract class Entity {
     private final String name;
     private int curHealth, maxHealth;
     private StatusEffect statusEffect;
-    private final Image model;
     
     public static Class getClassFromNumber(int i) {
         switch ( i ) {

@@ -6,9 +6,8 @@ import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class ArmorFileReader {
 
@@ -68,6 +67,19 @@ public class ArmorFileReader {
                 .build();
         
         items.put(weapon.getName(), weapon);
+    }
+    public static List<Item> getArmorForLevel(int level) {
+        
+        List<Item> temp = new ArrayList<>();
+        for (Item i : items.values()) {
+            if (i.getLevel() == level)
+                temp.add(i);
+        }
+        return temp;
+        
+        //this is close to working maybe?
+        //items.entrySet().stream().filter(x -> x.getValue().getLevel() != level).forEach(temp.add());
+        
     }
     
     private static void parseArmor(Element node) {
