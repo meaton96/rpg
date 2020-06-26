@@ -8,6 +8,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        primaryStage.setResizable(false);
+        primaryStage.setTitle("RPG Game");
         Controller controller = new Controller(primaryStage);
         controller.start();
 

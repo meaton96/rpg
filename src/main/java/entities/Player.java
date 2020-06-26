@@ -1,5 +1,6 @@
 package entities;
 
+import control.FileUtil;
 import items.*;
 import javafx.scene.image.Image;
 import lombok.Builder;
@@ -31,10 +32,11 @@ public class Player extends Entity {
     private List<Spell> equippedSpells;
     private List<Spell> learnedSpells;
     private Resource resource;
+    private final Image model;
 
     @Builder
-    public Player(Chest chest, Helm helm, Legs legs, Boots boots, Weapon weapon, int health, String name, Class chosenClass, Image model) {
-        super(chosenClass, name, health, health, null, model);
+    public Player(Chest chest, Helm helm, Legs legs, Boots boots, Weapon weapon, int health, String name, Class chosenClass) {
+        super(chosenClass, name, health, health, null);
         equippedBoots = boots;
         equippedChest = chest;
         equippedHelm = helm;
@@ -47,21 +49,25 @@ public class Player extends Entity {
 
         switch (chosenClass) {
             case MAGE:
+                model = FileUtil.getResourceStreamFromClass(getClass(), "images/Mage/mage.png");
                 resource = new Resource(Resource.Type.MANA);
                 break;
             case ROGUE:
+                model = FileUtil.getResourceStreamFromClass(getClass(), "images/Rogue/rogue.png");
                 resource = new Resource(Resource.Type.ENERGY);
                 break;
             case WARRIOR:
+                model = FileUtil.getResourceStreamFromClass(getClass(), "images/Knight/knight.png");
                 resource = new Resource(Resource.Type.RAGE);
                 break;
             default:
+                model = null;
                 break;
         }
 
     }
-    public Player(Class chosenClass, String name, int health, Image model) {
-        super(chosenClass, name, health, health, null, model);
+    public Player(Class chosenClass, String name, int health) {
+        super(chosenClass, name, health, health, null);
     
         backPack = new ArrayList<>();
         learnedSpells = new ArrayList<>();
@@ -69,15 +75,19 @@ public class Player extends Entity {
         
         switch (chosenClass) {
             case MAGE:
+                model = FileUtil.getResourceStreamFromClass(getClass(), "images/Mage/mage.png");
                 resource = new Resource(Resource.Type.MANA);
                 break;
             case ROGUE:
+                model = FileUtil.getResourceStreamFromClass(getClass(), "images/Rogue/rogue.png");
                 resource = new Resource(Resource.Type.ENERGY);
                 break;
             case WARRIOR:
+                model = FileUtil.getResourceStreamFromClass(getClass(), "images/Knight/knight.png");
                 resource = new Resource(Resource.Type.RAGE);
                 break;
             default:
+                model = null;
                 break;
         }
     }
@@ -99,7 +109,8 @@ public class Player extends Entity {
                     return;
                 }
         }
-        backPack.add(equippedWeapon);
+        if (equippedWeapon != null)
+            backPack.add(equippedWeapon);
         equippedWeapon = weapon;
     }
     
@@ -122,16 +133,20 @@ public class Player extends Entity {
                 }
         }
         if (item instanceof Chest) {
-            backPack.add(equippedChest);
+            if (equippedChest != null)
+                backPack.add(equippedChest);
             equippedChest = (Chest) item;
         } else if (item instanceof Helm) {
-            backPack.add(equippedHelm);
+            if (equippedHelm != null)
+                backPack.add(equippedHelm);
             equippedHelm = (Helm) item;
         } else if (item instanceof Legs) {
-            backPack.add(equippedLegs);
+            if (equippedLegs != null)
+                backPack.add(equippedLegs);
             equippedLegs = (Legs) item;
         } else if (item instanceof Boots) {
-            backPack.add(equippedBoots);
+            if (equippedBoots != null)
+                backPack.add(equippedBoots);
             equippedBoots = (Boots) item;
         }
     }
@@ -145,5 +160,17 @@ public class Player extends Entity {
     }
     public int getCurrentResource() {
         return resource.getCurrentAmount();
+    }
+    
+    public String toString() {
+        return "Name: " + getName() +
+                "\nEquipped Gear: " +
+                "\nChest: " + equippedChest.getName() +
+                "\nHelm: " + equippedHelm.getName() +
+                "\nLegs: " + equippedLegs.getName() +
+                "\nBoots: " + equippedBoots.getName() +
+                "\nWeapon: " + equippedWeapon.getName() +
+                "\nSpells learned: \n" + learnedSpells +
+                "\n\nBackpack items: " + backPack;
     }
 }

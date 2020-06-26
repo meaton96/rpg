@@ -5,13 +5,17 @@ import entities.Player;
 import items.Armor;
 import items.Item;
 import items.Weapon;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
+import java.util.List;
 import java.util.Map;
 
 public class Game {
 
     private final Player player;
     private final Map<String, Item> items;
+    private final Stage primaryStage;
 
     /**
      * game constructor
@@ -22,13 +26,21 @@ public class Game {
      *                    3 - mage
      * @param name        name chosen by the user
      */
-    public Game(int classNumber, String name) {
+    public Game(Stage stage, int classNumber, String name) {
 
+        primaryStage = stage;
         ArmorFileReader.init();
         items = ArmorFileReader.getItemMap();
-        player = new Player(Entity.getClassFromNumber(classNumber), name, 100, null);
+        player = new Player(Entity.getClassFromNumber(classNumber), name, 100);
         equipStartingGear();
-
+        run();
+        
+    }
+    public void run() {
+    
+    
+    
+    
     }
     
     private void equipStartingGear() {
