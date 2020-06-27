@@ -19,7 +19,6 @@ public class ArmorFileReader {
         items = new LinkedHashMap<>();
         SAXBuilder builder = new SAXBuilder();
         File xmlFile = new File(FILE_PATH);
-        System.out.println(xmlFile.getAbsolutePath());
         
         try {
             Document doc = builder.build(xmlFile);

@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -32,6 +33,7 @@ public class Controller {
         gameFont = Font.loadFont(getClass().getClassLoader().getResourceAsStream("immortal.ttf"), 40);
         
         styleSheet = getClass().getClassLoader().getResource("style.css").toExternalForm();
+        //Image image = new Image(getClass().getResourceAsStream("cherry.jpg"));
         mainMenu();
         primaryStage.show();
         //loadBattleStage();
