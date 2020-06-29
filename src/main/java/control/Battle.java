@@ -1,21 +1,22 @@
 package control;
 
+import lombok.Getter;
 
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-
+@Getter
 public class Battle {
     
-    //private final Scene scene;
-    private final BorderPane mainPane;
+    private final WalkingStage initScene;
     
-    public Battle(String sceneName) {
-        mainPane = new BorderPane();
-        mainPane.setId(sceneName);
-        //todo init scene
+    // for balancing
+    
+    private double enemyHealthMulti;
+    private double enemyDamageMulti;
+    
+    public Battle(WalkingStage initScene) {
+        System.out.println("Battle started");
+        this.initScene = initScene;
+        
     }
     
-    //todo
-    // add static methods for getting a scene, reading scene from xml to set up variables for x/y writing of character
-    // background image path ect..
+
 }

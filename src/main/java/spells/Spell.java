@@ -11,7 +11,7 @@ import lombok.experimental.NonFinal;
 @NonFinal
 public class Spell {
 
-    enum DamageType {
+    public enum DamageType {
         PHYSICAL,
         FROST,
         FIRE,
@@ -25,5 +25,6 @@ public class Spell {
     StatusEffect statusEffect;
     double damageLow, damageHigh, setStatusChance;
     int cost;
+    String styleID;
 
 }

@@ -10,11 +10,14 @@ import spells.StatusEffect;
 @RequiredArgsConstructor
 @EqualsAndHashCode
 public abstract class Entity {
+    
+
 
     public enum Class {
         ROGUE,
         MAGE,
-        WARRIOR
+        WARRIOR,
+        NONE
     }
 
     private final Class entityClass;
@@ -29,6 +32,16 @@ public abstract class Entity {
             case 3 : return Class.MAGE;
             default: return null;
         }
+    }
+    
+    //these are here in case I need to overwrite them
+    public static int getXDrawOffset() {
+        return 21;
+    }
+    public static int getYDrawOffset() {
+        //54 from top
+        //17 from bottom
+        return 37;
     }
 
 }

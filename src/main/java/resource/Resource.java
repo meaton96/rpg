@@ -41,6 +41,7 @@ public class Resource {
             default:
                 break;
         }
+        this.type = type;
     }
 
     private void generateResource(int amount) {

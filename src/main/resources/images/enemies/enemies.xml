@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Enemies>
+    <!-- Class entityClass, String name, int maxHealth, List<Spell> availableSpells, List<Item> drops, int level, Image model -->
+    <enemy>
+        <name>Snake</name>
+        <mode_path>images/enemies/desert/snake/Snake.png</mode_path>
+    </enemy>
+    <enemy>
+        <name>Deceased</name>
+        <mode_path>images/enemies/desert/deceased/Deceased.png</mode_path>
+    </enemy>
+    <enemy>
+        <name>Hyena</name>
+        <mode_path>images/enemies/desert/hyena/Hyena.png</mode_path>
+    </enemy>
+    <enemy>
+        <name>Mummy</name>
+        <mode_path>images/enemies/desert/mummmy/Mummy.png</mode_path>
+    </enemy>
+    <enemy>
+        <name>Scorpion</name>
+        <mode_path>images/enemies/desert/scorpion/Scorpio.png</mode_path>
+    </enemy>
+    <enemy>
+        <name>Vulture</name>
+        <mode_path>images/enemies/desert/vulture/Vulture.png</mode_path>
+    </enemy>
+    <enemy>
+        <name>Beetle</name>
+        <mode_path>images/enemies/field/beetle/Beetle.png</mode_path>
+    </enemy>
+    <enemy>
+        <name>Melee Goblin</name>
+        <mode_path>images/enemies/field/goblin_melee/Goblin_melee.png</mode_path>
+    </enemy>
+    <enemy>
+        <name>Melee Goblin</name>
+        <mode_path>images/enemies/field/goblin_melee/Goblin_melee.png</mode_path>
+    </enemy>
+
+
+
+</Enemies>
