@@ -10,11 +10,12 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import util.ArmorFileReader;
+import util.FileUtil;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.security.Key;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Game {
 
@@ -24,8 +25,9 @@ public class Game {
     private final List<Integer> sceneRotation;
     private int sceneNumber = 0;
     private final String battleXMLPath = "src/main/resources/battle_stages.xml";
+    private final String enemyXMLPath = "src/main/resources/images/enemies/enemies.xml";
     private final List<Enemy> enemyList;
-    
+    private final int ENEMY_BASE_HEALTH = 100; //adjust here for enemy base health
     
     /**
      * game constructor
@@ -42,8 +44,7 @@ public class Game {
         ArmorFileReader.init();
         items = ArmorFileReader.getItemMap();
         player = new Player(Entity.getClassFromNumber(classNumber), name, 100);
-        enemyList = new ArrayList<>();
-        initEnemyList();
+        enemyList = FileUtil.getEnemiesOfType("", enemyXMLPath, ENEMY_BASE_HEALTH);
         equipStartingGear();
         
         sceneRotation = new ArrayList<>();
@@ -52,14 +53,11 @@ public class Game {
             sceneRotation.add(x);
         
         Collections.shuffle(sceneRotation);
-        
-        
         run();
         
     }
     public void run() {
-        Enemy enemy = enemyList.get(0); //change eventually
-        
+
         WalkingStage wStage = new WalkingStage(player, sceneRotation.get(sceneNumber), battleXMLPath);
         primaryStage.setScene(wStage.getScene());
         Timeline gameLoop = new Timeline();
@@ -68,11 +66,21 @@ public class Game {
         //final long timeStart = System.currentTimeMillis();
     
         KeyFrame kf = new KeyFrame(
-                Duration.seconds(0.017),
+                Duration.seconds(0.0333),
                 event -> {
                     wStage.updateDraw();
                     if (wStage.checkForEnemy()) {
-                    
+                        wStage.setInBattle(true);
+                        List<Enemy> enemies = enemyList.stream()
+                                .filter(x -> x.getLevel() == player.getLevel())
+                                .collect(Collectors.toList());
+                        Random r = new Random();
+                        Battle b = new Battle(wStage, enemies.get(r.nextInt(enemies.size())));
+
+                        while (player.getCurHealth() > 0 && b.getEnemy().getCurHealth() > 0) {
+                            b.playerTurn(); //todo
+                            b.enemyTurn();
+                        }
                     }
                 }
         );
@@ -115,20 +123,7 @@ public class Game {
                 
         }
     }
-    private void initEnemyList() {
-        
-        //change to read enemy list in from file and randomize then sort by level
-        //maybe split into different lists or list<list<Enemy>> to keep enemy levels seperate
-        for (int x = 0; x < 1; x++) {
-            enemyList.add(new Enemy(
-                    Entity.Class.MAGE,
-                    "Test Enemy",
-                    100,
-                    1,
-                    FileUtil.getResourceStreamFromClass(getClass(), "/images/Mage/mage.png")
-            ));
-        }
-    }
+
 
 
 }

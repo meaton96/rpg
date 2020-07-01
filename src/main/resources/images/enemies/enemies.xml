@@ -3,41 +3,198 @@
     <!-- Class entityClass, String name, int maxHealth, List<Spell> availableSpells, List<Item> drops, int level, Image model -->
     <enemy>
         <name>Snake</name>
-        <mode_path>images/enemies/desert/snake/Snake.png</mode_path>
+        <model_path>images/enemies/desert/snake/Snake.png</model_path>
+        <biome>desert</biome>
     </enemy>
     <enemy>
         <name>Deceased</name>
-        <mode_path>images/enemies/desert/deceased/Deceased.png</mode_path>
+        <model_path>images/enemies/desert/deceased/Deceased.png</model_path>
+        <biome>desert</biome>
     </enemy>
     <enemy>
         <name>Hyena</name>
-        <mode_path>images/enemies/desert/hyena/Hyena.png</mode_path>
+        <model_path>images/enemies/desert/hyena/Hyena.png</model_path>
+        <biome>desert</biome>
     </enemy>
     <enemy>
         <name>Mummy</name>
-        <mode_path>images/enemies/desert/mummmy/Mummy.png</mode_path>
+        <model_path>images/enemies/desert/mummy/Mummy.png</model_path>
+        <biome>desert</biome>
     </enemy>
     <enemy>
         <name>Scorpion</name>
-        <mode_path>images/enemies/desert/scorpion/Scorpio.png</mode_path>
+        <model_path>images/enemies/desert/scorpion/Scorpio.png</model_path>
+        <biome>desert</biome>
     </enemy>
     <enemy>
         <name>Vulture</name>
-        <mode_path>images/enemies/desert/vulture/Vulture.png</mode_path>
+        <model_path>images/enemies/desert/vulture/Vulture.png</model_path>
+        <biome>desert</biome>
     </enemy>
     <enemy>
         <name>Beetle</name>
-        <mode_path>images/enemies/field/beetle/Beetle.png</mode_path>
+        <model_path>images/enemies/field/beetle/Rhinoceros-beetle.png</model_path>
+        <biome>field</biome>
     </enemy>
     <enemy>
         <name>Melee Goblin</name>
-        <mode_path>images/enemies/field/goblin_melee/Goblin_melee.png</mode_path>
+        <model_path>images/enemies/field/goblin_melee/Goblin_melee.png</model_path>
+        <biome>field</biome>
     </enemy>
     <enemy>
-        <name>Melee Goblin</name>
-        <mode_path>images/enemies/field/goblin_melee/Goblin_melee.png</mode_path>
+        <name>Ranged Goblin</name>
+        <model_path>images/enemies/field/goblin_range/Goblin_range.png</model_path>
+        <biome>field</biome>
     </enemy>
-
-
+    <enemy>
+        <name>Slime</name>
+        <model_path>images/enemies/field/slime/Slime.png</model_path>
+        <biome>field</biome>
+    </enemy>
+    <enemy>
+        <name>Toad</name>
+        <model_path>images/enemies/field/toad/Toad.png</model_path>
+        <biome>field</biome>
+    </enemy>
+    <enemy>
+        <name>Toad King</name>
+        <model_path>images/enemies/field/toad_king/Toad_king.png</model_path>
+        <biome>field</biome>
+    </enemy>
+    <enemy>
+        <name>Troll</name>
+        <model_path>images/enemies/field/troll/Troll.png</model_path>
+        <biome>field</biome>
+    </enemy>
+    <enemy>
+        <name>Wasp</name>
+        <model_path>images/enemies/field/wasp/Wasp.png</model_path>
+        <biome>field</biome>
+    </enemy>
+    <enemy>
+        <name>Wolf</name>
+        <model_path>images/enemies/field/wolf/Wolf.png</model_path>
+        <biome>field</biome>
+    </enemy>
+    <enemy>
+        <name>Bear</name>
+        <model_path>images/enemies/mine/bear/Bear.png</model_path>
+        <biome>mine</biome>
+    </enemy>
+    <enemy>
+        <name>Mimic</name>
+        <model_path>images/enemies/mine/mimic/Mimic.png</model_path>
+        <biome>mine</biome>
+    </enemy>
+    <enemy>
+        <name>Spider</name>
+        <model_path>images/enemies/mine/spider/Spider.png</model_path>
+        <biome>mine</biome>
+    </enemy>
+    <enemy>
+        <name>Toadman</name>
+        <model_path>images/enemies/mine/toadman/Toadman.png</model_path>
+        <biome>mine</biome>
+    </enemy>
+    <enemy>
+        <name>Toadman Voodoo</name>
+        <model_path>images/enemies/mine/toadman_voodoo/voodoo.png</model_path>
+        <biome>mine</biome>
+    </enemy>
+    <enemy>
+        <name>Wisp</name>
+        <model_path>images/enemies/mine/wisp/Wisp.png</model_path>
+        <biome>mine</biome>
+    </enemy>
+    <enemy>
+        <name>Boar</name>
+        <model_path>images/enemies/ruin/boar/Boar.png</model_path>
+        <biome>ruin</biome>
+    </enemy>
+    <enemy>
+        <name>Brigand</name>
+        <model_path>images/enemies/ruin/brigand/Brigand.png</model_path>
+        <biome>ruin</biome>
+    </enemy>
+    <enemy>
+        <name>Bug</name>
+        <model_path>images/enemies/ruin/bug/Bug.png</model_path>
+        <biome>ruin</biome>
+    </enemy>
+    <enemy>
+        <name>Golem</name>
+        <model_path>images/enemies/ruin/golem/Golem.png</model_path>
+        <biome>ruin</biome>
+    </enemy>
+    <enemy>
+        <name>Raven</name>
+        <model_path>images/enemies/ruin/raven/Raven.png</model_path>
+        <biome>ruin</biome>
+    </enemy>
+    <enemy>
+        <name>Shooter</name>
+        <model_path>images/enemies/ruin/shooter/Shooter.png</model_path>
+        <biome>ruin</biome>
+    </enemy>
+    <enemy>
+        <name>Elkman</name>
+        <model_path>images/enemies/snow/elkman/Elkman.png</model_path>
+        <biome>snow</biome>
+    </enemy>
+    <enemy>
+        <name>Frost Golem</name>
+        <model_path>images/enemies/snow/frost_golem/Frost_golem.png</model_path>
+        <biome>snow</biome>
+    </enemy>
+    <enemy>
+        <name>Northerner</name>
+        <model_path>images/enemies/snow/northerner/Northern.png</model_path>
+        <biome>snow</biome>
+    </enemy>
+    <enemy>
+        <name>Northerner Two</name>
+        <model_path>images/enemies/snow/northerner_two/Northerner.png</model_path>
+        <biome>snow</biome>
+    </enemy>
+    <enemy>
+        <name>Snowy</name>
+        <model_path>images/enemies/snow/snowy/Snowy.png</model_path>
+        <biome>snow</biome>
+    </enemy>
+    <enemy>
+        <name>Spiked Slime</name>
+        <model_path>images/enemies/snow/spiked_slime/Spiked_slime.png</model_path>
+        <biome>snow</biome>
+    </enemy>
+    <enemy>
+        <name>Bat</name>
+        <model_path>images/enemies/swamp/bat/Bat.png</model_path>
+        <biome>swamp</biome>
+    </enemy>
+    <enemy>
+        <name>Bloat</name>
+        <model_path>images/enemies/swamp/bloat/Bloat.png</model_path>
+        <biome>swamp</biome>
+    </enemy>
+    <enemy>
+        <name>Drowned</name>
+        <model_path>images/enemies/swamp/drowned/Drowned.png</model_path>
+        <biome>swamp</biome>
+    </enemy>
+    <enemy>
+        <name>Larva</name>
+        <model_path>images/enemies/swamp/larva/Larva.png</model_path>
+        <biome>swamp</biome>
+    </enemy>
+    <enemy>
+        <name>Ooze</name>
+        <model_path>images/enemies/swamp/ooze/Ooze.png</model_path>
+        <biome>swamp</biome>
+    </enemy>
+    <enemy>
+        <name>Turtle</name>
+        <model_path>images/enemies/swamp/turtle/Turtle.png</model_path>
+        <biome>swamp</biome>
+    </enemy>
 
 </Enemies>
