@@ -68,8 +68,10 @@ public class Game {
         KeyFrame kf = new KeyFrame(
                 Duration.seconds(0.0333),
                 event -> {
-                    wStage.updateDraw();
+                    if (!wStage.isInBattle())
+                        wStage.updateDraw();
                     if (wStage.checkForEnemy()) {
+                        
                         wStage.setInBattle(true);
                         List<Enemy> enemies = enemyList.stream()
                                 .filter(x -> x.getLevel() == player.getLevel())

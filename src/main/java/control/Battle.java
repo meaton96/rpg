@@ -4,6 +4,7 @@ import entities.Enemy;
 import entities.Player;
 import javafx.scene.canvas.GraphicsContext;
 import lombok.Getter;
+import ui.HUD;
 
 @Getter
 public class Battle {
@@ -11,7 +12,8 @@ public class Battle {
     private final WalkingStage initScene;
     private Enemy enemy;
     private Player player;
-    private final int ENEMY_X_DRAW_OFFSET = 30;
+    private final int ENEMY_X_DRAW_OFFSET = 50;
+    private HUD hud;
     // for balancing
     
     private double enemyHealthMulti;
@@ -28,11 +30,14 @@ public class Battle {
         draw();
     }
     private void init() {
-        enemy.setYLoc(player.getYLoc());
+        enemy.setYLoc(player.getYLoc() );
         enemy.setXLoc(player.getXLoc() + ENEMY_X_DRAW_OFFSET);
-
+        hud = initScene.getHud();
     }
     private void draw() {
+        
+        
+        
         initScene.getGc().drawImage(
                 enemy.getModel(),
                 enemy.getXLoc(),
@@ -43,6 +48,7 @@ public class Battle {
     }
     public void enemyTurn() {
         System.out.println("Enemy taking turn :(");
+        enemy.reduceHealth(5);
     }
     
 

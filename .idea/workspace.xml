@@ -19,40 +19,56 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/beta" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="working on adding enemies">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/ArmorFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ArmorFileReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/battle_stages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/battle_stages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/darkForest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/darkForest.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/flatNature.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/flatNature.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/grassLight.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/grassLight.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/grassNight.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/grassNight.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/hills.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/hills.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/mountains.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/mountains.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/rockyForest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/rockyForest.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/snowyForest.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/snowyForest.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/sunset.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/battle_scenes/sunset.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/enemies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/enemies.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/smile/Slime.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/slime/Slime.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/smile/Slime_attack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/slime/Slime_attack.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/smile/Slime_death.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/slime/Slime_death.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/smile/Slime_hurt.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/slime/Slime_hurt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/smile/Slime_idle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/slime/Slime_idle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/smile/Slime_walk.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/slime/Slime_walk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/deceased/Deceased.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/deceased/Deceased.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/hyena/Hyena.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/hyena/Hyena.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/mummy/Mummy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/mummy/Mummy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/scorpion/Scorpio.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/scorpion/Scorpio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/snake/Snake.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/snake/Snake.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/vulture/Vulture.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/desert/vulture/Vulture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/goblin_melee/Goblin_melee.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/goblin_melee/Goblin_melee.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/goblin_range/Goblin_range.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/goblin_range/Goblin_range.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/slime/Slime.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/slime/Slime.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad/Toad.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad/Toad.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/wasp/Wasp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/wasp/Wasp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/wolf/Wolf.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/field/wolf/Wolf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/bear/Bear.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/bear/Bear.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/mimic/Mimic.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/mimic/Mimic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/spider/Spider.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/spider/Spider.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/toadman/Toadman.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/toadman/Toadman.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/toadman_voodoo/voodoo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/toadman_voodoo/voodoo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/wisp/Wisp.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/mine/wisp/Wisp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/boar/Boar.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/boar/Boar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/brigand/Brigand.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/brigand/Brigand.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/bug/Bug.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/bug/Bug.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/golem/Golem.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/golem/Golem.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/raven/Raven.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/raven/Raven.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/shooter/Shooter.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/ruin/shooter/Shooter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/elkman/Elkman.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/elkman/Elkman.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/frost_golem/Frost_golem.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/frost_golem/Frost_golem.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/northerner/Northern.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/northerner/Northern.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/northerner_two/Northerner.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/northerner_two/Northerner.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/snowy/Snowy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/snowy/Snowy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/spiked_slime/Spiked_slime.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/snow/spiked_slime/Spiked_slime.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/bat/Bat.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/bat/Bat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/bloat/Bloat.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/bloat/Bloat.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/drowned/Drowned.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/drowned/Drowned.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/larva/Larva.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/larva/Larva.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/ooze/Ooze.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/ooze/Ooze.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/turtle/Turtle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/swamp/turtle/Turtle.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +182,16 @@
       <option name="presentableId" value="Default" />
       <updated>1593225699267</updated>
       <workItem from="1593225703447" duration="314000" />
+      <workItem from="1593638026611" duration="4902000" />
     </task>
+    <task id="LOCAL-00001" summary="working on adding enemies">
+      <created>1593638057692</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593638057692</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,26 +226,38 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="working on adding enemies" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on adding enemies" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1593635190682">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593638262430">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593465275982" />
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638262430" />
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1593638285111">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1593641444007">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593641444007" />
     <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593635190682" />
-    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1593635190682">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1593641444006">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593465275982" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593641444006" />
     <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593635190682" />
-    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1593635190682">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1593641444006">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593465275981" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593641444006" />
     <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593635190682" />
-    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1593635190682">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1593641444007">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1258" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593465275982" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593641444007" />
     <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593635190682" />
     <state width="2005" height="376" key="GridCell.Tab.1.bottom" timestamp="1593632468948">
       <screen x="0" y="0" width="2048" height="1112" />

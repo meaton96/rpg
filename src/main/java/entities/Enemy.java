@@ -73,6 +73,12 @@ public class Enemy extends Entity {
     public Spell castSpell() {
         return availableSpells.get(rand.nextInt(availableSpells.size()));
     }
+    public boolean reduceHealth(int amt) {
+        setCurHealth(getCurHealth() - amt);
+        if (getCurHealth() <= 0)
+            return false;
+        return true;
+    }
 
 
 }
