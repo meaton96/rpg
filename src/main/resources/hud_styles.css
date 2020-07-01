@@ -1,0 +1,43 @@
+#hud_style {
+    -fx-background-image: url("images/hud/hud_background.png");
+    -fx-pref-width: 1440;
+    -fx-pref-height: 150;
+}
+#hud_label {
+    -fx-font-family: Immortal;
+    -fx-font-size: 15;
+    -fx-fill: #ffffff;
+}
+#warrior_auto {
+    -fx-background-image: url("images/sword_100.png");
+    -fx-pref-height: 100px;
+    -fx-pref-width: 100px;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-font-smoothing-type: lcd;
+}
+#rogue_auto {
+    -fx-background-image: url("images/dagger_100.png");
+    -fx-pref-height: 100px;
+    -fx-pref-width: 100px;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-font-smoothing-type: lcd;
+}
+#mage_auto {
+    -fx-background-image: url("images/staff_100.png");
+    -fx-pref-height: 100px;
+    -fx-pref-width: 100px;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-font-smoothing-type: lcd;
+}
+/*
+insert spell icons here
+ */

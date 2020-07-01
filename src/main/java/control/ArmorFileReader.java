@@ -8,6 +8,7 @@ import org.jdom2.input.SAXBuilder;
 import java.io.File;
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ArmorFileReader {
 
@@ -48,6 +49,17 @@ public class ArmorFileReader {
             System.out.println(i);
         }
     }
+    public static Item getItemByName(String itemName) {
+        return items.get(itemName);
+    }
+    public static Weapon getWeaponByName(String itemName) {
+        Item i = items.get(itemName);
+        if (i instanceof Weapon)
+            return (Weapon) i;
+        else
+            System.out.println("Weapon name was not given");
+        return null;
+    }
     private static void parseWeapons(Element node) {
         
         Weapon weapon = Weapon.builder()
@@ -69,15 +81,10 @@ public class ArmorFileReader {
     }
     public static List<Item> getArmorForLevel(int level) {
         
-        List<Item> temp = new ArrayList<>();
-        for (Item i : items.values()) {
-            if (i.getLevel() == level)
-                temp.add(i);
-        }
-        return temp;
-        
-        //this is close to working maybe?
-        //items.entrySet().stream().filter(x -> x.getValue().getLevel() != level).forEach(temp.add());
+        return items.values()
+                .stream()
+                .filter(x -> x.getLevel() != level)
+                .collect(Collectors.toList());
         
     }
     

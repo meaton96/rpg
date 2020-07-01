@@ -18,5 +18,7 @@ public class StatusEffect {
     Type type;
     int duration;
 
-
+    public static StatusEffect NONE() {
+        return new StatusEffect(Type.NONE, 0);
+    }
 }

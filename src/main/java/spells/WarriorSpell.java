@@ -10,8 +10,8 @@ public class WarriorSpell extends Spell {
 
     @Builder(builderMethodName = "warriorSpellBuilder")
     public WarriorSpell(String name, int requiredLevel, DamageType damageType, StatusEffect statusEffect, double damageLow, double damageHigh,
-                        double setStatusChance, int cost, int rageGen) {
-        super(name, requiredLevel, damageType, statusEffect, damageLow, damageHigh, setStatusChance, cost);
+                        double setStatusChance, int cost, int rageGen, String styleID) {
+        super(name, requiredLevel, damageType, statusEffect, damageLow, damageHigh, setStatusChance, cost, styleID);
         this.rageGen = rageGen;
     }
 

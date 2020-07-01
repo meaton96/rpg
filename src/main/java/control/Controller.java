@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -30,10 +29,9 @@ public class Controller {
     
 
     public void start() {
-        gameFont = Font.loadFont(getClass().getClassLoader().getResourceAsStream("immortal.ttf"), 40);
+        gameFont = Font.loadFont(getClass().getResourceAsStream("/immortal.ttf"), 40);
         
-        styleSheet = getClass().getClassLoader().getResource("style.css").toExternalForm();
-        //Image image = new Image(getClass().getResourceAsStream("cherry.jpg"));
+        styleSheet = getClass().getResource("/style.css").toExternalForm();
         mainMenu();
         primaryStage.show();
         //loadBattleStage();
@@ -66,7 +64,7 @@ public class Controller {
     }
 
     private void characterSelect(Scene scene) {
-        scene.getStylesheets().add(getClass().getClassLoader().getResource("characterSelectStyle.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/characterSelectStyle.css").toExternalForm());
 
         HBox hBox = new HBox(100);
 
