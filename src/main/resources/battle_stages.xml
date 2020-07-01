@@ -28,7 +28,7 @@
     <scene>
         <name>Hills</name>
         <ground_height>618</ground_height>
-        <file_path>images/battle_scenes/hillss.png</file_path>
+        <file_path>images/battle_scenes/hills.png</file_path>
     </scene>
 
     <scene>

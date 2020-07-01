@@ -1,10 +1,8 @@
 package entities;
 
-import control.FileUtil;
+import util.FileUtil;
 import items.*;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,7 +1,7 @@
 package entities;
 
 
-import control.ArmorFileReader;
+import util.ArmorFileReader;
 import items.Item;
 import javafx.scene.image.Image;
 import lombok.Builder;
@@ -25,20 +25,21 @@ public class Enemy extends Entity {
     private List<Item> drops;
     private int level;
     private final Random rand;
-    
+    private final String biome;
     private final Image model;
     private double xLoc, yLoc;
 
-    @Builder
-    public Enemy(Class entityClass, String name, int maxHealth, List<Spell> availableSpells, List<Item> drops, int level, Image model) {
+    public Enemy(Class entityClass, String name, int maxHealth, List<Spell> availableSpells, List<Item> drops, int level, Image model, String biome) {
         super(entityClass, name, maxHealth, maxHealth, null);
         this.availableSpells = Collections.unmodifiableList(availableSpells);
         this.drops = drops;
         this.level = level;
+        this.biome = biome;
         this.model = model;
         rand = new Random();
     }
-    public Enemy(Class entityClass, String name, int maxHealth, int level, Image model) {
+    @Builder
+    public Enemy(Class entityClass, String name, int maxHealth, int level, Image model, String biome) {
         super(entityClass, name, maxHealth, maxHealth, null);
         this.availableSpells = new ArrayList<>();
         Spell.DamageType damageType;
@@ -53,7 +54,20 @@ public class Enemy extends Entity {
         this.drops = ArmorFileReader.getArmorForLevel(level);
         this.level = level;
         this.model = model;
+        this.biome = biome;
         rand = new Random();
+        randomizeHealth();
+    }
+    private void randomizeHealth() {
+        double variance = 0.3;                      //adjust here for health variance and level scaling
+        double levelHealthScaling = 0.2;
+
+        double healthMin = getMaxHealth() - (variance * getMaxHealth());
+        double healthMax = getMaxHealth() + variance * getMaxHealth();
+
+        double health = rand.nextInt((int)Math.round(healthMax - healthMin)) + healthMin;
+        health *= (1 + levelHealthScaling);
+        setMaxHealth((int)health);
     }
 
     public Spell castSpell() {

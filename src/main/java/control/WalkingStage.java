@@ -1,30 +1,26 @@
 package control;
 
 
-import animation.SpriteAnimation;
 import entities.Entity;
 import entities.Player;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.util.Duration;
 import lombok.Getter;
+import lombok.Setter;
 import ui.GameScene;
 import ui.HUD;
+import util.FileUtil;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 @Getter
+@Setter
 public class WalkingStage {
     
     private final GameScene scene;
@@ -34,6 +30,7 @@ public class WalkingStage {
     private final GraphicsContext gc;
     private final List<Integer> enemyLocations;
     private HUD hud;
+    private boolean inBattle = false;
     
     public WalkingStage(Player player, int numScene, String xmlPath) {
         mainPane = new VBox(0);
@@ -53,7 +50,7 @@ public class WalkingStage {
     public WalkingStage(WalkingStage otherStage) {
         mainPane = otherStage.mainPane;
         this.player = otherStage.player;
-    
+        inBattle = false;
         canvas = otherStage.canvas;
         gc = otherStage.gc;
     
@@ -79,10 +76,15 @@ public class WalkingStage {
         initListeners();
     }
     public boolean checkForEnemy() {
-        if (enemyLocations.size() == 0)
+        if (enemyLocations.size() == 0) {
             return false;
-        if (player.getXLoc() == enemyLocations.get(0)) {
-            enemyLocations.remove(0);
+        }
+        List<Double> xLocCheckList = new ArrayList<>();
+        for (int x = -6; x <=6; x++) {
+            xLocCheckList.add((double)(enemyLocations.get(0) + x));
+        }
+        if (xLocCheckList.contains(player.getXLoc())) {
+            enemyLocations.remove(enemyLocations.get(0));
             return true;
         }
         return false;
@@ -90,7 +92,8 @@ public class WalkingStage {
     private void initListeners() {
         mainPane.setOnKeyPressed(keyListener -> {
             if (keyListener.getCode() == KeyCode.RIGHT || keyListener.getCode() == KeyCode.D) {
-                player.moveForward();
+                if (!inBattle)
+                    player.moveForward();
             }
         });
     }
