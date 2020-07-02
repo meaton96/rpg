@@ -1,6 +1,7 @@
 package ui;
 
 import control.Controller;
+import entities.Enemy;
 import entities.Player;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -28,12 +29,20 @@ public class HUD extends Pane {
     public final static int HEALTH_BAR_WIDTH = 90;
     public final static int HEALTH_BAR_HEIGHT = 135;
     
+    public final static int ENEMY_HEALTH_BAR_HEIGHT = 30;
+    public final static int ENEMY_HEALTH_BAR_MAX_WIDTH = 800;
+    
+    private final static int CANVAS_WIDTH = 1440;
+    
     
     private final static int HUD_HEIGHT = 150;
     private final Player player;
     private Rectangle health, mana;
     private Button aaButton, spellOneButton, spellTwoButton, spellThreeButton;
     private Label healthAmtLabel, manaAmtLabel, healthLabel, manaLabel;
+    private Label enemyNameLabel, enemyHealthLabel;
+    private Rectangle enemyHealthBar, enemyHealthBackdrop;
+    private Enemy enemy;
     
     public HUD(Player player) {
         super();
@@ -48,6 +57,7 @@ public class HUD extends Pane {
         initButtons();
         
     }
+    
     private void initLabels() {
         healthAmtLabel = new Label(player.getMaxHealth() + "/" + player.getMaxHealth());
         healthAmtLabel.setId("hud_label");
@@ -88,10 +98,53 @@ public class HUD extends Pane {
         manaLabel.setTextFill(Color.WHITE);
         
     }
+    public void initEnemy(Enemy enemy) {
+        this.enemy = enemy;
+        enemyNameLabel = new Label("Level " + enemy.getLevel() + " " + enemy.getName());
+        enemyHealthLabel = new Label(enemy.getCurHealth() + "/" + enemy.getMaxHealth());
+        enemyHealthBar = new Rectangle(ENEMY_HEALTH_BAR_MAX_WIDTH, ENEMY_HEALTH_BAR_HEIGHT);
+        enemyHealthBar.setLayoutX(CANVAS_WIDTH / 2.0 - ENEMY_HEALTH_BAR_MAX_WIDTH / 2.0);
+        enemyHealthBar.setLayoutY(-650);
+        enemyHealthBar.setFill(Color.RED);
+        enemyHealthBar.setArcHeight(15);
+        enemyHealthBar.setArcWidth(15);
+        
+        enemyHealthBackdrop = new Rectangle();
+        enemyHealthBackdrop.setLayoutX(CANVAS_WIDTH / 2.0 - ENEMY_HEALTH_BAR_MAX_WIDTH / 2.0);
+        enemyHealthBackdrop.setLayoutY(-650);
+        enemyHealthBackdrop.setArcHeight(15);
+        enemyHealthBackdrop.setArcWidth(15);
+        enemyHealthBackdrop.setFill(Color.BLACK);
+        enemyHealthBackdrop.setOpacity(0.5);
+        
+        enemyNameLabel.setLayoutX(enemyHealthBar.getLayoutX());
+        enemyNameLabel.setLayoutY(enemyHealthBar.getLayoutY() + ENEMY_HEALTH_BAR_HEIGHT + 5);
+        enemyNameLabel.setId("hud_label");
+        enemyNameLabel.setTextFill(Color.WHITE);
+        
+        enemyHealthLabel.setLayoutX(enemyHealthBar.getLayoutX() + ENEMY_HEALTH_BAR_MAX_WIDTH - 100); //adjust health bar X here
+        enemyHealthLabel.setLayoutY(enemyHealthBar.getLayoutY() + ENEMY_HEALTH_BAR_HEIGHT + 5);
+        enemyHealthLabel.setId("hud_label");
+        enemyHealthLabel.setTextFill(Color.WHITE);
+        
+        getChildren().addAll(enemyHealthBar, enemyHealthBackdrop, enemyHealthLabel, enemyNameLabel);
+        System.out.println("adding all children to scene");
+    }
+    public void endBattle() {
+       getChildren().removeAll(enemyHealthBar, enemyHealthBackdrop, enemyNameLabel, enemyHealthLabel);
+    }
     public void updateHUD() {
         updateButtons();
         updateHealth();
         updateMana();
+        if (player.isInBattle())
+            updateEnemyHealth();
+    }
+    private void updateEnemyHealth() {
+        System.out.println(enemy.getName() + "\n" + enemy.getCurHealth() + "/" + enemy.getMaxHealth());
+        double scale = 1.0 * enemy.getCurHealth() / enemy.getMaxHealth();
+        enemyHealthBar.setWidth(scale * ENEMY_HEALTH_BAR_MAX_WIDTH);
+        enemyHealthLabel.setText(enemy.getCurHealth() + "/" + enemy.getMaxHealth());
     }
     private void updateHealth() {
         healthAmtLabel.setText(player.getCurHealth() + "/" + player.getMaxHealth());
@@ -178,10 +231,5 @@ public class HUD extends Pane {
             break;
         }
     }
-    
-    /*todo
-    update health?
-    extend this class for battle hud to add status effect panels and enemy healthbar
-     */
     
 }

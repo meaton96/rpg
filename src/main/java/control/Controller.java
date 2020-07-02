@@ -161,7 +161,7 @@ public class Controller {
                     noNameEnteredLabel.setId("no_name_toast");
             }
             else {
-                new Game(primaryStage, characterNum, characterName);
+                new Game(primaryStage, characterNum, characterName).run();
             }
             
             

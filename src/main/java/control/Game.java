@@ -14,10 +14,11 @@ import util.ArmorFileReader;
 import util.FileUtil;
 
 import java.security.Key;
+import java.sql.Time;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Game {
+public class Game implements Runnable{
 
     private final Player player;
     private final Map<String, Item> items;
@@ -53,36 +54,26 @@ public class Game {
             sceneRotation.add(x);
         
         Collections.shuffle(sceneRotation);
-        run();
         
     }
+    @Override
     public void run() {
 
         WalkingStage wStage = new WalkingStage(player, sceneRotation.get(sceneNumber), battleXMLPath);
         primaryStage.setScene(wStage.getScene());
+        wStage.run();
+        
         Timeline gameLoop = new Timeline();
         gameLoop.setCycleCount(Timeline.INDEFINITE);
     
-        //final long timeStart = System.currentTimeMillis();
-    
+        //todo ??????????????????????????????????????????????????
         KeyFrame kf = new KeyFrame(
                 Duration.seconds(0.0333),
                 event -> {
-                    if (!wStage.isInBattle())
+                    if (!player.isInBattle())
                         wStage.updateDraw();
                     if (wStage.checkForEnemy()) {
-                        
-                        wStage.setInBattle(true);
-                        List<Enemy> enemies = enemyList.stream()
-                                .filter(x -> x.getLevel() == player.getLevel())
-                                .collect(Collectors.toList());
-                        Random r = new Random();
-                        Battle b = new Battle(wStage, enemies.get(r.nextInt(enemies.size())));
-
-                        while (player.getCurHealth() > 0 && b.getEnemy().getCurHealth() > 0) {
-                            b.playerTurn(); //todo
-                            b.enemyTurn();
-                        }
+                        startBattle(wStage, gameLoop);
                     }
                 }
         );
@@ -96,6 +87,15 @@ public class Game {
             sceneNumber++;
     
     
+    }
+    //todo not working need to rethink gameloop logic
+    private void startBattle(WalkingStage wStage, Timeline loop) {
+        List<Enemy> enemies = enemyList.stream()
+                .filter(x -> x.getLevel() == player.getLevel())
+                .collect(Collectors.toList());
+        Random r = new Random();
+        Battle b = new Battle(wStage, enemies.get(r.nextInt(enemies.size())), loop);
+        b.run();
     }
     
     private void equipStartingGear() {

@@ -34,6 +34,7 @@ public class Player extends Entity {
     private double xLoc, yLoc;
     private boolean faceForward;
     private int level;
+    private boolean inBattle = false;
     
     
     public Player(Class chosenClass, String name, int health) {

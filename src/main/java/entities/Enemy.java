@@ -66,8 +66,10 @@ public class Enemy extends Entity {
         double healthMax = getMaxHealth() + variance * getMaxHealth();
 
         double health = rand.nextInt((int)Math.round(healthMax - healthMin)) + healthMin;
-        health *= (1 + levelHealthScaling);
+        double levelScale = (getLevel() - 1) * (1 + levelHealthScaling) * health;
+        health += levelScale;
         setMaxHealth((int)health);
+        setCurHealth((int)health);
     }
 
     public Spell castSpell() {
