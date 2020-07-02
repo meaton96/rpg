@@ -35,6 +35,7 @@ public class Player extends Entity {
     private boolean faceForward;
     private int level;
     private boolean inBattle = false;
+    private boolean actionPerformed;
     
     
     public Player(Class chosenClass, String name, int health) {
@@ -169,4 +170,13 @@ public class Player extends Entity {
                 "\nSpells learned: \n" + learnedSpells +
                 "\n\nBackpack items: " + backPack;
     }
+    public int getDamFromSpellName(String s) {
+        for (Spell spell : learnedSpells) {
+            if (spell.getName().equals(s)) {
+                return (int) spell.getDamageDone();
+            }
+        }
+        return -1;
+    }
+    
 }

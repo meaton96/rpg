@@ -5,6 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Value;
 import lombok.experimental.NonFinal;
 
+import java.util.Random;
+
 @Value
 @EqualsAndHashCode
 @Builder
@@ -26,5 +28,10 @@ public class Spell {
     double damageLow, damageHigh, setStatusChance;
     int cost;
     String styleID;
+    
+    public double getDamageDone() {
+        Random r = new Random();
+        return (r.nextInt((int)Math.round(damageHigh - damageLow)) + damageLow);
+    }
 
 }

@@ -41,7 +41,7 @@ public class HUD extends Pane {
     private Button aaButton, spellOneButton, spellTwoButton, spellThreeButton;
     private Label healthAmtLabel, manaAmtLabel, healthLabel, manaLabel;
     private Label enemyNameLabel, enemyHealthLabel;
-    private Rectangle enemyHealthBar, enemyHealthBackdrop;
+    private Rectangle enemyHealthBar, enemyHealthBackdrop, enemyTextBackdrop;
     private Enemy enemy;
     
     public HUD(Player player) {
@@ -105,33 +105,43 @@ public class HUD extends Pane {
         enemyHealthBar = new Rectangle(ENEMY_HEALTH_BAR_MAX_WIDTH, ENEMY_HEALTH_BAR_HEIGHT);
         enemyHealthBar.setLayoutX(CANVAS_WIDTH / 2.0 - ENEMY_HEALTH_BAR_MAX_WIDTH / 2.0);
         enemyHealthBar.setLayoutY(-650);
-        enemyHealthBar.setFill(Color.RED);
+        enemyHealthBar.setFill(Color.rgb(146,28,29));
         enemyHealthBar.setArcHeight(15);
         enemyHealthBar.setArcWidth(15);
         
-        enemyHealthBackdrop = new Rectangle();
+        enemyHealthBackdrop = new Rectangle(ENEMY_HEALTH_BAR_MAX_WIDTH, ENEMY_HEALTH_BAR_HEIGHT);
         enemyHealthBackdrop.setLayoutX(CANVAS_WIDTH / 2.0 - ENEMY_HEALTH_BAR_MAX_WIDTH / 2.0);
         enemyHealthBackdrop.setLayoutY(-650);
         enemyHealthBackdrop.setArcHeight(15);
         enemyHealthBackdrop.setArcWidth(15);
         enemyHealthBackdrop.setFill(Color.BLACK);
-        enemyHealthBackdrop.setOpacity(0.5);
+        enemyHealthBackdrop.setOpacity(0.4);
         
-        enemyNameLabel.setLayoutX(enemyHealthBar.getLayoutX());
+        enemyTextBackdrop = new Rectangle(ENEMY_HEALTH_BAR_MAX_WIDTH, 25);
+        enemyTextBackdrop.setLayoutX(CANVAS_WIDTH / 2.0 - ENEMY_HEALTH_BAR_MAX_WIDTH / 2.0);
+        enemyTextBackdrop.setLayoutY(-617);
+        enemyTextBackdrop.setArcHeight(15);
+        enemyTextBackdrop.setArcWidth(15);
+        enemyTextBackdrop.setFill(Color.BLACK);
+        enemyTextBackdrop.setOpacity(0.4);
+        
+        enemyNameLabel.setLayoutX(enemyHealthBar.getLayoutX() + 10);
         enemyNameLabel.setLayoutY(enemyHealthBar.getLayoutY() + ENEMY_HEALTH_BAR_HEIGHT + 5);
         enemyNameLabel.setId("hud_label");
         enemyNameLabel.setTextFill(Color.WHITE);
         
-        enemyHealthLabel.setLayoutX(enemyHealthBar.getLayoutX() + ENEMY_HEALTH_BAR_MAX_WIDTH - 100); //adjust health bar X here
+        enemyHealthLabel.setLayoutX(enemyHealthBar.getLayoutX() + ENEMY_HEALTH_BAR_MAX_WIDTH - 70); //adjust health bar X here
         enemyHealthLabel.setLayoutY(enemyHealthBar.getLayoutY() + ENEMY_HEALTH_BAR_HEIGHT + 5);
         enemyHealthLabel.setId("hud_label");
         enemyHealthLabel.setTextFill(Color.WHITE);
         
-        getChildren().addAll(enemyHealthBar, enemyHealthBackdrop, enemyHealthLabel, enemyNameLabel);
+        
+        
+        getChildren().addAll(enemyTextBackdrop,enemyHealthBackdrop, enemyHealthBar, enemyHealthLabel, enemyNameLabel);
         System.out.println("adding all children to scene");
     }
     public void endBattle() {
-       getChildren().removeAll(enemyHealthBar, enemyHealthBackdrop, enemyNameLabel, enemyHealthLabel);
+       getChildren().removeAll(enemyHealthBar, enemyHealthBackdrop, enemyNameLabel, enemyHealthLabel, enemyTextBackdrop);
     }
     public void updateHUD() {
         updateButtons();
@@ -180,12 +190,13 @@ public class HUD extends Pane {
         spellOneButton.setLayoutX(SPELL_ONE_X);
         spellTwoButton.setLayoutX(SPELL_TWO_X);
         spellThreeButton.setLayoutX(SPELL_THREE_X);
+
         
         getChildren().add(aaButton);
     }
     private void drawBars() {
         health = new Rectangle();
-        health.setFill(Color.RED);
+        health.setFill(Color.rgb(146,28,29));
         health.setHeight(HEALTH_BAR_HEIGHT);
         health.setWidth(HEALTH_BAR_WIDTH);
         health.setX(HEALTH_X);
@@ -202,7 +213,7 @@ public class HUD extends Pane {
                 mana.setFill(Color.BLUE);
             break;
             case RAGE:
-                mana.setFill(Color.RED);
+                mana.setFill(Color.rgb(146,28,29));
                 mana.setHeight(HEALTH_BAR_HEIGHT);
             break;
             case ENERGY:
@@ -211,6 +222,7 @@ public class HUD extends Pane {
         }
     }
     public void updateButtons() {
+        getChildren().removeAll(aaButton, spellOneButton, spellThreeButton, spellTwoButton);        //updated
         if (player.getEquippedSpells()[1] != null && !getChildren().contains(spellOneButton)) {
             getChildren().add(spellOneButton);
         }
@@ -220,6 +232,7 @@ public class HUD extends Pane {
         if (player.getEquippedSpells()[3] != null && !getChildren().contains(spellThreeButton)) {
             getChildren().add(spellThreeButton);
         }
+        getChildren().add(aaButton);                                //updated
     }
     public void changeSpellButtonId(int spellNum, String ID) {
         switch (spellNum) {
@@ -229,6 +242,15 @@ public class HUD extends Pane {
             break;
             case 3: spellThreeButton.setId(ID);
             break;
+        }
+    }
+    public void setButtonListeners(String ... spellNames) {
+        for (int x = 0; x < spellNames.length; x++) {
+            if (x == 1) {
+                aaButton.setOnAction(event -> {
+                    //todo wtf these buttons do doe
+                });
+            }
         }
     }
     

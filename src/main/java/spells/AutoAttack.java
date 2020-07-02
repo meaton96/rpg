@@ -2,6 +2,8 @@ package spells;
 
 import items.Weapon;
 
+import java.util.Random;
+
 public class AutoAttack extends Spell{
     
     /*String name;

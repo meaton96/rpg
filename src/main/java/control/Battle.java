@@ -58,6 +58,14 @@ public class Battle {
     }
     public void playerTurn() {
         System.out.println("Player taking turn :)");
+        player.setActionPerformed(false);
+        while (!player.isActionPerformed()) {
+            
+            //todo also apparently mage is getting wrong weapon so check that
+            
+            
+            
+        }
     }
     public void enemyTurn() {
         System.out.println("Enemy taking turn :(");

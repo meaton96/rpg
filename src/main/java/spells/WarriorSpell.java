@@ -14,6 +14,6 @@ public class WarriorSpell extends Spell {
         super(name, requiredLevel, damageType, statusEffect, damageLow, damageHigh, setStatusChance, cost, styleID);
         this.rageGen = rageGen;
     }
-
+    
 
 }

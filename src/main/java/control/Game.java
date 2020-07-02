@@ -72,9 +72,9 @@ public class Game implements Runnable{
                 event -> {
                     if (!player.isInBattle())
                         wStage.updateDraw();
-                    if (wStage.checkForEnemy()) {
+                    if (wStage.checkForEnemy())
                         startBattle(wStage, gameLoop);
-                    }
+                    
                 }
         );
         gameLoop.getKeyFrames().add(kf);
