@@ -30,12 +30,11 @@ public class WalkingStage {
     private final GraphicsContext gc;
     private final List<Integer> enemyLocations;
     private HUD hud;
-    private boolean inBattle = false;
     
     public WalkingStage(Player player, int numScene, String xmlPath) {
         mainPane = new VBox(0);
         this.player = player;
-        
+        player.setInBattle(false);
         canvas = new Canvas(1440, 660);
         gc = canvas.getGraphicsContext2D();
         
@@ -44,13 +43,13 @@ public class WalkingStage {
         scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         enemyLocations = new ArrayList<>();
         initEnemyLocations();
-        run();
+        
         
     }
     public WalkingStage(WalkingStage otherStage) {
         mainPane = otherStage.mainPane;
         this.player = otherStage.player;
-        inBattle = false;
+        player.setInBattle(false);
         canvas = otherStage.canvas;
         gc = otherStage.gc;
     
@@ -92,8 +91,10 @@ public class WalkingStage {
     private void initListeners() {
         mainPane.setOnKeyPressed(keyListener -> {
             if (keyListener.getCode() == KeyCode.RIGHT || keyListener.getCode() == KeyCode.D) {
-                if (!inBattle)
+                if (!player.isInBattle()) {
                     player.moveForward();
+                    updateDraw();
+                }
             }
         });
     }

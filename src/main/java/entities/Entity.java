@@ -25,6 +25,10 @@ public abstract class Entity {
     private int curHealth, maxHealth;
     private StatusEffect statusEffect;
     
+    public boolean isAlive() {
+        return curHealth > 0;
+    }
+    
     public static Class getClassFromNumber(int i) {
         switch ( i ) {
             case 1 : return Class.WARRIOR;
@@ -43,5 +47,6 @@ public abstract class Entity {
         //17 from bottom
         return 37;
     }
+    
 
 }
