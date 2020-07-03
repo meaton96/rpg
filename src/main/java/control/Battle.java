@@ -17,12 +17,13 @@ public class Battle {
     private final WalkingStage initScene;
     private final Enemy enemy;
     private final Player player;
-    private final int ENEMY_X_DRAW_OFFSET = 50;
+    private static final int ENEMY_X_DRAW_OFFSET = 55;
+    private static final int ENEMY_Y_DRAW_OFFSET = 15;
     private HUD hud;
     // for balancing
     
     private final double enemyHealthMulti = 1.2;
-    private final double enemyDamageMulti = 3;
+    private final double enemyDamageMulti = 2;
     
     
     /**
@@ -43,7 +44,7 @@ public class Battle {
      */
     private void init() {
         player.setInBattle(true);                           //set the player to be in battle and set the enemy location to be in front of the player
-        enemy.setYLoc(player.getYLoc() );
+        enemy.setYLoc(player.getYLoc() + ENEMY_Y_DRAW_OFFSET);
         enemy.setXLoc(player.getXLoc() + ENEMY_X_DRAW_OFFSET);
         hud = initScene.getHud();                               //get the heads up display from the scene and pass it the enemy for drawing healthbars
         hud.initEnemy(enemy);
@@ -82,7 +83,7 @@ public class Battle {
                         player.setTurn(false);                                                      //this stuff should be moved to a method to call ie. pass in spell and then run the rest
                         try {
                             Thread.sleep(500);                              //wait half a second and play the attack animation
-                            player.playAttackAnimation();                   //not currently working
+                            player.playAttackAnimation(initScene.getMainPane());                   //not currently working
                             enemy.reduceHealth(playerDamageDone);           //reduce enemy hp and update the hud
                             hud.updateHUD();
                             Thread.sleep(1000);

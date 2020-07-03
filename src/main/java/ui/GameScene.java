@@ -15,14 +15,14 @@ import lombok.ToString;
 public class GameScene extends Scene {
     
     private final String name;
-    private final int entityDrawX;
+    private final int entityDrawY;
     private final String filePath;
     
     @Builder
-    public GameScene(Pane pane, String name, int entityDrawX, String filePath) {
+    public GameScene(Pane pane, String name, int entityDrawY, String filePath) {
         super(pane, Controller.WIDTH, Controller.HEIGHT);
         this.name = name;
         this.filePath = filePath;
-        this.entityDrawX = entityDrawX;
+        this.entityDrawY = entityDrawY;
     }
 }

@@ -41,6 +41,8 @@ public class WalkingStage {
     private int numScene;
     private String xmlPath;
     private Stage primaryStage;
+    private static int numStages = 0;
+    private final static int MAX_SCENE_NUMBER = 10;
     
     /**
      * stage constructor
@@ -53,13 +55,15 @@ public class WalkingStage {
     public WalkingStage(Stage primaryStage, Player player, int numScene, String xmlPath, List<Enemy> enemyList) {
         this.primaryStage = primaryStage;
         this.numScene = numScene;
+        if (numScene > MAX_SCENE_NUMBER)
+            numScene = 0;
         this.xmlPath = xmlPath;
         this.enemyList = enemyList;
-    mainPane = new VBox(0);                                                                 //create a new vbox to add the canvas (game scene) and hud to
+        mainPane = new VBox(0);                                                             //create a new vbox to add the canvas (game scene) and hud to
         this.player = player;
         player.setInBattle(false);
         canvas = new Canvas(1440, 660);
-    gc = canvas.getGraphicsContext2D();                                                     //init graphics objects for drawing images
+        gc = canvas.getGraphicsContext2D();                                                 //init graphics objects for drawing images
         player.heal();
         scene = FileUtil.getSceneFromXML(mainPane, numScene, xmlPath);                      //get the scene from the xml file
         assert scene != null;                                                               //removes warnings but this wont be null unless the xml path is incorrect
@@ -75,7 +79,7 @@ public class WalkingStage {
     private void initEnemyLocations() {
         Random rand = new Random();
         for (int x = 0; x <= player.getLevel(); x++) {
-            enemyLocations.add(rand.nextInt(Controller.WIDTH - 100) + 50);
+            enemyLocations.add(rand.nextInt(Controller.WIDTH - 150) + 50);
         }
         Collections.sort(enemyLocations);
     }
@@ -120,7 +124,10 @@ public class WalkingStage {
                         startBattle();                              //player encountered an enemy so start the battle
                     }
                     if (endStage()) {
+                        if (numStages % 2 == 0)                     //level player up every other stage
+                            player.levelUp();
                         numScene++;                                 //player got to the end of the scene so make a new scene
+                        numStages++;
                         new WalkingStage(primaryStage, player, numScene, xmlPath, enemyList).run();
                     }
                 }
@@ -170,9 +177,9 @@ public class WalkingStage {
         Pane content = new Pane();
         content.setId(scene.getName().toLowerCase());
        
-        player.setXLoc(-Entity.getXDrawOffset());
-        player.setYLoc(canvas.getHeight() - player.getModel().getHeight());
-        
+        player.setXLoc(Entity.getXDrawOffset());
+        player.setYLoc(scene.getEntityDrawY() - Entity.getYDrawOffset());
+
         gc.drawImage(
                 player.getModel(),
                 player.getXLoc(),

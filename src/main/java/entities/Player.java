@@ -3,7 +3,9 @@ package entities;
 import animation.SpriteAnimation;
 import javafx.animation.Animation;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import javafx.util.Pair;
 import spells.AutoAttack;
@@ -31,6 +33,7 @@ public class Player extends Entity {
     
     public final double MAIN_STAT_SCALING = 1.0;
     public final double STAMINA_SCALING = 3;
+    private final static int HEALTH_LEVEL_SCALING = 8;
 
     private Chest equippedChest;
     private Helm equippedHelm;
@@ -59,7 +62,7 @@ public class Player extends Entity {
     private static final int ATTACK_OFFSET_Y = 0;
     private static final int ATTACK_WIDTH = 128;
     private static final int ATTACK_HEIGHT = 128;
-    private final Animation attackAnimation;
+    private final SpriteAnimation attackAnimation;
     
     
     public Player(Class chosenClass, String name, int health) {
@@ -74,17 +77,17 @@ public class Player extends Entity {
             case MAGE:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Mage/mage.png");
                 resource = new Resource(Resource.Type.MANA);
-                attackAnimation = createClassSpriteAnimation("/images/Mage/Attack/attack.png", 7, Duration.millis(500));
+                attackAnimation = createClassSpriteAnimation("/images/Mage/Attack/attack.png", 7, Duration.millis(1000));
                 break;
             case ROGUE:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Rogue/rogue.png");
                 resource = new Resource(Resource.Type.ENERGY);
-                attackAnimation = createClassSpriteAnimation("/images/Rogue/Attack/attack.png", 7, Duration.millis(500));
+                attackAnimation = createClassSpriteAnimation("/images/Rogue/Attack/attack.png", 7, Duration.millis(1000));
                 break;
             case WARRIOR:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Knight/knight.png");
                 resource = new Resource(Resource.Type.RAGE);
-                attackAnimation = createClassSpriteAnimation("/images/Knight/Attack/attack.png", 5, Duration.millis(500));
+                attackAnimation = createClassSpriteAnimation("/images/Knight/Attack/attack.png", 5, Duration.millis(1000));
                 break;
             default:
                 model = null;
@@ -116,8 +119,10 @@ public class Player extends Entity {
      * tell player to play their attack animation
      * currently not working
      */
-    public void playAttackAnimation() {
+    public void playAttackAnimation(Pane pane) {
+        pane.getChildren().add(attackAnimation.getImageView());
         attackAnimation.play();
+        pane.getChildren().remove(attackAnimation.getImageView());
     }
     
     /**
@@ -162,9 +167,9 @@ public class Player extends Entity {
     
     /**
      * level up the player
-     * for future implementation
      */
     public void levelUp() {
+        setBaseHealth(getBaseHealth() + HEALTH_LEVEL_SCALING);
         level++;
     }
     
@@ -309,18 +314,13 @@ public class Player extends Entity {
         intel += equippedWeapon.getIntellect();
         return intel;
     }
-    public void updateHealth() {
-        super.setMaxHealth(getMaxHealth() + (int)(getStamina() * STAMINA_SCALING));
-        super.setCurHealth(getMaxHealth());
-    }
-    public void updateMaxHealth() {
-        super.setMaxHealth(getMaxHealth() + (int)(getStamina() * STAMINA_SCALING));
-    }
     public void heal() {
         setCurHealth(getMaxHealth());
     }
     
     
-    
+    public int getMaxHealth() {
+        return super.getBaseHealth() + (int)(getStamina() * STAMINA_SCALING);
+    }
     
 }

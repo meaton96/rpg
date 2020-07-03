@@ -40,7 +40,7 @@ public class FileUtil {
             Element e = rootNode.getChildren().get(sceneNumber);
             
             return GameScene.builder()
-                    .entityDrawX(Integer.parseInt(e.getChildText("ground_height")))
+                    .entityDrawY(Integer.parseInt(e.getChildText("ground_height")))
                     .name(e.getChildText("name"))
                     .pane(pane)
                     .filePath(e.getChildText("file_path"))

@@ -69,13 +69,13 @@ public class Enemy extends Entity {
         double variance = 0.3;                      //adjust here for health variance and level scaling
         double levelHealthScaling = 0.2;
 
-        double healthMin = getMaxHealth() - (variance * getMaxHealth());
-        double healthMax = getMaxHealth() + variance * getMaxHealth();
+        double healthMin = getBaseHealth() - (variance * getBaseHealth());
+        double healthMax = getBaseHealth() + variance * getBaseHealth();
 
         double health = rand.nextInt((int)Math.round(healthMax - healthMin)) + healthMin;
         double levelScale = (getLevel() - 1) * (1 + levelHealthScaling) * health;
         health += levelScale;
-        setMaxHealth((int)health);
+        setBaseHealth((int)health);
         setCurHealth((int)health);
     }
     

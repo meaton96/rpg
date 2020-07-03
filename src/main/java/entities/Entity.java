@@ -25,7 +25,7 @@ public abstract class Entity {
 
     private final Class entityClass;
     private final String name;
-    private int curHealth, maxHealth;
+    private int curHealth, baseHealth;
     private StatusEffect statusEffect;
     
     public boolean isAlive() {
@@ -44,12 +44,12 @@ public abstract class Entity {
     //offsets for drawing purposes
     //these are here in case I need to overwrite them
     public static int getXDrawOffset() {
-        return 21;
+        return -21;
     }
     public static int getYDrawOffset() {
         //54 from top
         //17 from bottom
-        return 37;
+        return 111;
     }
     public void reduceHealth(int amt) {
         System.out.println("Reducing " + name + "'s health by: " + amt);

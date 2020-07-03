@@ -3,43 +3,43 @@
 
     <scene>
         <name>DarkForest</name>
-        <ground_height>609</ground_height>
+        <ground_height>613</ground_height>
         <file_path>images/battle_scenes/darkForest.png</file_path>
     </scene>
 
     <scene>
         <name>FlatNature</name>
-        <ground_height>594</ground_height>
+        <ground_height>607</ground_height>
         <file_path>images/battle_scenes/flatNature.png</file_path>
     </scene>
 
     <scene>
         <name>LightGrass</name>
-        <ground_height>610</ground_height>
+        <ground_height>579</ground_height>
         <file_path>images/battle_scenes/grassLight.png</file_path>
     </scene>
 
     <scene>
         <name>NightGrass</name>
-        <ground_height>605</ground_height>
+        <ground_height>581</ground_height>
         <file_path>images/battle_scenes/grassNight.png</file_path>
     </scene>
 
     <scene>
         <name>Hills</name>
-        <ground_height>618</ground_height>
+        <ground_height>617</ground_height>
         <file_path>images/battle_scenes/hills.png</file_path>
     </scene>
 
     <scene>
         <name>Mountains</name>
-        <ground_height>544</ground_height>
+        <ground_height>570</ground_height>
         <file_path>images/battle_scenes/mountains.png</file_path>
     </scene>
 
     <scene>
         <name>RockyForest</name>
-        <ground_height>609</ground_height>
+        <ground_height>592</ground_height>
         <file_path>images/battle_scenes/rockyForest.png</file_path>
     </scene>
 
@@ -51,19 +51,19 @@
 
     <scene>
         <name>Sunset</name>
-        <ground_height>626</ground_height>
+        <ground_height>628</ground_height>
         <file_path>images/battle_scenes/sunset.png</file_path>
     </scene>
 
     <scene>
         <name>Dark</name>
-        <ground_height>608</ground_height>
+        <ground_height>612</ground_height>
         <file_path>images/battle_scenes/creepyDark.png</file_path>
     </scene>
 
     <scene>
         <name>GrassMountains</name>
-        <ground_height>640</ground_height>
+        <ground_height>637</ground_height>
         <file_path>images/battle_scenes/grassMountain.png</file_path>
     </scene>
 

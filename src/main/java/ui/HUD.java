@@ -102,7 +102,7 @@ public class HUD extends Pane {
     public void initEnemy(Enemy enemy) {
         this.enemy = enemy;
         enemyNameLabel = new Label("Level " + enemy.getLevel() + " " + enemy.getName());
-        enemyHealthLabel = new Label(enemy.getCurHealth() + "/" + enemy.getMaxHealth());
+        enemyHealthLabel = new Label(enemy.getCurHealth() + "/" + enemy.getBaseHealth());
         enemyHealthBar = new Rectangle(ENEMY_HEALTH_BAR_MAX_WIDTH, ENEMY_HEALTH_BAR_HEIGHT);
         enemyHealthBar.setLayoutX(CANVAS_WIDTH / 2.0 - ENEMY_HEALTH_BAR_MAX_WIDTH / 2.0);
         enemyHealthBar.setLayoutY(-650);
@@ -152,9 +152,9 @@ public class HUD extends Pane {
             updateEnemyHealth();
     }
     private void updateEnemyHealth() {
-        double scale = 1.0 * enemy.getCurHealth() / enemy.getMaxHealth();
+        double scale = 1.0 * enemy.getCurHealth() / enemy.getBaseHealth();
         enemyHealthBar.setWidth(scale * ENEMY_HEALTH_BAR_MAX_WIDTH);
-        enemyHealthLabel.setText(enemy.getCurHealth() + "/" + enemy.getMaxHealth());
+        enemyHealthLabel.setText(enemy.getCurHealth() + "/" + enemy.getBaseHealth());
     }
     private void updateHealth() {
         healthAmtLabel.setText(player.getCurHealth() + "/" + player.getMaxHealth());

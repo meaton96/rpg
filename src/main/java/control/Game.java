@@ -98,6 +98,5 @@ public class Game implements Runnable{
             break;
                 
         }
-        player.updateHealth();
     }
 }
