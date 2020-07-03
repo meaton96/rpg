@@ -1,13 +1,16 @@
 package control;
 
 
+import entities.Enemy;
 import entities.Entity;
 import entities.Player;
+import javafx.animation.Timeline;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
 import ui.GameScene;
@@ -18,7 +21,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
+/**
+ * class creating and running the part of the game where you walk across the scene and encounter random enemies
+ */
 @Getter
 @Setter
 public class WalkingStage {
@@ -30,50 +37,61 @@ public class WalkingStage {
     private final GraphicsContext gc;
     private final List<Integer> enemyLocations;
     private HUD hud;
+    private List<Enemy> enemyList;
+    private int numScene;
+    private String xmlPath;
+    private Stage primaryStage;
     
-    public WalkingStage(Player player, int numScene, String xmlPath) {
-        mainPane = new VBox(0);
+    /**
+     * stage constructor
+     * @param primaryStage application stage from javafx
+     * @param player instance of the player of the game
+     * @param numScene scene number for choosing the background image
+     * @param xmlPath path to xml document containing the background images and styles
+     * @param enemyList list of all the enemies in the game
+     */
+    public WalkingStage(Stage primaryStage, Player player, int numScene, String xmlPath, List<Enemy> enemyList) {
+        this.primaryStage = primaryStage;
+        this.numScene = numScene;
+        this.xmlPath = xmlPath;
+        this.enemyList = enemyList;
+    mainPane = new VBox(0);                                                                 //create a new vbox to add the canvas (game scene) and hud to
         this.player = player;
         player.setInBattle(false);
         canvas = new Canvas(1440, 660);
-        gc = canvas.getGraphicsContext2D();
-        
-        scene = FileUtil.getSceneFromXML(mainPane, numScene, xmlPath);
-        assert scene != null;
-        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+    gc = canvas.getGraphicsContext2D();                                                     //init graphics objects for drawing images
+        player.heal();
+        scene = FileUtil.getSceneFromXML(mainPane, numScene, xmlPath);                      //get the scene from the xml file
+        assert scene != null;                                                               //removes warnings but this wont be null unless the xml path is incorrect
+        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());  //set styles
         enemyLocations = new ArrayList<>();
         initEnemyLocations();
-        
-        
+        primaryStage.setScene(getScene());
     }
-    public WalkingStage(WalkingStage otherStage) {
-        mainPane = otherStage.mainPane;
-        this.player = otherStage.player;
-        player.setInBattle(false);
-        canvas = otherStage.canvas;
-        gc = otherStage.gc;
     
-        scene = otherStage.scene;
-        
-        assert scene != null;
-        enemyLocations = new ArrayList<>();
-        
-        hud = otherStage.hud;
-        initEnemyLocations();
-        run();
-    }
+    /**
+     * create an arraylist of integers for where the enemies will be encountered on this stage
+     */
     private void initEnemyLocations() {
         Random rand = new Random();
         for (int x = 0; x <= player.getLevel(); x++) {
             enemyLocations.add(rand.nextInt(Controller.WIDTH - 100) + 50);
         }
         Collections.sort(enemyLocations);
-        System.out.println(enemyLocations.get(0));
     }
+    
+    /**
+     * run the scene draw it and initialize the listeners
+     */
     public void run() {
         drawScene();
         initListeners();
     }
+    
+    /**
+     * checks player location against +/- 6 pixels to find when the player gets an encounter with the enemies
+     * @return true if the player encounters an enemy false otherwise
+     */
     public boolean checkForEnemy() {
         if (enemyLocations.size() == 0) {
             return false;
@@ -88,14 +106,52 @@ public class WalkingStage {
         }
         return false;
     }
+    
+    /**
+     * create listeners for player movement also checks for the player encountering enemies or
+     */
     private void initListeners() {
         mainPane.setOnKeyPressed(keyListener -> {
             if (keyListener.getCode() == KeyCode.RIGHT || keyListener.getCode() == KeyCode.D) {
-                if (!player.isInBattle())
-                    player.moveForward();
+                if (!player.isInBattle()) {                         //player is allowed to move foward if they arent in a battle
+                    player.moveForward();                           //move the player and update the draw
+                    updateDraw();
+                    if (checkForEnemy()) {
+                        startBattle();                              //player encountered an enemy so start the battle
+                    }
+                    if (endStage()) {
+                        numScene++;                                 //player got to the end of the scene so make a new scene
+                        new WalkingStage(primaryStage, player, numScene, xmlPath, enemyList).run();
+                    }
+                }
             }
         });
     }
+    
+    /**
+     * check if the player gets to the end of the stage
+     * @return true if the player has moved off the screen false otherwise
+     */
+    private boolean endStage() {
+        return player.getXLoc() > canvas.getWidth() - 21;
+    }
+    
+    /**
+     * start a battle, finds an enemy of the same level as the player and starts a battle between the player and the enemy
+     */
+    private void startBattle() {
+        List<Enemy> enemies = enemyList.stream()
+                .filter(x -> x.getLevel() == player.getLevel())
+                .collect(Collectors.toList());
+        Random r = new Random();
+        Enemy enemy = enemies.get(r.nextInt(enemies.size()));
+        enemyList.remove(enemy);
+        Battle b = new Battle(this, enemy);
+    }
+    
+    /**
+     * update the screen, clears cavas and redraws the player and updates the hud
+     */
     public void updateDraw() {
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         gc.drawImage(
@@ -105,6 +161,10 @@ public class WalkingStage {
         );
         hud.updateHUD();
     }
+    
+    /**
+     * draw the initial scene
+     */
     private void drawScene() {
     
         Pane content = new Pane();

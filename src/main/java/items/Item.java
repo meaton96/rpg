@@ -12,5 +12,6 @@ public abstract class Item {
     private final double weight;
     private final double durability;
     private final int level;
+    private final int stamina, strength, agility, intellect;
 
 }

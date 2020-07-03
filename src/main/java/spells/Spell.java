@@ -29,9 +29,12 @@ public class Spell {
     int cost;
     String styleID;
     
-    public double getDamageDone() {
+    public int getDamageDone() {
         Random r = new Random();
-        return (r.nextInt((int)Math.round(damageHigh - damageLow)) + damageLow);
+        return (int)(r.nextInt((int)Math.round(damageHigh - damageLow)) + damageLow);
+    }
+    public String toString() {
+        return name + ": " + damageLow + "-" + damageHigh;
     }
 
 }

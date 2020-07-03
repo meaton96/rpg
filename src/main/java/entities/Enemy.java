@@ -16,6 +16,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * class representing an enemy entity
+ */
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @Setter
@@ -58,6 +61,10 @@ public class Enemy extends Entity {
         rand = new Random();
         randomizeHealth();
     }
+    
+    /**
+     * randomize the enemy hp by the variance and level
+     */
     private void randomizeHealth() {
         double variance = 0.3;                      //adjust here for health variance and level scaling
         double levelHealthScaling = 0.2;
@@ -71,16 +78,15 @@ public class Enemy extends Entity {
         setMaxHealth((int)health);
         setCurHealth((int)health);
     }
-
+    
+    /**
+     * cast a random spell the enemy has, currently just will always be a basic attack
+     * @return the spell to be cast
+     */
     public Spell castSpell() {
         return availableSpells.get(rand.nextInt(availableSpells.size()));
     }
-    public boolean reduceHealth(int amt) {
-        setCurHealth(getCurHealth() - amt);
-        if (getCurHealth() <= 0)
-            return false;
-        return true;
-    }
+    
 
 
 }

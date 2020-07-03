@@ -9,9 +9,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import lombok.Getter;
 import spells.Spell;
 
-
+@Getter
 public class HUD extends Pane {
     
     public final static double HEALTH_Y = 7.5;
@@ -138,7 +139,7 @@ public class HUD extends Pane {
         
         
         getChildren().addAll(enemyTextBackdrop,enemyHealthBackdrop, enemyHealthBar, enemyHealthLabel, enemyNameLabel);
-        System.out.println("adding all children to scene");
+        
     }
     public void endBattle() {
        getChildren().removeAll(enemyHealthBar, enemyHealthBackdrop, enemyNameLabel, enemyHealthLabel, enemyTextBackdrop);
@@ -151,7 +152,6 @@ public class HUD extends Pane {
             updateEnemyHealth();
     }
     private void updateEnemyHealth() {
-        System.out.println(enemy.getName() + "\n" + enemy.getCurHealth() + "/" + enemy.getMaxHealth());
         double scale = 1.0 * enemy.getCurHealth() / enemy.getMaxHealth();
         enemyHealthBar.setWidth(scale * ENEMY_HEALTH_BAR_MAX_WIDTH);
         enemyHealthLabel.setText(enemy.getCurHealth() + "/" + enemy.getMaxHealth());
@@ -244,14 +244,6 @@ public class HUD extends Pane {
             break;
         }
     }
-    public void setButtonListeners(String ... spellNames) {
-        for (int x = 0; x < spellNames.length; x++) {
-            if (x == 1) {
-                aaButton.setOnAction(event -> {
-                    //todo wtf these buttons do doe
-                });
-            }
-        }
-    }
+    
     
 }

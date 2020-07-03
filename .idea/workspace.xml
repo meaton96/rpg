@@ -25,15 +25,24 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="fixed getting into battle need to run the battle init button listeners and provide ability to change them">
+    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="working on how to implement listeners">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Knight/Attack/attack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Mage/Attack/attack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Rogue/Attack/attack.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spells/AutoAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spells/AutoAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/items/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Armor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/items/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Weapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spells/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spells/Spell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spells/WarriorSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spells/WarriorSpell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/HUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/armor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/armor.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +102,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="LombokPluginEnabledInProject" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -149,7 +160,8 @@
       <workItem from="1593225703447" duration="314000" />
       <workItem from="1593638026611" duration="4902000" />
       <workItem from="1593658398085" duration="10142000" />
-      <workItem from="1593668878630" duration="4507000" />
+      <workItem from="1593668878630" duration="4660000" />
+      <workItem from="1593719843026" duration="20080000" />
     </task>
     <task id="LOCAL-00001" summary="working on adding enemies">
       <created>1593638057692</created>
@@ -172,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593670044911</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="working on how to implement listeners">
+      <created>1593673449367</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1593673449367</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,72 +227,74 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="working on adding enemies" />
     <MESSAGE value="working on main game loop and starting battle but no work" />
     <MESSAGE value="fixed getting into battle need to run the battle init button listeners and provide ability to change them" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed getting into battle need to run the battle init button listeners and provide ability to change them" />
+    <MESSAGE value="working on how to implement listeners" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on how to implement listeners" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593638262430">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638262430" />
-    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1593672493334">
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1593733147433">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593672493334" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593733147433" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1593638285111">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1593673386052">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1593738663947">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593673386052" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593738663947" />
     <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593635190682" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1593673386052">
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1593738663947">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593673386052" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593738663947" />
     <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593635190682" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1593673386052">
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1593738663947">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593673386052" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593738663947" />
     <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593635190682" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1593673386052">
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1593738663947">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593673386052" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593738663947" />
     <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593635190682" />
-    <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1593668774046">
+    <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1593734180809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="458" key="GridCell.Tab.1.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593668774046" />
+    <state width="2517" height="458" key="GridCell.Tab.1.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
     <state width="2005" height="376" key="GridCell.Tab.1.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
-    <state width="2517" height="458" key="GridCell.Tab.1.center" timestamp="1593668774045">
+    <state width="2517" height="458" key="GridCell.Tab.1.center" timestamp="1593734180809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="458" key="GridCell.Tab.1.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593668774045" />
+    <state width="2517" height="458" key="GridCell.Tab.1.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
     <state width="2005" height="376" key="GridCell.Tab.1.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
-    <state width="2517" height="458" key="GridCell.Tab.1.left" timestamp="1593668774045">
+    <state width="2517" height="458" key="GridCell.Tab.1.left" timestamp="1593734180809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="458" key="GridCell.Tab.1.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593668774045" />
+    <state width="2517" height="458" key="GridCell.Tab.1.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
     <state width="2005" height="376" key="GridCell.Tab.1.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
-    <state width="2517" height="458" key="GridCell.Tab.1.right" timestamp="1593668774046">
+    <state width="2517" height="458" key="GridCell.Tab.1.right" timestamp="1593734180809">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="458" key="GridCell.Tab.1.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593668774046" />
+    <state width="2517" height="458" key="GridCell.Tab.1.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
     <state width="2005" height="376" key="GridCell.Tab.1.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
     <state x="1614" y="243" key="MultipleFileMergeDialog" timestamp="1593670082172">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1614" y="243" key="MultipleFileMergeDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593670082172" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1593670049074">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1593673451735">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593670049074" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593673451735" />
     <state x="-131" y="245" width="2376" height="1216" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593465226698">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -290,5 +311,9 @@
       <screen x="2560" y="0" width="1920" height="1030" />
     </state>
     <state x="2560" y="0" width="1509" height="989" key="dock-window-2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593630313643" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1593735149357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593735149357" />
   </component>
 </project>
