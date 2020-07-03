@@ -12,17 +12,17 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Main extends Application {
-/*
-    private static final Image IMAGE = new Image("/images/Rogue/Attack/attack.png");
 
-    private static final int COLUMNS  =   7;
-    private static final int COUNT    =  5;
+    private static final Image IMAGE = new Image("/images/Rogue/Idle/idle.png");
+
+    private static final int COLUMNS  =   18;
+    private static final int COUNT    =  18;
     private static final int OFFSET_X =  0;
     private static final int OFFSET_Y =  0;
     private static final int WIDTH    = 128;
     private static final int HEIGHT   = 128;
 
- */
+
     @Override
     public void start(Stage primaryStage) throws Exception {
 
@@ -39,7 +39,7 @@ public class Main extends Application {
 
         final Animation animation = new SpriteAnimation(
                 imageView,
-                Duration.millis(700),
+                Duration.millis(2400),
                 COUNT, COLUMNS,
                 OFFSET_X, OFFSET_Y,
                 WIDTH, HEIGHT
@@ -49,8 +49,8 @@ public class Main extends Application {
 
         primaryStage.setScene(new Scene(new Group(imageView)));
         primaryStage.show();
-*/
 
+*/
 
     }
 

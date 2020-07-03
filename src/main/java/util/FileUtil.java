@@ -2,6 +2,7 @@ package util;
 
 import entities.Enemy;
 import entities.Entity;
+import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import org.jdom2.Document;
@@ -28,7 +29,7 @@ public class FileUtil {
         }
     }
     
-    public static GameScene getSceneFromXML(final Pane pane, final int sceneNumber, final String path) {
+    public static GameScene getSceneFromXML(final Group group, final int sceneNumber, final String path) {
     
         SAXBuilder builder = new SAXBuilder();
         File xmlFile = new File(path);
@@ -42,7 +43,7 @@ public class FileUtil {
             return GameScene.builder()
                     .entityDrawY(Integer.parseInt(e.getChildText("ground_height")))
                     .name(e.getChildText("name"))
-                    .pane(pane)
+                    .group(group)
                     .filePath(e.getChildText("file_path"))
                     .build();
             

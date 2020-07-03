@@ -69,6 +69,7 @@ public class Battle {
         
         
     }
+
     
     /**
      * set listeners for ability buttons on the hud
@@ -82,11 +83,14 @@ public class Battle {
                         int playerDamageDone = player.getDamFromSpellName("Auto Attack");           //if its the players turn get the damage of the spell (basic attack)
                         player.setTurn(false);                                                      //this stuff should be moved to a method to call ie. pass in spell and then run the rest
                         try {
-                            Thread.sleep(500);                              //wait half a second and play the attack animation
+                          //  Thread.sleep(500);                              //wait half a second and play the attack animation
+
                             player.playAttackAnimation(initScene.getMainPane());                   //not currently working
+                            player.playIdleAnimation(initScene.getMainPane());                      //https://www.developer.com/java/data/multithreading-in-javafx.html
+                                                                                                    //need to work on running animations as seperate thread
                             enemy.reduceHealth(playerDamageDone);           //reduce enemy hp and update the hud
                             hud.updateHUD();
-                            Thread.sleep(1000);
+                            //Thread.sleep(1000);
                             if (enemy.isAlive())                            //do enemy turn if enemy didnt die from player attack
                                 enemyTurn();
                             else {
@@ -129,12 +133,13 @@ public class Battle {
      * draw the enemy model
      */
     private void draw() {
-        
+        initScene.clearDraw();
+        player.playIdleAnimation(initScene.getMainPane());
         initScene.getGc().drawImage(
                 enemy.getModel(),
                 enemy.getXLoc(),
                 enemy.getYLoc());
-        
+
         hud.updateHUD();
         
     }

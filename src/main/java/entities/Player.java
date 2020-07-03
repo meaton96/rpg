@@ -3,11 +3,9 @@ package entities;
 import animation.SpriteAnimation;
 import javafx.animation.Animation;
 import javafx.geometry.Rectangle2D;
-import javafx.scene.canvas.Canvas;
+import javafx.scene.Group;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
 import javafx.util.Duration;
-import javafx.util.Pair;
 import spells.AutoAttack;
 import util.FileUtil;
 import items.*;
@@ -19,9 +17,7 @@ import resource.Resource;
 import spells.Spell;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * class representing the player character
@@ -58,11 +54,13 @@ public class Player extends Entity {
     
     //animation constants
     private static final int ATTACK_COL = 5;
-    private static final int ATTACK_OFFSET_X = 0;
-    private static final int ATTACK_OFFSET_Y = 0;
-    private static final int ATTACK_WIDTH = 128;
-    private static final int ATTACK_HEIGHT = 128;
+    private static final int IDLE_COL = 18;
+    private static final int ANIM_X_OFFSET = 0;
+    private static final int ANIM_Y_OFFSET = 0;
+    private static final int ANIM_WIDTH = 128;
+    private static final int ANIM_HEIGHT = 128;
     private final SpriteAnimation attackAnimation;
+    private final SpriteAnimation idleAnimation;
     
     
     public Player(Class chosenClass, String name, int health) {
@@ -77,25 +75,30 @@ public class Player extends Entity {
             case MAGE:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Mage/mage.png");
                 resource = new Resource(Resource.Type.MANA);
-                attackAnimation = createClassSpriteAnimation("/images/Mage/Attack/attack.png", 7, Duration.millis(1000));
+                attackAnimation = createClassSpriteAnimation("/images/Mage/Attack/attack.png", 7, Duration.millis(1000), 7);
+                idleAnimation = null;
                 break;
             case ROGUE:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Rogue/rogue.png");
                 resource = new Resource(Resource.Type.ENERGY);
-                attackAnimation = createClassSpriteAnimation("/images/Rogue/Attack/attack.png", 7, Duration.millis(1000));
+                attackAnimation = createClassSpriteAnimation("/images/Rogue/Attack/attack.png", 7, Duration.millis(1000), 7);
+                idleAnimation = createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 18, Duration.millis(2400), IDLE_COL);
                 break;
             case WARRIOR:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Knight/knight.png");
                 resource = new Resource(Resource.Type.RAGE);
-                attackAnimation = createClassSpriteAnimation("/images/Knight/Attack/attack.png", 5, Duration.millis(1000));
+                attackAnimation = createClassSpriteAnimation("/images/Knight/Attack/attack.png", 5, Duration.millis(1000), ATTACK_COL);
+                idleAnimation = null;
                 break;
             default:
                 model = null;
                 attackAnimation = null;
+                idleAnimation = null;
                 break;
         }
-        assert attackAnimation != null;
-        attackAnimation.setCycleCount(1);
+
+        attackAnimation.setCycleCount(2);
+        idleAnimation.setCycleCount(Animation.INDEFINITE);
     
         
         
@@ -109,20 +112,34 @@ public class Player extends Entity {
      * @param duration how long the frame takes to play
      * @return a SpriteAnimation instance
      */
-    private SpriteAnimation createClassSpriteAnimation(String imagePath, int frameCount, Duration duration) {
+    private SpriteAnimation createClassSpriteAnimation(String imagePath, int frameCount, Duration duration, int numCol) {
         ImageView imageView = new ImageView(new Image(imagePath));
-        imageView.setViewport(new Rectangle2D(0, 0, ATTACK_WIDTH, ATTACK_HEIGHT));
-        return new SpriteAnimation(imageView, duration, frameCount, ATTACK_COL, ATTACK_OFFSET_X, ATTACK_OFFSET_Y, ATTACK_WIDTH, ATTACK_HEIGHT);
+        imageView.setViewport(new Rectangle2D(0, 0, ANIM_WIDTH, ANIM_HEIGHT));
+        return new SpriteAnimation(imageView, duration, frameCount, numCol, ANIM_X_OFFSET, ANIM_Y_OFFSET, ANIM_WIDTH, ANIM_HEIGHT);
     }
     
     /**
      * tell player to play their attack animation
-     * currently not working
      */
-    public void playAttackAnimation(Pane pane) {
-        pane.getChildren().add(attackAnimation.getImageView());
-        attackAnimation.play();
-        pane.getChildren().remove(attackAnimation.getImageView());
+    public void playAttackAnimation(Group group) {
+
+        /*
+        ImageView imageView = attackAnimation.getImageView();
+        imageView.setLayoutY(yLoc);
+        imageView.setLayoutX(xLoc);
+        group.getChildren().add(imageView);
+        attackAnimation.play();*/
+
+        attackAnimation.play(group, xLoc, yLoc);
+    }
+    public void playIdleAnimation(Group group) {/*
+        ImageView imageView = idleAnimation.getImageView();
+        imageView.setLayoutX(xLoc);
+        imageView.setLayoutY(yLoc);
+        group.getChildren().add(imageView);
+        idleAnimation.play();*/
+
+        idleAnimation.play(group, xLoc, yLoc);
     }
     
     /**

@@ -5,8 +5,10 @@ import entities.Enemy;
 import entities.Entity;
 import entities.Player;
 import javafx.animation.Timeline;
+import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -31,7 +33,7 @@ import java.util.stream.Collectors;
 public class WalkingStage {
     
     private final GameScene scene;
-    private final VBox mainPane;
+    private final Group mainPane;
     private final Player player;
     private final Canvas canvas;
     private final GraphicsContext gc;
@@ -59,7 +61,7 @@ public class WalkingStage {
             numScene = 0;
         this.xmlPath = xmlPath;
         this.enemyList = enemyList;
-        mainPane = new VBox(0);                                                             //create a new vbox to add the canvas (game scene) and hud to
+        mainPane = new Group();                                                             //create a new vbox to add the canvas (game scene) and hud to
         this.player = player;
         player.setInBattle(false);
         canvas = new Canvas(1440, 660);
@@ -160,13 +162,16 @@ public class WalkingStage {
      * update the screen, clears cavas and redraws the player and updates the hud
      */
     public void updateDraw() {
-        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        clearDraw();
         gc.drawImage(
                 player.getModel(),
                 player.getXLoc(),
                 player.getYLoc()
         );
         hud.updateHUD();
+    }
+    public void clearDraw() {
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
     }
     
     /**
@@ -186,8 +191,16 @@ public class WalkingStage {
                 player.getYLoc()
         );
         content.getChildren().add(canvas);
-        
+
+       /* ImageView imageView = player.getAttackAnimation().getImageView();
+        imageView.setLayoutY(canvas.getHeight() / 2);
+        imageView.setLayoutX(canvas.getWidth() / 2);
+        player.getAttackAnimation().play();
+
+        */
         hud = new HUD(player);
+        hud.setLayoutX(0);
+        hud.setLayoutY(canvas.getHeight() + 1);
         mainPane.getChildren().addAll(content, hud);
         scene.setRoot(mainPane);
     }

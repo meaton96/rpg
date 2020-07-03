@@ -1,6 +1,7 @@
 package ui;
 
 import control.Controller;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import lombok.Builder;
@@ -19,8 +20,8 @@ public class GameScene extends Scene {
     private final String filePath;
     
     @Builder
-    public GameScene(Pane pane, String name, int entityDrawY, String filePath) {
-        super(pane, Controller.WIDTH, Controller.HEIGHT);
+    public GameScene(Group group, String name, int entityDrawY, String filePath) {
+        super(group, Controller.WIDTH, Controller.HEIGHT);
         this.name = name;
         this.filePath = filePath;
         this.entityDrawY = entityDrawY;
