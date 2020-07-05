@@ -16,10 +16,28 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="" />
+    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="animating">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Rogue/Walk/walk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/HUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/armor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/armor.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,24 +48,105 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RPGgame" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RPGgame" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RPGgame" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="beta" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1dstbRPQZbVpRRTi3f29y08zFha" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="LombokPluginEnabledInProject" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.344" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="RPGgame [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.RPGgame [run]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -60,7 +159,49 @@
       <option name="presentableId" value="Default" />
       <updated>1593225699267</updated>
       <workItem from="1593225703447" duration="314000" />
+      <workItem from="1593638026611" duration="4902000" />
+      <workItem from="1593658398085" duration="10142000" />
+      <workItem from="1593668878630" duration="4660000" />
+      <workItem from="1593719843026" duration="20080000" />
+      <workItem from="1593927341982" duration="2545000" />
+      <workItem from="1593976536750" duration="12657000" />
     </task>
+    <task id="LOCAL-00001" summary="working on adding enemies">
+      <created>1593638057692</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593638057692</updated>
+    </task>
+    <task id="LOCAL-00002" summary="working on main game loop and starting battle but no work">
+      <created>1593668708841</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593668708841</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixed getting into battle need to run the battle init button listeners and provide ability to change them">
+      <created>1593670044911</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1593670044911</updated>
+    </task>
+    <task id="LOCAL-00004" summary="working on how to implement listeners">
+      <created>1593673449367</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1593673449367</updated>
+    </task>
+    <task id="LOCAL-00005" summary="animating">
+      <created>1593802335187</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593802335187</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -69,12 +210,124 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN">
+        <entry key="1">
           <value>
             <State />
           </value>
         </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="working on adding enemies" />
+    <MESSAGE value="working on main game loop and starting battle but no work" />
+    <MESSAGE value="fixed getting into battle need to run the battle init button listeners and provide ability to change them" />
+    <MESSAGE value="working on how to implement listeners" />
+    <MESSAGE value="animating" />
+    <option name="LAST_COMMIT_MESSAGE" value="animating" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593638262430">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638262430" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1593986919035">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593986919035" />
+    <state x="868" y="322" key="#com.intellij.ide.util.MemberChooser/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593805294928" />
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1593638285111">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1593990029332">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830206" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1593990029332">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830205" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1593990029332">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830205" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1593990029332">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830206" />
+    <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1593734180809">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="458" key="GridCell.Tab.1.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
+    <state width="2005" height="376" key="GridCell.Tab.1.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
+    <state width="2517" height="458" key="GridCell.Tab.1.center" timestamp="1593734180809">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="458" key="GridCell.Tab.1.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
+    <state width="2005" height="376" key="GridCell.Tab.1.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
+    <state width="2517" height="458" key="GridCell.Tab.1.left" timestamp="1593734180809">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="458" key="GridCell.Tab.1.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
+    <state width="2005" height="376" key="GridCell.Tab.1.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
+    <state width="2517" height="458" key="GridCell.Tab.1.right" timestamp="1593734180809">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="458" key="GridCell.Tab.1.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
+    <state width="2005" height="376" key="GridCell.Tab.1.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
+    <state x="1614" y="243" key="MultipleFileMergeDialog" timestamp="1593670082172">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1614" y="243" key="MultipleFileMergeDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593670082172" />
+    <state x="698" y="344" key="Vcs.Push.Dialog.v2" timestamp="1593802336942">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593673451735" />
+    <state x="698" y="344" key="Vcs.Push.Dialog.v2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593802336942" />
+    <state x="-131" y="245" width="2376" height="1216" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593465226698">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="-131" y="245" width="2376" height="1216" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593465226698" />
+    <state x="1043" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593990267346">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1043" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990267346" />
+    <state x="834" y="470" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593621184421" />
+    <state x="2628" y="54" width="1509" height="766" key="dock-window-1" timestamp="1593624974086">
+      <screen x="2560" y="0" width="1920" height="1030" />
+    </state>
+    <state x="2628" y="54" width="1509" height="766" key="dock-window-1/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593624974086" />
+    <state x="2560" y="0" width="1509" height="989" key="dock-window-2" timestamp="1593630313643">
+      <screen x="2560" y="0" width="1920" height="1030" />
+    </state>
+    <state x="2560" y="0" width="1509" height="989" key="dock-window-2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593630313643" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1593735149357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593735149357" />
   </component>
 </project>

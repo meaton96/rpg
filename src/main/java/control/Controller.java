@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -14,7 +13,9 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import lombok.RequiredArgsConstructor;
 
-
+/**
+ * class to start up the game run the main menu and character select
+ */
 @RequiredArgsConstructor
 public class Controller {
 
@@ -28,17 +29,22 @@ public class Controller {
     private Player player;
     private String styleSheet;
     
-
+    
+    /**
+     * start the controller, get the menu font and init the style sheet
+     */
     public void start() {
-        gameFont = Font.loadFont(getClass().getClassLoader().getResourceAsStream("immortal.ttf"), 40);
+        gameFont = Font.loadFont(getClass().getResourceAsStream("/immortal.ttf"), 40);
         
-        styleSheet = getClass().getClassLoader().getResource("style.css").toExternalForm();
-        //Image image = new Image(getClass().getResourceAsStream("cherry.jpg"));
+        styleSheet = getClass().getResource("/style.css").toExternalForm();
         mainMenu();
         primaryStage.show();
         //loadBattleStage();
     }
-
+    
+    /**
+     * make controls and add them to the main menu
+     */
     private void mainMenu() {
         VBox mainMenuPane = new VBox(50);
         mainMenuPane.setId("main_menu");
@@ -64,9 +70,13 @@ public class Controller {
             characterSelect(menuScene);
         });
     }
-
+    
+    /**
+     * run character select
+     * @param scene scene of the main menu for style options
+     */
     private void characterSelect(Scene scene) {
-        scene.getStylesheets().add(getClass().getClassLoader().getResource("characterSelectStyle.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/characterSelectStyle.css").toExternalForm());
 
         HBox hBox = new HBox(100);
 
@@ -118,13 +128,19 @@ public class Controller {
         warriorVBox.getChildren().addAll(warriorName, warriorButton, warriorDesc);
         rogueVBox.getChildren().addAll(rogueName, rogueButton, rogueDesc);
         mageVBox.getChildren().addAll(mageName, mageButton, mageDesc);
-
+        
         hBox.getChildren().addAll(warriorVBox, rogueVBox, mageVBox);
 
         scene.setRoot(hBox);
 
     }
-
+    
+    /**
+     * Customize character name after selecting what class to play
+     * @param scene scene of the character select for styling
+     * @param characterNum number of the class the player chose to play
+     * @param className the label class name
+     */
     private void customizeCharacter(Scene scene, int characterNum, Label className) {
         VBox vBox = new VBox(20);
         vBox.setId("main_menu");
@@ -156,14 +172,14 @@ public class Controller {
             characterSelect(scene);
         });
         
-        beginButton.setOnAction(actionEvent -> {
+        beginButton.setOnAction(actionEvent -> {                                    //begin button checks to make sure player actually entered a name if they did then start a new game
             String characterName = nameBox.getText();
             if ((characterName == null || characterName.equals(""))) {
                 if (noNameEnteredLabel.getId().equals("no_name_toast_invis"))
                     noNameEnteredLabel.setId("no_name_toast");
             }
             else {
-                new Game(primaryStage, characterNum, characterName);
+                new Game(primaryStage, characterNum, characterName).run();
             }
             
             

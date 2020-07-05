@@ -5,13 +5,15 @@ import lombok.EqualsAndHashCode;
 import lombok.Value;
 import lombok.experimental.NonFinal;
 
+import java.util.Random;
+
 @Value
 @EqualsAndHashCode
 @Builder
 @NonFinal
 public class Spell {
 
-    enum DamageType {
+    public enum DamageType {
         PHYSICAL,
         FROST,
         FIRE,
@@ -25,5 +27,14 @@ public class Spell {
     StatusEffect statusEffect;
     double damageLow, damageHigh, setStatusChance;
     int cost;
+    String styleID;
+    
+    public int getDamageDone() {
+        Random r = new Random();
+        return (int)(r.nextInt((int)Math.round(damageHigh - damageLow)) + damageLow);
+    }
+    public String toString() {
+        return name + ": " + damageLow + "-" + damageHigh;
+    }
 
 }
