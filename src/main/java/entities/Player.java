@@ -2,6 +2,7 @@ package entities;
 
 import animation.SpriteAnimation;
 import javafx.animation.Animation;
+import javafx.animation.SequentialTransition;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.image.ImageView;
@@ -61,6 +62,7 @@ public class Player extends Entity {
     private static final int ANIM_HEIGHT = 128;
     private final SpriteAnimation attackAnimation;
     private final SpriteAnimation idleAnimation;
+    private final SpriteAnimation walkingAnimation;
     
     
     public Player(Class chosenClass, String name, int health) {
@@ -77,27 +79,31 @@ public class Player extends Entity {
                 resource = new Resource(Resource.Type.MANA);
                 attackAnimation = createClassSpriteAnimation("/images/Mage/Attack/attack.png", 7, Duration.millis(1000), 7);
                 idleAnimation = null;
+                walkingAnimation = null;
                 break;
             case ROGUE:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Rogue/rogue.png");
                 resource = new Resource(Resource.Type.ENERGY);
                 attackAnimation = createClassSpriteAnimation("/images/Rogue/Attack/attack.png", 7, Duration.millis(1000), 7);
                 idleAnimation = createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 18, Duration.millis(2400), IDLE_COL);
+                walkingAnimation = createClassSpriteAnimation("/images/Rogue/Walk/walk.png", 6, Duration.millis(700), 6);
                 break;
             case WARRIOR:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Knight/knight.png");
                 resource = new Resource(Resource.Type.RAGE);
                 attackAnimation = createClassSpriteAnimation("/images/Knight/Attack/attack.png", 5, Duration.millis(1000), ATTACK_COL);
                 idleAnimation = null;
+                walkingAnimation = null;
                 break;
             default:
                 model = null;
                 attackAnimation = null;
                 idleAnimation = null;
+                walkingAnimation = null;
                 break;
         }
 
-        attackAnimation.setCycleCount(2);
+        attackAnimation.setCycleCount(1);
         idleAnimation.setCycleCount(Animation.INDEFINITE);
     
         
@@ -122,24 +128,43 @@ public class Player extends Entity {
      * tell player to play their attack animation
      */
     public void playAttackAnimation(Group group) {
-
-        /*
-        ImageView imageView = attackAnimation.getImageView();
-        imageView.setLayoutY(yLoc);
-        imageView.setLayoutX(xLoc);
-        group.getChildren().add(imageView);
-        attackAnimation.play();*/
-
-        attackAnimation.play(group, xLoc, yLoc);
+        idleAnimation.hide();
+        
+        attackAnimation.setScene(group);
+        attackAnimation.setLoc(xLoc, yLoc);
+        attackAnimation.setOnFinished(event -> {
+            idleAnimation.unHide();
+            attackAnimation.hide();
+            idleAnimation.playFromStart();
+        });
+        attackAnimation.play();
     }
-    public void playIdleAnimation(Group group) {/*
-        ImageView imageView = idleAnimation.getImageView();
-        imageView.setLayoutX(xLoc);
-        imageView.setLayoutY(yLoc);
-        group.getChildren().add(imageView);
-        idleAnimation.play();*/
-
-        idleAnimation.play(group, xLoc, yLoc);
+    public void initWalkingAnim(Group group) {
+        walkingAnimation.setScene(group);
+        walkingAnimation.setLoc(xLoc, yLoc);
+    }
+    public void startWalking() {
+        walkingAnimation.play();
+    }
+    public void pauseWalking() {
+        walkingAnimation.pause();
+    }
+    public void hideWalkingAnimation() {
+        walkingAnimation.hide();
+    }
+    public void unHideWalkingAnimation() {
+        walkingAnimation.unHide();
+    }
+    public void unHideBattleAnimations() {
+        attackAnimation.unHide();
+    }
+    
+    public void playIdleAnimation(Group group) {
+        
+        idleAnimation.setLoc(xLoc, yLoc);
+        idleAnimation.setScene(group);
+        idleAnimation.unHide();
+        idleAnimation.play();
     }
     
     /**
@@ -247,7 +272,8 @@ public class Player extends Entity {
     }
     
     public void moveForward() {
-        xLoc += 5;
+        xLoc += 3.5;
+        walkingAnimation.setLoc(xLoc, yLoc);
     }
     public void moveForward(int amt) {
         xLoc =+ amt;

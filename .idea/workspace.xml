@@ -19,23 +19,24 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/beta" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="animating">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Rogue/Idle/idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Rogue/Walk/walk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/GameScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/HUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/armor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/armor.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +78,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -155,6 +163,8 @@
       <workItem from="1593658398085" duration="10142000" />
       <workItem from="1593668878630" duration="4660000" />
       <workItem from="1593719843026" duration="20080000" />
+      <workItem from="1593927341982" duration="2545000" />
+      <workItem from="1593976536750" duration="12657000" />
     </task>
     <task id="LOCAL-00001" summary="working on adding enemies">
       <created>1593638057692</created>
@@ -240,34 +250,34 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638262430" />
-    <state x="868" y="322" key="#com.intellij.ide.util.MemberChooser" timestamp="1593805294928">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1593986919035">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593733147433" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593986919035" />
     <state x="868" y="322" key="#com.intellij.ide.util.MemberChooser/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593805294928" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1593638285111">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
-    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1593807830206">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1593990029332">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593738663947" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
     <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830206" />
-    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1593807830205">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1593990029332">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593738663947" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
     <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830205" />
-    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1593807830205">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1593990029332">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593738663947" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
     <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830205" />
-    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1593807830206">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1593990029332">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593738663947" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
     <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830206" />
     <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1593734180809">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -302,9 +312,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="-131" y="245" width="2376" height="1216" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593465226698" />
-    <state x="834" y="470" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593621184422">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="1043" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593990267346">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="1043" y="592" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990267346" />
     <state x="834" y="470" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593621184421" />
     <state x="2628" y="54" width="1509" height="766" key="dock-window-1" timestamp="1593624974086">
       <screen x="2560" y="0" width="1920" height="1030" />

@@ -3,6 +3,7 @@ package ui;
 import control.Controller;
 import entities.Enemy;
 import entities.Player;
+import javafx.concurrent.Worker;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -244,6 +245,4 @@ public class HUD extends Pane {
             break;
         }
     }
-    
-    
 }

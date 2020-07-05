@@ -73,6 +73,7 @@ public class WalkingStage {
         enemyLocations = new ArrayList<>();
         initEnemyLocations();
         primaryStage.setScene(getScene());
+        
     }
     
     /**
@@ -120,6 +121,7 @@ public class WalkingStage {
         mainPane.setOnKeyPressed(keyListener -> {
             if (keyListener.getCode() == KeyCode.RIGHT || keyListener.getCode() == KeyCode.D) {
                 if (!player.isInBattle()) {                         //player is allowed to move foward if they arent in a battle
+                    player.startWalking();
                     player.moveForward();                           //move the player and update the draw
                     updateDraw();
                     if (checkForEnemy()) {
@@ -132,6 +134,13 @@ public class WalkingStage {
                         numStages++;
                         new WalkingStage(primaryStage, player, numScene, xmlPath, enemyList).run();
                     }
+                }
+            }
+        });
+        mainPane.setOnKeyReleased(keyListener -> {
+            if (keyListener.getCode() == KeyCode.RIGHT || keyListener.getCode() == KeyCode.D) {
+                if (!player.isInBattle()) {
+                    player.pauseWalking();
                 }
             }
         });
@@ -163,11 +172,14 @@ public class WalkingStage {
      */
     public void updateDraw() {
         clearDraw();
+        /*
         gc.drawImage(
                 player.getModel(),
                 player.getXLoc(),
                 player.getYLoc()
         );
+        */
+        
         hud.updateHUD();
     }
     public void clearDraw() {
@@ -184,24 +196,14 @@ public class WalkingStage {
        
         player.setXLoc(Entity.getXDrawOffset());
         player.setYLoc(scene.getEntityDrawY() - Entity.getYDrawOffset());
-
-        gc.drawImage(
-                player.getModel(),
-                player.getXLoc(),
-                player.getYLoc()
-        );
+        
         content.getChildren().add(canvas);
-
-       /* ImageView imageView = player.getAttackAnimation().getImageView();
-        imageView.setLayoutY(canvas.getHeight() / 2);
-        imageView.setLayoutX(canvas.getWidth() / 2);
-        player.getAttackAnimation().play();
-
-        */
+        
         hud = new HUD(player);
         hud.setLayoutX(0);
         hud.setLayoutY(canvas.getHeight() + 1);
         mainPane.getChildren().addAll(content, hud);
+        player.initWalkingAnim(mainPane);
         scene.setRoot(mainPane);
     }
     

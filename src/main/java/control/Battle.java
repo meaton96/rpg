@@ -2,7 +2,9 @@ package control;
 
 import entities.Enemy;
 import entities.Player;
+import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.effect.Bloom;
 import lombok.Getter;
@@ -43,6 +45,8 @@ public class Battle {
      * initialize many variables used in the battle
      */
     private void init() {
+        player.hideWalkingAnimation();
+        player.unHideBattleAnimations();
         player.setInBattle(true);                           //set the player to be in battle and set the enemy location to be in front of the player
         enemy.setYLoc(player.getYLoc() + ENEMY_Y_DRAW_OFFSET);
         enemy.setXLoc(player.getXLoc() + ENEMY_X_DRAW_OFFSET);
@@ -69,6 +73,19 @@ public class Battle {
         
         
     }
+    private void cleanUpBattle() {
+        player.setInBattle(false);
+        hud.endBattle();
+        hud.updateHUD();
+        initScene.updateDraw();
+        initScene.getMainPane().getChildren().removeAll(
+                player.getAttackAnimation().getImageView(),
+                player.getIdleAnimation().getImageView()
+        );
+        player.unHideWalkingAnimation();
+        
+    }
+    
 
     
     /**
@@ -80,31 +97,29 @@ public class Battle {
             if (x == 0) {
                 hud.getAaButton().setOnAction(event -> {
                     if (player.isTurn()) {
+                        hud.updateHUD();
+                        System.out.println("player hp: " + player.getCurHealth());
                         int playerDamageDone = player.getDamFromSpellName("Auto Attack");           //if its the players turn get the damage of the spell (basic attack)
                         player.setTurn(false);                                                      //this stuff should be moved to a method to call ie. pass in spell and then run the rest
-                        try {
-                          //  Thread.sleep(500);                              //wait half a second and play the attack animation
-
-                            player.playAttackAnimation(initScene.getMainPane());                   //not currently working
-                            player.playIdleAnimation(initScene.getMainPane());                      //https://www.developer.com/java/data/multithreading-in-javafx.html
-                                                                                                    //need to work on running animations as seperate thread
-                            enemy.reduceHealth(playerDamageDone);           //reduce enemy hp and update the hud
-                            hud.updateHUD();
-                            //Thread.sleep(1000);
-                            if (enemy.isAlive())                            //do enemy turn if enemy didnt die from player attack
-                                enemyTurn();
-                            else {
-                                player.setInBattle(false);                  //if enemy dies then end the battle and update the hud
-                                hud.endBattle();
-                                hud.updateHUD();
-                                initScene.updateDraw();
-                                
-                                //play some end battle message display the dropped gear ect
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
     
+                        
+                        player.playAttackAnimation(initScene.getMainPane());                   //currently doesnt play at the end of a fight
+                        
+                        
+                        
+                        
+                        enemy.reduceHealth(playerDamageDone);           //reduce enemy hp and update the hud
+                        hud.updateHUD();
+                        
+                        if (enemy.isAlive())  {                          //do enemy turn if enemy didnt die from player attack
+                            //enemyTurn();
+                            new EnemyTurn().start();
+                            
+                        }
+                        else {
+                            cleanUpBattle();
+                            //play some end battle message display the dropped gear ect
+                        }
                     }
                 });
                 
@@ -143,10 +158,33 @@ public class Battle {
         hud.updateHUD();
         
     }
+    class EnemyTurn implements Runnable {
     
+        
+        
+        @Override
+        public void run() {
+            int enemyDamageDone = (int) (enemy.castSpell().getDamageDone() * enemyDamageMulti);
+            player.reduceHealth(enemyDamageDone);       //reduce the hp of the player by that amount and update hud
+            
+            if (player.isAlive()) {
+                Platform.runLater(() -> hud.updateHUD());
+                                //check to make sure player is alive
+                player.setTurn(true);
+                
+            }
+            else {
+                //todo add end game screen
+            }
+        }
+        public void start() {
+            new Thread(this).start();
+        }
+    }
+    /*
     /**
      * process an enemy turn
-     */
+     
     public void enemyTurn() {
         System.out.println("Enemy taking turn :(");
         int enemyDamageDone = (int) (enemy.castSpell().getDamageDone() * enemyDamageMulti);     //get damage of enemy attack
@@ -164,6 +202,6 @@ public class Battle {
             e.printStackTrace();
         }
     }
-    
+    */
 
 }

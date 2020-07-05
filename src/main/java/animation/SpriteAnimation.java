@@ -11,7 +11,7 @@ import lombok.Getter;
 import java.io.IOException;
 
 @Getter
-public class SpriteAnimation extends Transition {           //implement worker?
+public class SpriteAnimation extends Transition {
     
     private final ImageView imageView;
     private final int count;
@@ -23,12 +23,7 @@ public class SpriteAnimation extends Transition {           //implement worker?
     private final Duration duration;
     private int lastIndex;
     
-    public SpriteAnimation(
-            ImageView imageView,
-            Duration duration,
-            int count,   int columns,
-            int offsetX, int offsetY,
-            int width,   int height) {
+    public SpriteAnimation(ImageView imageView, Duration duration, int count,   int columns, int offsetX, int offsetY, int width, int height) {
         this.duration = duration;
         this.imageView = imageView;
         this.count     = count;
@@ -50,27 +45,24 @@ public class SpriteAnimation extends Transition {           //implement worker?
             lastIndex = index;
         }
     }
-
-
-    public void play(Group group, double x, double y) {
-        for (Object o : group.getChildren()) {
-            if (o instanceof ImageView) {
-                if (!o.equals(imageView)) {
-                    ((ImageView) o).setOpacity(0);
-                }
-                else
-                    ((ImageView) o).setOpacity(1);
-            }
-
-        }
+    public void setLoc(double x, double y) {
         imageView.setLayoutX(x);
         imageView.setLayoutY(y);
+        
+    }
+    public void setScene(Group group) {
         if (!group.getChildren().contains(imageView))
             group.getChildren().add(imageView);
         else
             imageView.setOpacity(1);
-
-        super.play();
-
+    }
+    public void hide() {
+        imageView.setOpacity(0);
+    }
+    public void unHide() {
+        imageView.setOpacity(1);
+    }
+    public void removeFromScene(Group group) {
+        group.getChildren().remove(imageView);
     }
 }
