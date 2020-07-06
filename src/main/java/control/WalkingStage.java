@@ -5,11 +5,16 @@ import entities.Enemy;
 import entities.Entity;
 import entities.Player;
 import javafx.animation.Timeline;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -205,6 +210,27 @@ public class WalkingStage {
         mainPane.getChildren().addAll(content, hud);
         player.initWalkingAnim(mainPane);
         scene.setRoot(mainPane);
+    }
+    public Scene getDeathScreen() {
+        VBox deathPane = new VBox(300);
+        deathPane.setAlignment(Pos.CENTER);
+        deathPane.setId("death_screen");
+
+        Button mainMenu = new Button("Main Menu");
+        HBox hBox = new HBox(100);
+        hBox.setAlignment(Pos.CENTER);
+        mainMenu.setId("start_button");
+        mainMenu.setOnAction(event -> new Controller(primaryStage).start());
+        mainMenu.setMinSize(Controller.WIDTH / 8.0, Controller.HEIGHT / 8.0);
+        Button exit = new Button("Exit");
+        exit.setMinSize(Controller.WIDTH / 8.0, Controller.HEIGHT / 8.0);
+        exit.setId("start_button");
+        exit.setOnAction(event -> System.exit(0));
+        hBox.getChildren().addAll(mainMenu, exit);
+        deathPane.getChildren().addAll(new Label(), hBox);
+        Scene deathScene = new Scene(deathPane);
+        deathScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+        return deathScene;
     }
     
 }

@@ -44,12 +44,12 @@ public class Resource {
         this.type = type;
     }
 
-    private void generateResource(int amount) {
+    public void generateResource(int amount) {
         currentAmount += amount;
         if (currentAmount > maxAmount)
             currentAmount = maxAmount;
     }
-    private boolean spendResource(int amount) {
+    public boolean spendResource(int amount) {
         if (amount > currentAmount)
             return false;
         currentAmount -= amount;

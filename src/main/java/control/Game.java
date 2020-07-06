@@ -8,14 +8,21 @@ import items.Item;
 import items.Weapon;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lombok.Getter;
 import util.ArmorFileReader;
 import util.FileUtil;
 
+import java.awt.*;
 import java.security.Key;
 import java.sql.Time;
 import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -32,7 +39,7 @@ public class Game implements Runnable{
     private final String enemyXMLPath = "src/main/resources/images/enemies/enemies.xml";
     private final List<Enemy> enemyList;
     private final int ENEMY_BASE_HEALTH = 20; //adjust here for enemy base health
-    
+
     
     /**
      * game constructor
@@ -50,6 +57,10 @@ public class Game implements Runnable{
         player = new Player(Entity.getClassFromNumber(classNumber), name, 20);
         
         enemyList = FileUtil.getEnemiesOfType("", enemyXMLPath, ENEMY_BASE_HEALTH);
+
+
+
+
         equipStartingGear();
         sceneRotation = new ArrayList<>();
         
@@ -69,6 +80,8 @@ public class Game implements Runnable{
         new WalkingStage(primaryStage, player, sceneRotation.get(sceneNumber), battleXMLPath, enemyList).run();
 
     }
+
+
     
     /**
      * Equip the starting gear for the player based on the class they chose

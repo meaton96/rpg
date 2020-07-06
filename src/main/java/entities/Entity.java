@@ -51,7 +51,6 @@ public abstract class Entity {
         return 111;
     }
     public void reduceHealth(int amt) {
-        System.out.println("Reducing " + name + "'s health by: " + amt);
         curHealth -= amt;
     }
     

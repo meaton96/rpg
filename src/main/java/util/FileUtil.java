@@ -93,7 +93,7 @@ public class FileUtil {
                     String attackPath = e.getChildText("attack_animation");
                     String idlePath = e.getChildText("idle_animation");
                     String deathPath = e.getChildText("death_animation");
-                    
+
                     enemies.add(Enemy.builder()
                             .entityClass(Entity.Class.NONE)
                             .name(name)
@@ -120,7 +120,7 @@ public class FileUtil {
             System.out.println("File path: " + xmlFile.getAbsolutePath());
         }
         catch (Exception e) {
-            System.out.println("Something else happened");
+            e.printStackTrace();
         }
         return null;
     }

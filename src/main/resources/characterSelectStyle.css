@@ -3,6 +3,14 @@
     -fx-background-size: stretch;
     -fx-background-color: transparent;
 }
+#info_label {
+    -fx-font-family: Immortal;
+    -fx-font-size: 15;
+    -fx-fill: #ffffff;
+    -fx-text-fill: white;
+    -fx-text-alignment: center;
+    -fx-background-color: rgba(0,0,0,.3);
+}
 
 #warrior_button:hover {
     -fx-background-image: url("images/sword_highlight.png");
@@ -31,9 +39,8 @@
 #warrior_name_label, #mage_name_label, #rogue_name_label {
     -fx-font-family: Immortal;
     -fx-font-size: 60;
-    -fx-fill: darkgray;
-    -fx-stroke: white;
-    -fx-stroke-width: 2px;
+    -fx-text-fill: #2b2727;
+
 }
 
 #no_name_toast {

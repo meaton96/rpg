@@ -132,12 +132,15 @@ public class Enemy extends Entity {
         double variance = 0.3;                      //adjust here for health variance and level scaling
         double levelHealthScaling = 0.2;
 
-        double healthMin = getBaseHealth() - (variance * getBaseHealth());
-        double healthMax = getBaseHealth() + variance * getBaseHealth();
+        double levelScale = (getLevel() - 1) + (1 + levelHealthScaling);
+        double base = levelScale * getBaseHealth();
+
+        double healthMin = getBaseHealth() - variance * base;
+        double healthMax = getBaseHealth() + variance * base;
 
         double health = rand.nextInt((int)Math.round(healthMax - healthMin)) + healthMin;
-        double levelScale = (getLevel() - 1) * (1 + levelHealthScaling) * health;
-        health += levelScale;
+
+
         setBaseHealth((int)health);
         setCurHealth((int)health);
     }
@@ -149,7 +152,36 @@ public class Enemy extends Entity {
     public Spell castSpell() {
         return availableSpells.get(rand.nextInt(availableSpells.size()));
     }
-    
+    public double getDamageDone(Player player) {
+        final double damageMulti = 30;
+        final double armorMulti = .35;
+        final double mageAbsorb = .28;
+        final double dodgeChance = .4;
+
+        double damageDone = castSpell().getDamageDone() * damageMulti;
+        System.out.println("Enemy base damage: " + damageDone);
+        double armorReduction = player.getArmor() * armorMulti;
+        System.out.println("Armor reduced damage by: " + armorReduction);
+        damageDone -= armorReduction;
+        switch (player.getEntityClass()) {
+            case MAGE:
+                System.out.println("Mage absorbed: " + mageAbsorb * damageDone);
+                damageDone -= (mageAbsorb * damageDone);
+                break;
+            case ROGUE:
+                Random rand = new Random();
+                if (rand.nextDouble() <= dodgeChance)
+                    damageDone = 0;
+                System.out.println("The rogue " + (damageDone == 0 ? "did" : "did not") + " dodge");
+                break;
+            default:
+                break;
+        }
+        if (damageDone < 0)
+            damageDone = 0;
+        System.out.println("Final damage done to player is: " + damageDone);
+        return damageDone;
+    }
 
 
 }

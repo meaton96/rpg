@@ -2,11 +2,14 @@ package control;
 
 import entities.Enemy;
 import entities.Player;
+import javafx.animation.FadeTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.effect.Bloom;
+import javafx.util.Duration;
 import lombok.Getter;
 import ui.HUD;
 
@@ -25,7 +28,6 @@ public class Battle {
     // for balancing
     
     private final double enemyHealthMulti = 1.2;
-    private final double enemyDamageMulti = 2;
     
     
     /**
@@ -92,6 +94,29 @@ public class Battle {
             else
                 enemy.playDeathAnimation();
         });
+
+        Scene deathScene = initScene.getDeathScreen();
+
+        FadeTransition fadeOut = new FadeTransition();
+        fadeOut.setDuration(Duration.millis(1500));
+        fadeOut.setNode(initScene.getMainPane());
+        fadeOut.setFromValue(1);
+        fadeOut.setToValue(0);
+        FadeTransition fadeIn = new FadeTransition();
+        fadeIn.setDuration(Duration.millis(1500));
+        fadeIn.setNode(deathScene.getRoot());
+        fadeIn.setToValue(1);
+        fadeIn.setFromValue(0);
+
+
+
+
+        player.getDeathAnimation().setOnFinished(event -> {
+            fadeOut.play(); //fade not working
+            fadeIn.play();
+            initScene.getPrimaryStage().setScene(initScene.getDeathScreen());
+
+        });
         
     }
     private void cleanUpBattle() {
@@ -111,9 +136,6 @@ public class Battle {
         });
         
         enemy.playDeathAnimation();
-        
-        
-        
     }
     
 
@@ -177,7 +199,7 @@ public class Battle {
 
         @Override
         public void run() {
-            int enemyDamageDone = (int) (enemy.castSpell().getDamageDone() * enemyDamageMulti);
+            int enemyDamageDone = (int) Math.round(enemy.getDamageDone(player));
             
             Platform.runLater(enemy::playAttackAnimation);
             
@@ -187,7 +209,9 @@ public class Battle {
                 player.setTurn(true);
             }
             else {
-                //todo add end game screen
+                //player death animation -> death screen
+                Platform.runLater(() -> player.playDeathAnimation(initScene.getMainPane()));
+
             }
         }
         
