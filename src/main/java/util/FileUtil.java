@@ -90,6 +90,10 @@ public class FileUtil {
                     String name = e.getChildText("name");
                     Image model = new Image(e.getChildText("model_path"));
                     String biome = e.getChildText("biome");
+                    String attackPath = e.getChildText("attack_animation");
+                    String idlePath = e.getChildText("idle_animation");
+                    String deathPath = e.getChildText("death_animation");
+                    
                     enemies.add(Enemy.builder()
                             .entityClass(Entity.Class.NONE)
                             .name(name)
@@ -97,6 +101,9 @@ public class FileUtil {
                             .level(x)
                             .model(model)
                             .biome(biome)
+                            .attackPath(attackPath)
+                            .idlePath(idlePath)
+                            .deathPath(deathPath)
                             .build());
 
                 }

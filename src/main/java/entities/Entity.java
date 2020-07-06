@@ -41,14 +41,13 @@ public abstract class Entity {
             default: return null;
         }
     }
+    
     //offsets for drawing purposes
     //these are here in case I need to overwrite them
     public static int getXDrawOffset() {
         return -21;
     }
     public static int getYDrawOffset() {
-        //54 from top
-        //17 from bottom
         return 111;
     }
     public void reduceHealth(int amt) {

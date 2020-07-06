@@ -20,7 +20,7 @@ public class Battle {
     private final Enemy enemy;
     private final Player player;
     private static final int ENEMY_X_DRAW_OFFSET = 55;
-    private static final int ENEMY_Y_DRAW_OFFSET = 15;
+    private static final int ENEMY_Y_DRAW_OFFSET = 60;
     private HUD hud;
     // for balancing
     
@@ -50,6 +50,10 @@ public class Battle {
         player.setInBattle(true);                           //set the player to be in battle and set the enemy location to be in front of the player
         enemy.setYLoc(player.getYLoc() + ENEMY_Y_DRAW_OFFSET);
         enemy.setXLoc(player.getXLoc() + ENEMY_X_DRAW_OFFSET);
+        
+        enemy.initAnimationLocation(initScene.getMainPane());
+        
+        
         hud = initScene.getHud();                               //get the heads up display from the scene and pass it the enemy for drawing healthbars
         hud.initEnemy(enemy);
 
@@ -70,19 +74,45 @@ public class Battle {
             case 4 : setButtonListeners("", player.getEquippedSpells()[1].getName(), player.getEquippedSpells()[2].getName(), player.getEquippedSpells()[3].getName());
             break;
         }
-        
+        player.getAttackAnimation().setOnFinished(event -> {
+            player.getIdleAnimation().unHide();
+            player.getAttackAnimation().hide();
+            player.getIdleAnimation().playFromStart();
+            if (!player.isInBattle()) {
+                cleanUpBattle();
+            }
+            else {
+                new EnemyTurn().start();
+            }
+        });
+        enemy.getAttackAnimation().setOnFinished(event -> {
+            hud.updateHUD();
+            if (enemy.isAlive())
+                enemy.playIdleAnimation();
+            else
+                enemy.playDeathAnimation();
+        });
         
     }
     private void cleanUpBattle() {
-        player.setInBattle(false);
-        hud.endBattle();
-        hud.updateHUD();
-        initScene.updateDraw();
-        initScene.getMainPane().getChildren().removeAll(
-                player.getAttackAnimation().getImageView(),
-                player.getIdleAnimation().getImageView()
-        );
-        player.unHideWalkingAnimation();
+        
+        enemy.getDeathAnimation().setOnFinished(event -> {
+            hud.endBattle();
+            hud.updateHUD();
+            initScene.updateDraw();
+            initScene.getMainPane().getChildren().removeAll(
+                    player.getAttackAnimation().getImageView(),
+                    player.getIdleAnimation().getImageView(),
+                    enemy.getAttackAnimation().getImageView(),
+                    enemy.getDeathAnimation().getImageView(),
+                    enemy.getIdleAnimation().getImageView()
+            );
+            player.unHideWalkingAnimation();
+        });
+        
+        enemy.playDeathAnimation();
+        
+        
         
     }
     
@@ -98,28 +128,16 @@ public class Battle {
                 hud.getAaButton().setOnAction(event -> {
                     if (player.isTurn()) {
                         hud.updateHUD();
-                        System.out.println("player hp: " + player.getCurHealth());
                         int playerDamageDone = player.getDamFromSpellName("Auto Attack");           //if its the players turn get the damage of the spell (basic attack)
-                        player.setTurn(false);                                                      //this stuff should be moved to a method to call ie. pass in spell and then run the rest
-    
+                        player.setTurn(false);
                         
-                        player.playAttackAnimation(initScene.getMainPane());                   //currently doesnt play at the end of a fight
-                        
-                        
-                        
-                        
+                        player.playAttackAnimation(initScene.getMainPane());
+
                         enemy.reduceHealth(playerDamageDone);           //reduce enemy hp and update the hud
                         hud.updateHUD();
                         
-                        if (enemy.isAlive())  {                          //do enemy turn if enemy didnt die from player attack
-                            //enemyTurn();
-                            new EnemyTurn().start();
-                            
-                        }
-                        else {
-                            cleanUpBattle();
-                            //play some end battle message display the dropped gear ect
-                        }
+                        if (!enemy.isAlive())                         //do enemy turn if enemy didnt die from player attack
+                            player.setInBattle(false);
                     }
                 });
                 
@@ -150,58 +168,33 @@ public class Battle {
     private void draw() {
         initScene.clearDraw();
         player.playIdleAnimation(initScene.getMainPane());
-        initScene.getGc().drawImage(
-                enemy.getModel(),
-                enemy.getXLoc(),
-                enemy.getYLoc());
-
+        enemy.playIdleAnimation();
         hud.updateHUD();
         
     }
-    class EnemyTurn implements Runnable {
     
-        
-        
+    class EnemyTurn implements Runnable {
+
         @Override
         public void run() {
             int enemyDamageDone = (int) (enemy.castSpell().getDamageDone() * enemyDamageMulti);
+            
+            Platform.runLater(enemy::playAttackAnimation);
+            
             player.reduceHealth(enemyDamageDone);       //reduce the hp of the player by that amount and update hud
             
             if (player.isAlive()) {
-                Platform.runLater(() -> hud.updateHUD());
-                                //check to make sure player is alive
                 player.setTurn(true);
-                
             }
             else {
                 //todo add end game screen
             }
         }
+        
         public void start() {
             new Thread(this).start();
         }
     }
-    /*
-    /**
-     * process an enemy turn
-     
-    public void enemyTurn() {
-        System.out.println("Enemy taking turn :(");
-        int enemyDamageDone = (int) (enemy.castSpell().getDamageDone() * enemyDamageMulti);     //get damage of enemy attack
-        try {
-            Thread.sleep(500);
-            player.reduceHealth(enemyDamageDone);       //reduce the hp of the player by that amount and update hud
-            hud.updateHUD();
-            if (player.isAlive()) {                     //check to make sure player is alive
-                player.setTurn(true);
-            }
-            else {
-                //todo add end game screen
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    */
+    
 
 }

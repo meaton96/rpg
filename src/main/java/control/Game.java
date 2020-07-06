@@ -51,7 +51,6 @@ public class Game implements Runnable{
         
         enemyList = FileUtil.getEnemiesOfType("", enemyXMLPath, ENEMY_BASE_HEALTH);
         equipStartingGear();
-        
         sceneRotation = new ArrayList<>();
         
         for (int x = 0; x < FileUtil.getNumBattleScenes(battleXMLPath); x++)

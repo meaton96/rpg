@@ -78,22 +78,22 @@ public class Player extends Entity {
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Mage/mage.png");
                 resource = new Resource(Resource.Type.MANA);
                 attackAnimation = createClassSpriteAnimation("/images/Mage/Attack/attack.png", 7, Duration.millis(1000), 7);
-                idleAnimation = null;
-                walkingAnimation = null;
+                idleAnimation = createClassSpriteAnimation("/images/Mage/Idle/idle.png", 14, Duration.millis(1680), 14);
+                walkingAnimation = createClassSpriteAnimation("/images/Mage/Walk/walk.png", 6, Duration.millis(700), 6);
                 break;
             case ROGUE:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Rogue/rogue.png");
                 resource = new Resource(Resource.Type.ENERGY);
                 attackAnimation = createClassSpriteAnimation("/images/Rogue/Attack/attack.png", 7, Duration.millis(1000), 7);
-                idleAnimation = createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 18, Duration.millis(2400), IDLE_COL);
+                idleAnimation = createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 18, Duration.millis(2400), 18);
                 walkingAnimation = createClassSpriteAnimation("/images/Rogue/Walk/walk.png", 6, Duration.millis(700), 6);
                 break;
             case WARRIOR:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Knight/knight.png");
                 resource = new Resource(Resource.Type.RAGE);
-                attackAnimation = createClassSpriteAnimation("/images/Knight/Attack/attack.png", 5, Duration.millis(1000), ATTACK_COL);
-                idleAnimation = null;
-                walkingAnimation = null;
+                attackAnimation = createClassSpriteAnimation("/images/Knight/Attack/attack.png", 5, Duration.millis(1000), 5);
+                idleAnimation = createClassSpriteAnimation("images/Knight/Idle/idle.png", 12, Duration.millis(1800), 12);
+                walkingAnimation = createClassSpriteAnimation("images/Knight/Walk/walk.png", 6, Duration.millis(700), 6);
                 break;
             default:
                 model = null;
@@ -105,10 +105,6 @@ public class Player extends Entity {
 
         attackAnimation.setCycleCount(1);
         idleAnimation.setCycleCount(Animation.INDEFINITE);
-    
-        
-        
-        
     }
     
     /**
@@ -125,18 +121,15 @@ public class Player extends Entity {
     }
     
     /**
-     * tell player to play their attack animation
+     * animation helpers
+     * @param group animation
      */
     public void playAttackAnimation(Group group) {
         idleAnimation.hide();
         
         attackAnimation.setScene(group);
         attackAnimation.setLoc(xLoc, yLoc);
-        attackAnimation.setOnFinished(event -> {
-            idleAnimation.unHide();
-            attackAnimation.hide();
-            idleAnimation.playFromStart();
-        });
+        
         attackAnimation.play();
     }
     public void initWalkingAnim(Group group) {

@@ -25,18 +25,83 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="animating">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Rogue/Walk/walk.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="added animations for rogue">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Knight/Idle/idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Knight/Walk/walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Mage/Idle/idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Mage/Walk/walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Ball.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Rhinoceros-beetle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Rhinoceros-beetle_Idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Rhinoceros-beetle_attack1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Rhinoceros-beetle_attack2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Rhinoceros-beetle_attack3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Rhinoceros-beetle_attack4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Rhinoceros-beetle_death.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Rhinoceros-beetle_hurt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Rhinoceros-beetle_sneer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/beetle/Rhinoceros-beetle_walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/toad_king/Toad_king.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/toad_king/Toad_king_attack1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/toad_king/Toad_king_attack2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/toad_king/Toad_king_attack3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/toad_king/Toad_king_attack4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/toad_king/Toad_king_death.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/toad_king/Toad_king_hurt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/toad_king/Toad_king_idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/toad_king/Toad_king_sneer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/toad_king/Toad_king_walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/troll/Troll.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/troll/Troll_attack1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/troll/Troll_attack2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/troll/Troll_attack3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/troll/Troll_attack4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/troll/Troll_death.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/troll/Troll_hurt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/troll/Troll_idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/troll/Troll_sneer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/bosses/field/troll/Troll_walk.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/HUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/armor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/armor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/Knight/Walk/walkingAnimation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/enemies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/enemies/enemies.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Ball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle_Idle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle_attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle_attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle_attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle_attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle_death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle_hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle_sneer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/beetle/Rhinoceros-beetle_walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king_attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king_attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king_attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king_attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king_death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king_hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king_idle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king_sneer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/toad_king/Toad_king_walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll_attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll_attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll_attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll_attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll_death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll_hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll_idle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll_sneer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/enemies/field/troll/Troll_walk.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +229,7 @@
       <workItem from="1593668878630" duration="4660000" />
       <workItem from="1593719843026" duration="20080000" />
       <workItem from="1593927341982" duration="2545000" />
-      <workItem from="1593976536750" duration="12657000" />
+      <workItem from="1593976536750" duration="26582000" />
     </task>
     <task id="LOCAL-00001" summary="working on adding enemies">
       <created>1593638057692</created>
@@ -201,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593802335187</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added animations for rogue">
+      <created>1593990283310</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593990283310</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +315,8 @@
     <MESSAGE value="fixed getting into battle need to run the battle init button listeners and provide ability to change them" />
     <MESSAGE value="working on how to implement listeners" />
     <MESSAGE value="animating" />
-    <option name="LAST_COMMIT_MESSAGE" value="animating" />
+    <MESSAGE value="added animations for rogue" />
+    <option name="LAST_COMMIT_MESSAGE" value="added animations for rogue" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593638262430">
@@ -259,25 +332,25 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1593990029332">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1594013034772">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594013034772" />
     <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830206" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1593990029332">
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1594013034772">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594013034772" />
     <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830205" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1593990029332">
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1594013034772">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594013034772" />
     <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830205" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1593990029332">
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1594013034772">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594013034772" />
     <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830206" />
     <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1593734180809">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -303,10 +376,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1614" y="243" key="MultipleFileMergeDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593670082172" />
-    <state x="698" y="344" key="Vcs.Push.Dialog.v2" timestamp="1593802336942">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1593990293136">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593673451735" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990293136" />
     <state x="698" y="344" key="Vcs.Push.Dialog.v2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593802336942" />
     <state x="-131" y="245" width="2376" height="1216" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593465226698">
       <screen x="0" y="0" width="2560" height="1400" />

@@ -8,7 +8,6 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import lombok.Getter;
 
-import java.io.IOException;
 
 @Getter
 public class SpriteAnimation extends Transition {
@@ -65,4 +64,5 @@ public class SpriteAnimation extends Transition {
     public void removeFromScene(Group group) {
         group.getChildren().remove(imageView);
     }
+    
 }
