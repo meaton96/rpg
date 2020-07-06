@@ -108,7 +108,7 @@ public class Battle {
         fadeIn.setToValue(1);
         fadeIn.setFromValue(0);
 
-
+        //lkasjd
 
 
         player.getDeathAnimation().setOnFinished(event -> {
