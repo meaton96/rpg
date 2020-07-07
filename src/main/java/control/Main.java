@@ -14,7 +14,7 @@ public class Main extends Application {
         Controller controller = new Controller(primaryStage);
         controller.start();
         //todo
-        //1.add instructions to main menu and a death screen/animation for player
+        //
         //4.add a few spells - wednesday ( might need to hand in this day)
         //5.add gear drops - thursday
         //6.addbackpack system to allow player to equip new gear - friday/saturday

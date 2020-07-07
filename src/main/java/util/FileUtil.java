@@ -4,7 +4,6 @@ import entities.Enemy;
 import entities.Entity;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -93,7 +92,10 @@ public class FileUtil {
                     String attackPath = e.getChildText("attack_animation");
                     String idlePath = e.getChildText("idle_animation");
                     String deathPath = e.getChildText("death_animation");
-
+                    int attackFrames = Integer.parseInt(e.getChildText("attack_frames"));
+                    int deathFrames = Integer.parseInt(e.getChildText("death_frames"));
+                    int idleFrames = Integer.parseInt(e.getChildText("idle_frames"));
+                    
                     enemies.add(Enemy.builder()
                             .entityClass(Entity.Class.NONE)
                             .name(name)
@@ -104,6 +106,9 @@ public class FileUtil {
                             .attackPath(attackPath)
                             .idlePath(idlePath)
                             .deathPath(deathPath)
+                            .attackFrames(attackFrames)
+                            .deathFrames(deathFrames)
+                            .idleFrames(idleFrames)
                             .build());
 
                 }

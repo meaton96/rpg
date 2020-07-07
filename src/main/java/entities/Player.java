@@ -8,6 +8,7 @@ import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import spells.AutoAttack;
+import ui.Backpack;
 import util.FileUtil;
 import items.*;
 import javafx.scene.image.Image;
@@ -40,7 +41,7 @@ public class Player extends Entity {
     private Weapon equippedWeapon;
     private Weapon equippedOffHand;
     
-    private List<Item> backPack;
+    
     private Spell[] equippedSpells;
     private List<Spell> learnedSpells;
     private Resource resource;
@@ -51,6 +52,7 @@ public class Player extends Entity {
     private int level;
     private boolean inBattle = false;
     private boolean isTurn;
+    private final Backpack backPack;
     
     
     //animation constants
@@ -69,7 +71,7 @@ public class Player extends Entity {
     public Player(Class chosenClass, String name, int health) {
         super(chosenClass, name, health, health, null);
     
-        backPack = new ArrayList<>();
+        
         learnedSpells = new ArrayList<>();
         equippedSpells = new Spell[4];
         faceForward = true;
@@ -107,7 +109,7 @@ public class Player extends Entity {
                 walkingAnimation = null;
                 break;
         }
-
+        backPack = new Backpack(this);
         attackAnimation.setCycleCount(1);
         idleAnimation.setCycleCount(Animation.INDEFINITE);
     }

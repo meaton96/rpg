@@ -9,9 +9,13 @@ import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.effect.Bloom;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import lombok.Getter;
 import ui.HUD;
+
+import java.awt.*;
 
 /**
  * class representing one battle between the player and a single enemy
@@ -23,7 +27,7 @@ public class Battle {
     private final Enemy enemy;
     private final Player player;
     private static final int ENEMY_X_DRAW_OFFSET = 55;
-    private static final int ENEMY_Y_DRAW_OFFSET = 60;
+    private static final int ENEMY_Y_DRAW_OFFSET = 15;
     private HUD hud;
     // for balancing
     
@@ -98,23 +102,28 @@ public class Battle {
         Scene deathScene = initScene.getDeathScreen();
 
         FadeTransition fadeOut = new FadeTransition();
-        fadeOut.setDuration(Duration.millis(1500));
+        fadeOut.setDuration(Duration.millis(4000));
         fadeOut.setNode(initScene.getMainPane());
         fadeOut.setFromValue(1);
         fadeOut.setToValue(0);
         FadeTransition fadeIn = new FadeTransition();
-        fadeIn.setDuration(Duration.millis(1500));
-        fadeIn.setNode(deathScene.getRoot());
+        fadeIn.setDuration(Duration.millis(4000));
+        Rectangle rec = new Rectangle(Controller.WIDTH, Controller.HEIGHT);
+        rec.setFill(Color.BLACK);
+       // rec.setOpacity(0);
+        
+        fadeIn.setNode(rec);
         fadeIn.setToValue(1);
         fadeIn.setFromValue(0);
-
-        //lkasjd
-
-
-        player.getDeathAnimation().setOnFinished(event -> {
-            fadeOut.play(); //fade not working
-            fadeIn.play();
+        
+        fadeOut.setOnFinished(e -> {
+            
             initScene.getPrimaryStage().setScene(initScene.getDeathScreen());
+        });
+        player.getDeathAnimation().setOnFinished(event -> {
+            fadeOut.play();
+            initScene.getMainPane().getChildren().add(rec);
+            fadeIn.play(); //fade in not working
 
         });
         

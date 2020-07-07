@@ -1,5 +1,6 @@
 package items;
 
+import javafx.scene.image.Image;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -10,8 +11,8 @@ import lombok.ToString;
 public abstract class Armor extends Item {
 
     public Armor(String name, double weight, double durability, int level, double armor, Type type,
-                 int stamina, int strength, int agility, int intellect) {
-        super(name, weight, durability, level, stamina, strength, agility, intellect);
+                 int stamina, int strength, int agility, int intellect, String iconId) {
+        super(name, weight, durability, level, stamina, strength, agility, intellect, iconId);
         this.armor = armor;
         this.type = type;
     }

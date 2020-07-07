@@ -24,6 +24,7 @@ import ui.GameScene;
 import ui.HUD;
 import util.FileUtil;
 
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -50,6 +51,7 @@ public class WalkingStage {
     private Stage primaryStage;
     private static int numStages = 0;
     private final static int MAX_SCENE_NUMBER = 10;
+    private boolean backPackShown = false;
     
     /**
      * stage constructor
@@ -62,14 +64,14 @@ public class WalkingStage {
     public WalkingStage(Stage primaryStage, Player player, int numScene, String xmlPath, List<Enemy> enemyList) {
         this.primaryStage = primaryStage;
         this.numScene = numScene;
-        if (numScene > MAX_SCENE_NUMBER)
+        if (numScene > FileUtil.getNumBattleScenes(xmlPath))
             numScene = 0;
         this.xmlPath = xmlPath;
         this.enemyList = enemyList;
         mainPane = new Group();                                                             //create a new vbox to add the canvas (game scene) and hud to
         this.player = player;
         player.setInBattle(false);
-        canvas = new Canvas(1440, 660);
+        canvas = new Canvas(1440, 659);
         gc = canvas.getGraphicsContext2D();                                                 //init graphics objects for drawing images
         player.heal();
         scene = FileUtil.getSceneFromXML(mainPane, numScene, xmlPath);                      //get the scene from the xml file
@@ -141,11 +143,26 @@ public class WalkingStage {
                     }
                 }
             }
+            
         });
         mainPane.setOnKeyReleased(keyListener -> {
             if (keyListener.getCode() == KeyCode.RIGHT || keyListener.getCode() == KeyCode.D) {
                 if (!player.isInBattle()) {
                     player.pauseWalking();
+                }
+            }
+            if (keyListener.getCode() == KeyCode.B) {
+                if (!player.isInBattle()) {
+                    if (!backPackShown) {
+                        System.out.println("showing backpack");
+                        backPackShown = true;
+                        player.getBackPack().show(getMainPane());
+                    }
+                    else {
+                        System.out.println("hiding backpack");
+                        backPackShown = false;
+                        player.getBackPack().hide(getMainPane());
+                    }
                 }
             }
         });

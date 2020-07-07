@@ -8,6 +8,9 @@
         <death_animation>images/enemies/desert/snake/Snake_death.png</death_animation>
         <idle_animation>images/enemies/desert/snake/Snake_idle.png</idle_animation>
         <biome>desert</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Deceased</name>
@@ -15,6 +18,9 @@
         <attack_animation>images/enemies/desert/deceased/Deceased_attack.png</attack_animation>
         <death_animation>images/enemies/desert/deceased/Deceased_death.png</death_animation>
         <idle_animation>images/enemies/desert/deceased/Deceased_idle.png</idle_animation>
+        <attack_frames>4</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
         <biome>desert</biome>
     </enemy>
     <enemy>
@@ -23,6 +29,9 @@
         <attack_animation>images/enemies/desert/hyena/Hyena_attack.png</attack_animation>
         <death_animation>images/enemies/desert/hyena/Hyena_death.png</death_animation>
         <idle_animation>images/enemies/desert/hyena/Hyena_idle.png</idle_animation>
+        <attack_frames>6</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
         <biome>desert</biome>
     </enemy>
     <enemy>
@@ -31,6 +40,9 @@
         <attack_animation>images/enemies/desert/mummy/Mummy_attack.png</attack_animation>
         <death_animation>images/enemies/desert/mummy/Mummy_death.png</death_animation>
         <idle_animation>images/enemies/desert/mummy/Mummy_idle.png</idle_animation>
+        <attack_frames>6</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
         <biome>desert</biome>
     </enemy>
     <enemy>
@@ -39,6 +51,9 @@
         <attack_animation>images/enemies/desert/scorpion/Scorpio_attack.png</attack_animation>
         <death_animation>images/enemies/desert/scorpion/Scorpio_death.png</death_animation>
         <idle_animation>images/enemies/desert/scorpion/Scorpio_idle.png</idle_animation>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
         <biome>desert</biome>
     </enemy>
     <enemy>
@@ -47,6 +62,9 @@
         <attack_animation>images/enemies/desert/vulture/Vulture_attack.png</attack_animation>
         <death_animation>images/enemies/desert/vulture/Vulture_death.png</death_animation>
         <idle_animation>images/enemies/desert/vulture/Vulture_idle.png</idle_animation>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
         <biome>desert</biome>
     </enemy>
     <!--<enemy>
@@ -64,6 +82,9 @@
         <death_animation>images/enemies/field/goblin_melee/Goblin_melee_death.png</death_animation>
         <idle_animation>images/enemies/field/goblin_melee/Goblin_melee_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Ranged Goblin</name>
@@ -72,6 +93,9 @@
         <death_animation>images/enemies/field/goblin_range/Goblin_range_death.png</death_animation>
         <idle_animation>images/enemies/field/goblin_range/Goblin_range_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Slime</name>
@@ -80,6 +104,9 @@
         <death_animation>images/enemies/field/slime/Slime_death.png</death_animation>
         <idle_animation>images/enemies/field/slime/Slime_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Toad</name>
@@ -88,6 +115,9 @@
         <death_animation>images/enemies/field/toad/Toad_death.png</death_animation>
         <idle_animation>images/enemies/field/toad/Toad_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <!--<enemy>
         <name>Toad King</name>
@@ -112,6 +142,9 @@
         <death_animation>images/enemies/field/wasp/Wasp_death.png</death_animation>
         <idle_animation>images/enemies/field/wasp/Wasp_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Wolf</name>
@@ -120,6 +153,9 @@
         <death_animation>images/enemies/field/wolf/Wolf_death.png</death_animation>
         <idle_animation>images/enemies/field/wolf/Wolf_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Bear</name>
@@ -128,6 +164,9 @@
         <death_animation>images/enemies/mine/bear/Bear_death.png</death_animation>
         <idle_animation>images/enemies/mine/bear/Bear_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Mimic</name>
@@ -136,6 +175,9 @@
         <death_animation>images/enemies/mine/mimic/Mimic_death.png</death_animation>
         <idle_animation>images/enemies/mine/mimic/Mimic_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Spider</name>
@@ -144,6 +186,9 @@
         <death_animation>images/enemies/mine/spider/Spider_death.png</death_animation>
         <idle_animation>images/enemies/mine/spider/Spider_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Toadman</name>
@@ -152,6 +197,9 @@
         <death_animation>images/enemies/mine/toadman/Toadman_death.png</death_animation>
         <idle_animation>images/enemies/mine/toadman/Toadman_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Toadman Voodoo</name>
@@ -160,6 +208,9 @@
         <death_animation>images/enemies/mine/toadman_voodoo/voodoo_death.png</death_animation>
         <idle_animation>images/enemies/mine/toadman_voodoo/voodoo_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Wisp</name>
@@ -168,6 +219,9 @@
         <death_animation>images/enemies/mine/wisp/Wisp_death.png</death_animation>
         <idle_animation>images/enemies/mine/wisp/Wisp_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Boar</name>
@@ -176,6 +230,9 @@
         <death_animation>images/enemies/ruin/boar/Boar_death.png</death_animation>
         <idle_animation>images/enemies/ruin/boar/Boar_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Brigand</name>
@@ -184,6 +241,9 @@
         <death_animation>images/enemies/ruin/brigand/Brigand_death.png</death_animation>
         <idle_animation>images/enemies/ruin/brigand/Brigand_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Bug</name>
@@ -192,6 +252,9 @@
         <death_animation>images/enemies/ruin/bug/Bug_death.png</death_animation>
         <idle_animation>images/enemies/ruin/bug/Bug_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Golem</name>
@@ -200,6 +263,9 @@
         <death_animation>images/enemies/ruin/golem/Golem_death.png</death_animation>
         <idle_animation>images/enemies/ruin/golem/Golem_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Raven</name>
@@ -208,6 +274,9 @@
         <death_animation>images/enemies/ruin/raven/Raven_death.png</death_animation>
         <idle_animation>images/enemies/ruin/raven/Raven_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Shooter</name>
@@ -216,6 +285,9 @@
         <death_animation>images/enemies/ruin/shooter/Shooter_death.png</death_animation>
         <idle_animation>images/enemies/ruin/shooter/Shooter_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Elkman</name>
@@ -224,6 +296,9 @@
         <death_animation>images/enemies/snow/elkman/Elkman_death.png</death_animation>
         <idle_animation>images/enemies/snow/elkman/Elkman_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Frost Golem</name>
@@ -232,6 +307,9 @@
         <death_animation>images/enemies/snow/frost_golem/Frost_golem_death.png</death_animation>
         <idle_animation>images/enemies/snow/frost_golem/Frost_golem_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Northerner</name>
@@ -240,6 +318,9 @@
         <death_animation>images/enemies/snow/northerner/Northern_death.png</death_animation>
         <idle_animation>images/enemies/snow/northerner/Northern_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Northerner Two</name>
@@ -248,6 +329,9 @@
         <death_animation>images/enemies/snow/northerner_two/Northerner_death.png</death_animation>
         <idle_animation>images/enemies/snow/northerner_two/Northerner_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Snowy</name>
@@ -256,6 +340,9 @@
         <death_animation>images/enemies/snow/snowy/Snowy_death.png</death_animation>
         <idle_animation>images/enemies/snow/snowy/Snowy_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Spiked Slime</name>
@@ -264,6 +351,9 @@
         <death_animation>images/enemies/snow/spiked_slime/Spiked_slime_death.png</death_animation>
         <idle_animation>images/enemies/snow/spiked_slime/Spiked_slime_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Bat</name>
@@ -272,6 +362,9 @@
         <death_animation>images/enemies/swamp/bat/Bat_death.png</death_animation>
         <idle_animation>images/enemies/swamp/bat/Bat_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Bloat</name>
@@ -280,6 +373,9 @@
         <death_animation>images/enemies/swamp/bloat/Bloat_death.png</death_animation>
         <idle_animation>images/enemies/swamp/bloat/Bloat_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Drowned</name>
@@ -288,6 +384,9 @@
         <death_animation>images/enemies/swamp/drowned/Drowned_death.png</death_animation>
         <idle_animation>images/enemies/swamp/drowned/Drowned_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Larva</name>
@@ -296,6 +395,9 @@
         <death_animation>images/enemies/swamp/larva/Larva_death.png</death_animation>
         <idle_animation>images/enemies/swamp/larva/Larva_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Ooze</name>
@@ -304,6 +406,9 @@
         <death_animation>images/enemies/swamp/ooze/Ooze_death.png</death_animation>
         <idle_animation>images/enemies/swamp/ooze/Ooze_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Turtle</name>
@@ -312,6 +417,9 @@
         <death_animation>images/enemies/swamp/turtle/Turtle_death.png</death_animation>
         <idle_animation>images/enemies/swamp/turtle/Turtle_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
 
 </Enemies>

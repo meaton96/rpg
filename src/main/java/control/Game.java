@@ -52,13 +52,11 @@ public class Game implements Runnable{
      */
     public Game(Stage stage, int classNumber, String name) {
         primaryStage = stage;
-        ArmorFileReader.init();
+        ArmorFileReader.init(getClass());
         items = ArmorFileReader.getItemMap();
         player = new Player(Entity.getClassFromNumber(classNumber), name, 20);
         
         enemyList = FileUtil.getEnemiesOfType("", enemyXMLPath, ENEMY_BASE_HEALTH);
-
-
 
 
         equipStartingGear();

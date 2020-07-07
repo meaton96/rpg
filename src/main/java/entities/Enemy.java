@@ -54,7 +54,8 @@ public class Enemy extends Entity {
         rand = new Random();
     }*/
     @Builder
-    public Enemy(Class entityClass, String name, int maxHealth, int level, Image model, String biome, String attackPath, String idlePath, String deathPath) {
+    public Enemy(Class entityClass, String name, int maxHealth, int level, Image model, String biome, String attackPath, String idlePath,
+                 String deathPath, int attackFrames, int idleFrames, int deathFrames) {
         super(entityClass, name, maxHealth, maxHealth, null);
         this.availableSpells = new ArrayList<>();
         Spell.DamageType damageType;
@@ -73,9 +74,9 @@ public class Enemy extends Entity {
         rand = new Random();
         randomizeHealth();
         
-        attackAnimation = createClassSpriteAnimation(attackPath);
-        idleAnimation = createClassSpriteAnimation(idlePath);
-        deathAnimation = createClassSpriteAnimation(deathPath);
+        attackAnimation = createClassSpriteAnimation(attackPath, attackFrames);
+        idleAnimation = createClassSpriteAnimation(idlePath, idleFrames);
+        deathAnimation = createClassSpriteAnimation(deathPath, deathFrames);
         attackAnimation.setCycleCount(1);
         idleAnimation.setCycleCount(Animation.INDEFINITE);
         deathAnimation.setCycleCount(1);
@@ -120,10 +121,10 @@ public class Enemy extends Entity {
      * @param imagePath path to the image of the animation
      * @return a SpriteAnimation instance
      */
-    private SpriteAnimation createClassSpriteAnimation(String imagePath) {
+    private SpriteAnimation createClassSpriteAnimation(String imagePath, int frames) {
         ImageView imageView = new ImageView(new Image(imagePath));
-        imageView.setViewport(new Rectangle2D(0, 0, 48, 48));
-        return new SpriteAnimation(imageView, Duration.millis(600), 4, 4, 0, 0, 48, 48);
+        imageView.setViewport(new Rectangle2D(0, 0, 96, 96));
+        return new SpriteAnimation(imageView, Duration.millis(frames * 150), frames, frames, 0, 0, 96, 96);
     }
     /**
      * randomize the enemy hp by the variance and level

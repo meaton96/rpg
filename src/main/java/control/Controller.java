@@ -23,11 +23,9 @@ public class Controller {
     public static final int WIDTH = 1440;
     public static final int HEIGHT = 810;
     
-    private Font gameFont;
-
-    //private final Application app;
+    
+    
     private final Stage primaryStage;
-    private Player player;
     private String styleSheet;
     
     
@@ -35,7 +33,6 @@ public class Controller {
      * start the controller, get the menu font and init the style sheet
      */
     public void start() {
-        gameFont = Font.loadFont(getClass().getResourceAsStream("/immortal.ttf"), 40);
         
         styleSheet = getClass().getResource("/style.css").toExternalForm();
         mainMenu();
