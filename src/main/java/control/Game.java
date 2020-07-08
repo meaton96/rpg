@@ -6,24 +6,14 @@ import entities.Player;
 import items.Armor;
 import items.Item;
 import items.Weapon;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-import lombok.Getter;
 import util.ArmorFileReader;
 import util.FileUtil;
 
-import java.awt.*;
-import java.security.Key;
-import java.sql.Time;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Map;
 
 /**
  * class to start the game
@@ -34,7 +24,7 @@ public class Game implements Runnable{
     private final Map<String, Item> items;
     private final Stage primaryStage;
     private final List<Integer> sceneRotation;
-    private int sceneNumber = 0;
+    private final int sceneNumber = 0;
     private final String battleXMLPath = "src/main/resources/battle_stages.xml";
     private final String enemyXMLPath = "src/main/resources/images/enemies/enemies.xml";
     private final List<Enemy> enemyList;
@@ -52,12 +42,11 @@ public class Game implements Runnable{
      */
     public Game(Stage stage, int classNumber, String name) {
         primaryStage = stage;
-        ArmorFileReader.init(getClass());
+        ArmorFileReader.init();
         items = ArmorFileReader.getItemMap();
         player = new Player(Entity.getClassFromNumber(classNumber), name, 20);
         
         enemyList = FileUtil.getEnemiesOfType("", enemyXMLPath, ENEMY_BASE_HEALTH);
-
 
         equipStartingGear();
         sceneRotation = new ArrayList<>();

@@ -6,9 +6,13 @@ import javafx.animation.FadeTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Label;
 import javafx.scene.effect.Bloom;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -27,7 +31,7 @@ public class Battle {
     private final Enemy enemy;
     private final Player player;
     private static final int ENEMY_X_DRAW_OFFSET = 55;
-    private static final int ENEMY_Y_DRAW_OFFSET = 15;
+    private static final int ENEMY_Y_DRAW_OFFSET = 15;  //gap between the player model feet and bottom of the .png image
     private HUD hud;
     // for balancing
     
@@ -70,7 +74,7 @@ public class Battle {
             }
         }
         player.setTurn(true);
-        switch (numSpells) {
+        switch (numSpells) {                    //fill up the hud with the spells that the player has equipped
             case 1 : setButtonListeners("");
             break;
             case 2 : setButtonListeners("", player.getEquippedSpells()[1].getName());
@@ -80,68 +84,68 @@ public class Battle {
             case 4 : setButtonListeners("", player.getEquippedSpells()[1].getName(), player.getEquippedSpells()[2].getName(), player.getEquippedSpells()[3].getName());
             break;
         }
-        player.getAttackAnimation().setOnFinished(event -> {
-            player.getIdleAnimation().unHide();
+        player.getAttackAnimation().setOnFinished(event -> {        //after player has attacked
+            player.getIdleAnimation().unHide();                     //restart idle animation
             player.getAttackAnimation().hide();
             player.getIdleAnimation().playFromStart();
-            if (!player.isInBattle()) {
+            if (!player.isInBattle()) {                             //if the battle ended call the cleanup method
                 cleanUpBattle();
             }
             else {
-                new EnemyTurn().start();
+                new EnemyTurn().start();                        //otherwise the enemy starts a turn
             }
         });
-        enemy.getAttackAnimation().setOnFinished(event -> {
-            hud.updateHUD();
+        enemy.getAttackAnimation().setOnFinished(event -> {     //when the enemy animation has finished
+        hud.updateHUD();                                        //update hud
             if (enemy.isAlive())
-                enemy.playIdleAnimation();
+                enemy.playIdleAnimation();                      //if enemy is alive go back to their idle animation otherwise play the death animation
             else
                 enemy.playDeathAnimation();
+            if (!player.isAlive()) {                            //if the player is killed play their death animation
+                player.playDeathAnimation(initScene.getMainPane());
+            }
         });
 
-        Scene deathScene = initScene.getDeathScreen();
 
-        FadeTransition fadeOut = new FadeTransition();
-        fadeOut.setDuration(Duration.millis(4000));
-        fadeOut.setNode(initScene.getMainPane());
-        fadeOut.setFromValue(1);
-        fadeOut.setToValue(0);
         FadeTransition fadeIn = new FadeTransition();
-        fadeIn.setDuration(Duration.millis(4000));
+        fadeIn.setDuration(Duration.millis(4000));                              //setup transition animation for the death screen
         Rectangle rec = new Rectangle(Controller.WIDTH, Controller.HEIGHT);
         rec.setFill(Color.BLACK);
-       // rec.setOpacity(0);
+        rec.setOpacity(0);
         
         fadeIn.setNode(rec);
         fadeIn.setToValue(1);
         fadeIn.setFromValue(0);
         
-        fadeOut.setOnFinished(e -> {
-            
-            initScene.getPrimaryStage().setScene(initScene.getDeathScreen());
+        fadeIn.setOnFinished(e -> {
+            initScene.getPrimaryStage().setScene(getDeathScreen());
         });
-        player.getDeathAnimation().setOnFinished(event -> {
-            fadeOut.play();
+        player.getDeathAnimation().setOnFinished(event -> {                 //fade to black
             initScene.getMainPane().getChildren().add(rec);
-            fadeIn.play(); //fade in not working
+            fadeIn.play();
 
         });
         
     }
+
+    /**
+     * clean up extra elements/lingering animations from the battle and remove them from the scene
+     * add back walking animation
+     */
     private void cleanUpBattle() {
         
-        enemy.getDeathAnimation().setOnFinished(event -> {
-            hud.endBattle();
+        enemy.getDeathAnimation().setOnFinished(event -> {              //when the enemy has finished the death animation
+            hud.endBattle();                                            //update hud
             hud.updateHUD();
             initScene.updateDraw();
-            initScene.getMainPane().getChildren().removeAll(
+            initScene.getMainPane().getChildren().removeAll(                        //remove all animations
                     player.getAttackAnimation().getImageView(),
                     player.getIdleAnimation().getImageView(),
                     enemy.getAttackAnimation().getImageView(),
                     enemy.getDeathAnimation().getImageView(),
                     enemy.getIdleAnimation().getImageView()
             );
-            player.unHideWalkingAnimation();
+            player.unHideWalkingAnimation();                //add the walking animation back
         });
         
         enemy.playDeathAnimation();
@@ -173,7 +177,7 @@ public class Battle {
                 });
                 
             }
-            //add animations for spells here
+            //add other spells here
             if (x == 1) {
                 hud.getSpellOneButton().setOnAction(event -> {
                 
@@ -201,9 +205,11 @@ public class Battle {
         player.playIdleAnimation(initScene.getMainPane());
         enemy.playIdleAnimation();
         hud.updateHUD();
-        
     }
-    
+
+    /**
+     * Threadable class to run an enemy turn
+     */
     class EnemyTurn implements Runnable {
 
         @Override
@@ -214,20 +220,39 @@ public class Battle {
             
             player.reduceHealth(enemyDamageDone);       //reduce the hp of the player by that amount and update hud
             
-            if (player.isAlive()) {
+            if (player.isAlive())
                 player.setTurn(true);
-            }
-            else {
-                //player death animation -> death screen
-                Platform.runLater(() -> player.playDeathAnimation(initScene.getMainPane()));
-
-            }
         }
         
         public void start() {
             new Thread(this).start();
         }
     }
-    
+
+    /**
+     * create the scene/controls to display the screen when your character dies
+     * @return the death scene
+     */
+    public Scene getDeathScreen() {
+        VBox deathPane = new VBox(300);
+        deathPane.setAlignment(Pos.CENTER);
+        deathPane.setId("death_screen");
+
+        javafx.scene.control.Button mainMenu = new javafx.scene.control.Button("Main Menu");
+        HBox hBox = new HBox(100);
+        hBox.setAlignment(Pos.CENTER);
+        mainMenu.setId("start_button");
+        mainMenu.setOnAction(event -> new Controller(initScene.getPrimaryStage()).start());
+        mainMenu.setMinSize(Controller.WIDTH / 8.0, Controller.HEIGHT / 8.0);
+        javafx.scene.control.Button exit = new javafx.scene.control.Button("Exit");
+        exit.setMinSize(Controller.WIDTH / 8.0, Controller.HEIGHT / 8.0);
+        exit.setId("start_button");
+        exit.setOnAction(event -> System.exit(0));
+        hBox.getChildren().addAll(mainMenu, exit);
+        deathPane.getChildren().addAll(new Label(), hBox);
+        Scene deathScene = new Scene(deathPane);
+        deathScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+        return deathScene;
+    }
 
 }

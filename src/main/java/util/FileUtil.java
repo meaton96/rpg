@@ -16,9 +16,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FileUtil {
+/**
+ * helper class to handle file input
+ */
+public final class FileUtil {
 
-    
+    /**
+     * gets a javafx.scene.image.Image from the classpath
+     * @param c the class to make resource stream
+     * @param path the path of the image
+     * @return an Image
+     */
     public static Image getResourceStreamFromClass(final Class<?> c, final String path) {
         try {
             return new Image(c.getResourceAsStream(path));
@@ -27,19 +35,26 @@ public class FileUtil {
             throw new IllegalArgumentException(path, e);
         }
     }
-    
+
+    /**
+     * get a GameScene instance from the xml file
+     * @param group the group to which the scene will be assigned
+     * @param sceneNumber the scene number to get from the file
+     * @param path the path to the xml file
+     * @return a Gamescene instance pulled from the xml file
+     */
     public static GameScene getSceneFromXML(final Group group, final int sceneNumber, final String path) {
     
-        SAXBuilder builder = new SAXBuilder();
+        SAXBuilder builder = new SAXBuilder();                      //setup xml reader
         File xmlFile = new File(path);
         
         try {
             Document doc = builder.build(xmlFile);
             Element rootNode = doc.getRootElement();
             
-            Element e = rootNode.getChildren().get(sceneNumber);
-            
-            return GameScene.builder()
+            Element e = rootNode.getChildren().get(sceneNumber);           //get the root element
+
+            return GameScene.builder()                                                  //build a game scene with the info from the xml file
                     .entityDrawY(Integer.parseInt(e.getChildText("ground_height")))
                     .name(e.getChildText("name"))
                     .group(group)
@@ -52,7 +67,12 @@ public class FileUtil {
         }
         return null;
     }
-    
+
+    /**
+     * read the xml battle scene file and count the total number of options
+     * @param path path to the xml file
+     * @return integer number of different scene ins the xml file
+     */
     public static int getNumBattleScenes(final String path) {
         SAXBuilder builder = new SAXBuilder();
         File xmlFile = new File(path);
@@ -70,21 +90,28 @@ public class FileUtil {
         return 0;
     }
 
+    /**
+     * create a list of enemies of the given type
+     * @param type the type/biome of the enemy
+     * @param path the path to the enemy xml file
+     * @param baseHealth enemy base hp
+     * @return a list of enemies
+     */
     public static List<Enemy> getEnemiesOfType(final String type, final String path, final int baseHealth) {
         SAXBuilder builder = new SAXBuilder();
         File xmlFile = new File(path);
 
-        List<String> enemyTypes = List.of("", "desert", "field", "mine", "ruin", "snow", "swap");
+        List<String> enemyTypes = List.of("", "desert", "field", "mine", "ruin", "snow", "swap");       //allowed enemy types
 
         try {
             if (!enemyTypes.contains(type)) {
                 System.out.println("Enemy of type " + type + " doesn't exist");
                 return null;
             }
-            Element root = builder.build(xmlFile).getRootElement();
+            Element root = builder.build(xmlFile).getRootElement();         //build xml file reader
             List<Element> enemyElements = root.getChildren();
             List<Enemy> enemies = new ArrayList<>();
-            for (Element e : enemyElements) {
+            for (Element e : enemyElements) {                               //iterate all xml nodes and create an enemy from the xml data
                 for (int x = 1; x < 6; x++) {
                     String name = e.getChildText("name");
                     Image model = new Image(e.getChildText("model_path"));
@@ -113,10 +140,10 @@ public class FileUtil {
 
                 }
             }
-            if (type.equals(""))
+            if (type.equals(""))                //if empty string was supplied return the entire list
                 return enemies;
 
-            return enemies.stream()
+            return enemies.stream()                                         //otherwise filter only the elements with supplied type/biome string
                     .filter(x -> x.getBiome().equals(type.toLowerCase()))
                     .collect(Collectors.toList());
         }

@@ -228,26 +228,6 @@ public class WalkingStage {
         player.initWalkingAnim(mainPane);
         scene.setRoot(mainPane);
     }
-    public Scene getDeathScreen() {
-        VBox deathPane = new VBox(300);
-        deathPane.setAlignment(Pos.CENTER);
-        deathPane.setId("death_screen");
 
-        Button mainMenu = new Button("Main Menu");
-        HBox hBox = new HBox(100);
-        hBox.setAlignment(Pos.CENTER);
-        mainMenu.setId("start_button");
-        mainMenu.setOnAction(event -> new Controller(primaryStage).start());
-        mainMenu.setMinSize(Controller.WIDTH / 8.0, Controller.HEIGHT / 8.0);
-        Button exit = new Button("Exit");
-        exit.setMinSize(Controller.WIDTH / 8.0, Controller.HEIGHT / 8.0);
-        exit.setId("start_button");
-        exit.setOnAction(event -> System.exit(0));
-        hBox.getChildren().addAll(mainMenu, exit);
-        deathPane.getChildren().addAll(new Label(), hBox);
-        Scene deathScene = new Scene(deathPane);
-        deathScene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
-        return deathScene;
-    }
     
 }

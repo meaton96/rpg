@@ -19,18 +19,20 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/beta" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="working on adding backpack">
+    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="animating">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Backpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Backpack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/characterSelectStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/characterSelectStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ArmorFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ArmorFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hud_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hud_styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style.css" afterDir="false" />
     </list>
@@ -279,10 +281,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="996" y="518" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594098380167" />
-    <state x="1027" y="534" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1594098358070">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="822" y="424" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1594229993306">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="1027" y="534" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594098358070" />
+    <state x="822" y="424" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594229993306" />
     <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1594102824178">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -291,26 +294,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1594185443319">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1594227738858">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
-    <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594066949317" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1594185443319">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738858" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1594227738857">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
-    <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594066949317" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1594185443319">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738857" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1594227738857">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
-    <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594066949317" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1594185443319">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738857" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1594227738858">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
-    <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594066949317" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738858" />
     <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1594103474763">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
