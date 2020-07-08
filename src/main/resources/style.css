@@ -1,3 +1,7 @@
+@font-face {
+    -fx-font-family: Immortal;
+    src: url("immortal.ttf");
+}
 #main_menu {
     -fx-background-image: url("images/menuBackground.png");
     -fx-background-repeat: no-repeat;
@@ -93,10 +97,7 @@
     -fx-pref-width: 1440;
     -fx-pref-height: 660;
 }
-@font-face {
-    -fx-font-family: Immortal;
-    src: url("immortal.ttf");
-}
+
 
 
 

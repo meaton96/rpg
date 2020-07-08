@@ -186,7 +186,7 @@ public class WalkingStage {
         Random r = new Random();
         Enemy enemy = enemies.get(r.nextInt(enemies.size()));
         enemyList.remove(enemy);
-        Battle b = new Battle(this, enemy);
+        new Battle(this, enemy);
     }
     
     /**

@@ -23,8 +23,8 @@ public class Controller {
     public static final int WIDTH = 1440;
     public static final int HEIGHT = 810;
     
-    
-    
+    Font font;
+
     private final Stage primaryStage;
     private String styleSheet;
     
@@ -34,6 +34,7 @@ public class Controller {
      */
     public void start() {
         
+        font = Font.font("/immortal.ttf");
         styleSheet = getClass().getResource("/style.css").toExternalForm();
         mainMenu();
         primaryStage.show();

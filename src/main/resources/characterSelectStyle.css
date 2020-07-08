@@ -1,3 +1,7 @@
+@font-face {
+    -fx-font-family: Immortal;
+    src: url("immortal.ttf");
+}
 #warrior_button {
     -fx-background-image: url("images/sword.png");
     -fx-background-size: stretch;
@@ -40,8 +44,8 @@
     -fx-font-family: Immortal;
     -fx-font-size: 60;
     -fx-text-fill: #2b2727;
-
 }
+
 
 #no_name_toast {
     -fx-text-fill: white;
@@ -70,7 +74,3 @@
     -fx-background-color: transparent;
 }
 
-@font-face {
-    -fx-font-family: Immortal;
-    src: url("immortal.ttf");
-}
