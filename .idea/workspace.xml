@@ -26,15 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="animating">
+    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="fixed death screen still working on adding backpack">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/ArmorFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ArmorFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hud_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hud_styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594101338653</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed death screen still working on adding backpack">
+      <created>1594235209866</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1594235209866</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +266,8 @@
     <MESSAGE value="animating" />
     <MESSAGE value="added animations for rogue" />
     <MESSAGE value="working on adding backpack" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on adding backpack" />
+    <MESSAGE value="fixed death screen still working on adding backpack" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed death screen still working on adding backpack" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593638262430">
@@ -338,11 +340,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1614" y="243" key="MultipleFileMergeDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593670082172" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1593990293136">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="698" y="344" key="Vcs.Push.Dialog.v2" timestamp="1594235215894">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990293136" />
-    <state x="698" y="344" key="Vcs.Push.Dialog.v2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593802336942" />
+    <state x="698" y="344" key="Vcs.Push.Dialog.v2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594235215894" />
     <state x="-131" y="245" width="2376" height="1216" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593465226698">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

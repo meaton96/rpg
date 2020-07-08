@@ -10,11 +10,13 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import lombok.Getter;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class Backpack {
     
     private final List<Item> contents;

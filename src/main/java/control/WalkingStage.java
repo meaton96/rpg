@@ -17,6 +17,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +26,7 @@ import ui.GameScene;
 import ui.HUD;
 import util.FileUtil;
 
+import java.awt.*;
 import java.security.Key;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -145,6 +148,9 @@ public class WalkingStage {
             }
             
         });
+
+
+
         mainPane.setOnKeyReleased(keyListener -> {
             if (keyListener.getCode() == KeyCode.RIGHT || keyListener.getCode() == KeyCode.D) {
                 if (!player.isInBattle()) {
@@ -161,7 +167,8 @@ public class WalkingStage {
                     else {
                         System.out.println("hiding backpack");
                         backPackShown = false;
-                        player.getBackPack().hide(getMainPane());
+                        mainPane.getChildren().remove(player.getBackPack().getBox());
+                      //  player.getBackPack().hide(getMainPane());
                     }
                 }
             }
