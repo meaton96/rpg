@@ -24,6 +24,7 @@ import lombok.Getter;
 import lombok.Setter;
 import ui.GameScene;
 import ui.HUD;
+import util.ArmorFileReader;
 import util.FileUtil;
 
 import java.awt.*;
@@ -83,7 +84,10 @@ public class WalkingStage {
         enemyLocations = new ArrayList<>();
         initEnemyLocations();
         primaryStage.setScene(getScene());
-        
+        //for testing backpack remove
+        player.getBackPack().add(ArmorFileReader.getItemByName("Doomward"));
+        player.getBackPack().add(ArmorFileReader.getItemByName("Starting Cloth Chest"));
+        player.getBackPack().updateBackpack();
     }
     
     /**
@@ -157,12 +161,10 @@ public class WalkingStage {
             if (keyListener.getCode() == KeyCode.B) {
                 if (!player.isInBattle()) {
                     if (!backPackShown) {
-                        System.out.println("showing backpack");
                         backPackShown = true;
                         player.getBackPack().show(getMainPane());
                     }
                     else {
-                        System.out.println("hiding backpack");
                         backPackShown = false;
                         player.getBackPack().hide(getMainPane());
                         updateDraw();

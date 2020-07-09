@@ -8,8 +8,11 @@ import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import lombok.Getter;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,23 +32,28 @@ public class Backpack {
         contents = new ArrayList<>();
        // itemButtons = new ArrayList<>();
         this.player = player;
-        
+
         
         itemPane = new GridPane();
         itemPane.setHgap(10);
         itemPane.setVgap(10);
-        
+
+
         box = new VBox();
         box.setPadding(new Insets(20, 20, 20, 20));
         box.getChildren().add(itemPane);
         box.setId("background");
         box.setLayoutX(Controller.WIDTH - 480);
         box.setLayoutY(10);
-        /*Rectangle rec = new Rectangle(400, 400);
-        rec.setFill(Color.BLACK);
-        itemPane.getChildren().add(rec);*/
-        box.setPrefWidth(470);
-        box.setPrefHeight(470);
+
+        Rectangle background = new Rectangle(470, 470);
+        background.setFill(Color.BLACK);
+        background.setOpacity(0.5);
+        box.getChildren().add(background);
+        box.getStylesheets()
+                .addAll(getClass().getResource("/backpack.css").toExternalForm());
+       // box.setPrefWidth(470);
+      //  box.setPrefHeight(470);
     }
     public boolean add(Item i) {
         if (contents.size() < maxSize)
@@ -60,18 +68,24 @@ public class Backpack {
         group.getChildren().add(box);
     }
     public void hide(Group group) {
-        group.getChildren().remove(box);//todo not working
+        group.getChildren().remove(box);
     }
     public void updateBackpack() {
         int count = 0;
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < 4; y++) {
+                if (contents.size() == count)
+                    return;
                 if (contents.get(count) != null) {
                     Button button = new Button();
+                    button.setPrefHeight(100);
+                    button.setPrefWidth(100);
+
                     button.setId(contents.get(count).getIconId());
                     GridPane.setConstraints(button, y, x);
                     //itemButtons.add(button);
                     itemPane.getChildren().add(button);
+                    count++;
                 }
             }
         }
