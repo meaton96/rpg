@@ -14,6 +14,8 @@
         <Strength>0</Strength>
         <Agility>0</Agility>
         <Intellect>1</Intellect>
+        <icon>images/icons/items/cloth/robe_1.png</icon>
+        <icon_id>chest_cloth_1</icon_id>
     </Armor>
     <Armor>
         <Slot>Helm</Slot>
@@ -27,6 +29,8 @@
         <Strength>0</Strength>
         <Agility>0</Agility>
         <Intellect>1</Intellect>
+        <icon>images/icons/items/cloth/helm_1.png</icon>
+        <icon_id>helm_cloth_1</icon_id>
     </Armor>
     <Armor>
         <Slot>Legs</Slot>
@@ -40,6 +44,8 @@
         <Strength>0</Strength>
         <Agility>0</Agility>
         <Intellect>1</Intellect>
+        <icon>images/icons/items/cloth/legs_1.png</icon>
+        <icon_id>legs_cloth_1</icon_id>
     </Armor>
     <Armor>
         <Slot>Boots</Slot>
@@ -53,6 +59,8 @@
         <Strength>0</Strength>
         <Agility>0</Agility>
         <Intellect>1</Intellect>
+        <icon>images/icons/items/cloth/boots_1.png</icon>
+        <icon_id>boots_cloth_1</icon_id>
     </Armor>
 
     <!--Leather -->
@@ -68,6 +76,8 @@
         <Strength>0</Strength>
         <Agility>1</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/chest_1.png</icon>
+        <icon_id>chest_leather_1</icon_id>
     </Armor>
     <Armor>
         <Slot>Helm</Slot>
@@ -81,6 +91,8 @@
         <Strength>0</Strength>
         <Agility>1</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/helm_1.png</icon>
+        <icon_id>helm_leather_1</icon_id>
     </Armor>
     <Armor>
         <Slot>Legs</Slot>
@@ -94,6 +106,8 @@
         <Strength>0</Strength>
         <Agility>1</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/legs_1.png</icon>
+        <icon_id>legs_leather_1</icon_id>
     </Armor>
     <Armor>
         <Slot>Boots</Slot>
@@ -107,6 +121,8 @@
         <Strength>0</Strength>
         <Agility>1</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/boots_1.png</icon>
+        <icon_id>boots_leather_1</icon_id>
     </Armor>
     <!--Plate -->
     <Armor>
@@ -121,6 +137,8 @@
         <Strength>1</Strength>
         <Agility>0</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/chest_1.png</icon>
+        <icon_id>chest_plate_1</icon_id>
     </Armor>
     <Armor>
         <Slot>Helm</Slot>
@@ -134,6 +152,8 @@
         <Strength>1</Strength>
         <Agility>0</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/helm_1.png</icon>
+        <icon_id>helm_plate_1</icon_id>
     </Armor>
     <Armor>
         <Slot>Legs</Slot>
@@ -147,6 +167,8 @@
         <Strength>1</Strength>
         <Agility>0</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/legs_1.png</icon>
+        <icon_id>legs_plate_1</icon_id>
     </Armor>
     <Armor>
         <Slot>Boots</Slot>
@@ -160,6 +182,8 @@
         <Strength>1</Strength>
         <Agility>0</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/boots_1.png</icon>
+        <icon_id>boots_plate_1</icon_id>
     </Armor>
     <!--Starting Weapons -->
     <Weapon>
@@ -174,6 +198,8 @@
         <Stamina>1</Stamina>
         <Strength>1</Strength>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/sword_1.png</icon>
+        <icon_id>sword_1</icon_id>
     </Weapon>
     <Weapon>
         <Name>Starting Dagger</Name>
@@ -187,6 +213,8 @@
         <Stamina>1</Stamina>
         <Strength>0</Strength>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/dagger_1.png</icon>
+        <icon_id>dagger_1</icon_id>
     </Weapon>
     <Weapon>
         <Name>Starting Staff</Name>
@@ -200,6 +228,8 @@
         <Stamina>1</Stamina>
         <Strength>0</Strength>
         <Intellect>1</Intellect>
+        <icon>images/icons/items/staff_1.png</icon>
+        <icon_id>staff_1</icon_id>
     </Weapon>
     <!-- End Starting Gear -->
 
@@ -216,6 +246,8 @@
         <Strength>0</Strength>
         <Agility>0</Agility>
         <Intellect>2</Intellect>
+        <icon>images/icons/items/cloth/robe_2.png</icon>
+        <icon_id>chest_cloth_2</icon_id>
     </Armor>
     <Armor>
         <Slot>Helm</Slot>
@@ -229,6 +261,8 @@
         <Strength>0</Strength>
         <Agility>0</Agility>
         <Intellect>2</Intellect>
+        <icon>images/icons/items/cloth/helm_2.png</icon>
+        <icon_id>helm_cloth_2</icon_id>
     </Armor>
     <Armor>
         <Slot>Legs</Slot>
@@ -242,6 +276,8 @@
         <Strength>0</Strength>
         <Agility>0</Agility>
         <Intellect>1</Intellect>
+        <icon>images/icons/items/cloth/legs_2.png</icon>
+        <icon_id>legs_cloth_2</icon_id>
     </Armor>
     <Armor>
         <Slot>Boots</Slot>
@@ -255,6 +291,8 @@
         <Strength>0</Strength>
         <Agility>0</Agility>
         <Intellect>2</Intellect>
+        <icon>images/icons/items/cloth/boots_2.png</icon>
+        <icon_id>boots_cloth_2</icon_id>
     </Armor>
 
     <!--Leather -->
@@ -270,6 +308,8 @@
         <Strength>0</Strength>
         <Agility>1</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/chest_2.png</icon>
+        <icon_id>chest_leather_2</icon_id>
     </Armor>
     <Armor>
         <Slot>Helm</Slot>
@@ -283,6 +323,8 @@
         <Strength>0</Strength>
         <Agility>2</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/helm_2.png</icon>
+        <icon_id>helm_leather_2</icon_id>
     </Armor>
     <Armor>
         <Slot>Legs</Slot>
@@ -296,6 +338,8 @@
         <Strength>0</Strength>
         <Agility>1</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/legs_2.png</icon>
+        <icon_id>legs_leather_2</icon_id>
     </Armor>
     <Armor>
         <Slot>Boots</Slot>
@@ -309,6 +353,8 @@
         <Strength>0</Strength>
         <Agility>2</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/boots_2.png</icon>
+        <icon_id>boots_leather_2</icon_id>
     </Armor>
     <!--Plate -->
     <Armor>
@@ -323,6 +369,8 @@
         <Strength>2</Strength>
         <Agility>0</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/chest_2.png</icon>
+        <icon_id>chest_plate_2</icon_id>
     </Armor>
     <Armor>
         <Slot>Helm</Slot>
@@ -336,6 +384,8 @@
         <Strength>2</Strength>
         <Agility>0</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/helm_2.png</icon>
+        <icon_id>helm_plate_2</icon_id>
     </Armor>
     <Armor>
         <Slot>Legs</Slot>
@@ -349,6 +399,8 @@
         <Strength>2</Strength>
         <Agility>0</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/legs_2.png</icon>
+        <icon_id>legs_plate_2</icon_id>
     </Armor>
     <Armor>
         <Slot>Boots</Slot>
@@ -362,6 +414,8 @@
         <Strength>2</Strength>
         <Agility>0</Agility>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/boots_2.png</icon>
+        <icon_id>boots_plate_2</icon_id>
     </Armor>
     <!--Basic Weapons -->
     <Weapon>
@@ -376,6 +430,8 @@
         <Stamina>1</Stamina>
         <Strength>2</Strength>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/sword_2.png</icon>
+        <icon_id>sword_2</icon_id>
     </Weapon>
     <Weapon>
         <Name>Basic Dagger</Name>
@@ -389,6 +445,8 @@
         <Stamina>1</Stamina>
         <Strength>0</Strength>
         <Intellect>0</Intellect>
+        <icon>images/icons/items/dagger_2.png</icon>
+        <icon_id>dagger_2</icon_id>
     </Weapon>
     <Weapon>
         <Name>Basic Staff</Name>
@@ -402,8 +460,472 @@
         <Stamina>2</Stamina>
         <Strength>0</Strength>
         <Intellect>2</Intellect>
+        <icon>images/icons/items/staff_2.png</icon>
+        <icon_id>staff_2</icon_id>
     </Weapon>
     <!-- End Basic Gear -->
+    <!--level 2 Gear -->
+    <!--Cloth -->
+    <Armor>
+        <Slot>Chest</Slot>
+        <Type>Cloth</Type>
+        <Name>Mage Robe</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>2</ArmorAmt>
+        <Stamina>2</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>3</Intellect>
+        <icon>images/icons/items/cloth/robe_3.png</icon>
+        <icon_id>chest_cloth_1</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Helm</Slot>
+        <Type>Cloth</Type>
+        <Name>Mage Helm</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>2</ArmorAmt>
+        <Stamina>3</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>2</Intellect>
+        <icon>images/icons/items/cloth/helm_1.png</icon>
+        <icon_id>helm_cloth_1</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Legs</Slot>
+        <Type>Cloth</Type>
+        <Name>Mage Pants</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>2</ArmorAmt>
+        <Stamina>4</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>1</Intellect>
+        <icon>images/icons/items/cloth/legs_1.png</icon>
+        <icon_id>legs_cloth_1</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Boots</Slot>
+        <Type>Cloth</Type>
+        <Name>Mage Boots</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>1</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>4</Intellect>
+        <icon>images/icons/items/cloth/boots_1.png</icon>
+        <icon_id>boots_cloth_1</icon_id>
+    </Armor>
 
+    <!--Leather -->
+    <Armor>
+        <Slot>Chest</Slot>
+        <Type>Leather</Type>
+        <Name>Assassin's Cuirass</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>3</ArmorAmt>
+        <Stamina>2</Stamina>
+        <Strength>0</Strength>
+        <Agility>3</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/chest_1.png</icon>
+        <icon_id>chest_leather_1</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Helm</Slot>
+        <Type>Leather</Type>
+        <Name>Assassin's Cap</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>2</ArmorAmt>
+        <Stamina>2</Stamina>
+        <Strength>0</Strength>
+        <Agility>3</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/helm_1.png</icon>
+        <icon_id>helm_leather_1</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Legs</Slot>
+        <Type>Leather</Type>
+        <Name>Assassin's Greaves</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>3</ArmorAmt>
+        <Stamina>3</Stamina>
+        <Strength>0</Strength>
+        <Agility>2</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/legs_1.png</icon>
+        <icon_id>legs_leather_1</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Boots</Slot>
+        <Type>Leather</Type>
+        <Name>Assassin's Boots</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>2</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Agility>4</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/boots_1.png</icon>
+        <icon_id>boots_leather_1</icon_id>
+    </Armor>
+    <!--Plate -->
+    <Armor>
+        <Slot>Chest</Slot>
+        <Type>Plate</Type>
+        <Name>Knight's Breastplate</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>5</ArmorAmt>
+        <Stamina>3</Stamina>
+        <Strength>2</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/chest_1.png</icon>
+        <icon_id>chest_plate_1</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Helm</Slot>
+        <Type>Plate</Type>
+        <Name>Knight's Coif</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>4</ArmorAmt>
+        <Stamina>3</Stamina>
+        <Strength>2</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/helm_1.png</icon>
+        <icon_id>helm_plate_1</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Legs</Slot>
+        <Type>Plate</Type>
+        <Name>Knight's Greaves</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>4</ArmorAmt>
+        <Stamina>4</Stamina>
+        <Strength>1</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/legs_1.png</icon>
+        <icon_id>legs_plate_1</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Boots</Slot>
+        <Type>Plate</Type>
+        <Name>Knight's Boots</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <ArmorAmt>4</ArmorAmt>
+        <Stamina>1</Stamina>
+        <Strength>4</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/boots_1.png</icon>
+        <icon_id>boots_plate_1</icon_id>
+    </Armor>
+    <!--Level 2 Weapons -->
+    <Weapon>
+        <Name>Knight's Short-sword</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <DamageLow>3</DamageLow>
+        <DamageHigh>8</DamageHigh>
+        <Type>Sword</Type>
+        <Agility>0</Agility>
+        <Stamina>2</Stamina>
+        <Strength>3</Strength>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/sword_3.png</icon>
+        <icon_id>sword_3</icon_id>
+    </Weapon>
+    <Weapon>
+        <Name>Assassin's Blade</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <DamageLow>4</DamageLow>
+        <DamageHigh>8</DamageHigh>
+        <Type>Dagger</Type>
+        <Agility>4</Agility>
+        <Stamina>1</Stamina>
+        <Strength>0</Strength>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/dagger_3.png</icon>
+        <icon_id>dagger_3</icon_id>
+    </Weapon>
+    <Weapon>
+        <Name>Mage Staff</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>2</Level>
+        <DamageLow>4</DamageLow>
+        <DamageHigh>7</DamageHigh>
+        <Type>Staff</Type>
+        <Agility>0</Agility>
+        <Stamina>2</Stamina>
+        <Strength>0</Strength>
+        <Intellect>3</Intellect>
+        <icon>images/icons/items/staff_3</icon>
+    </Weapon>
+    <!-- End Level 2 Gear -->
+
+    <!--Level 4 Gear -->
+    <Armor>
+        <Slot>Chest</Slot>
+        <Type>Cloth</Type>
+        <Name>Necromancer Robe</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <ArmorAmt>4</ArmorAmt>
+        <Stamina>4</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>3</Intellect>
+        <icon>images/icons/items/cloth/robe_3.png</icon>
+        <icon_id>chest_cloth_2</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Helm</Slot>
+        <Type>Cloth</Type>
+        <Name>Necromancer Helm</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <ArmorAmt>3</ArmorAmt>
+        <Stamina>4</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>3</Intellect>
+        <icon>images/icons/items/cloth/helm_2.png</icon>
+        <icon_id>helm_cloth_2</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Legs</Slot>
+        <Type>Cloth</Type>
+        <Name>Necromancer Cloth Legs</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <ArmorAmt>4</ArmorAmt>
+        <Stamina>5</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>2</Intellect>
+        <icon>images/icons/items/cloth/legs_2.png</icon>
+        <icon_id>legs_cloth_2</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Boots</Slot>
+        <Type>Cloth</Type>
+        <Name>Necromancer Cloth Boots</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <ArmorAmt>3</ArmorAmt>
+        <Stamina>2</Stamina>
+        <Strength>0</Strength>
+        <Agility>0</Agility>
+        <Intellect>5</Intellect>
+        <icon>images/icons/items/cloth/boots_2.png</icon>
+        <icon_id>boots_cloth_2</icon_id>
+    </Armor>
+
+    <!--Leather -->
+    <Armor>
+        <Slot>Chest</Slot>
+        <Type>Leather</Type>
+        <Name>Rugged Leather Chest</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <ArmorAmt>5</ArmorAmt>
+        <Stamina>4</Stamina>
+        <Strength>0</Strength>
+        <Agility>3</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/chest_2.png</icon>
+        <icon_id>chest_leather_2</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Helm</Slot>
+        <Type>Leather</Type>
+        <Name>Rugged Leather Helm</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <ArmorAmt>5</ArmorAmt>
+        <Stamina>4</Stamina>
+        <Strength>0</Strength>
+        <Agility>3</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/helm_2.png</icon>
+        <icon_id>helm_leather_2</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Legs</Slot>
+        <Type>Leather</Type>
+        <Name>Rugged Leather Legs</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>6</ArmorAmt>
+        <Stamina>5</Stamina>
+        <Strength>0</Strength>
+        <Agility>2</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/legs_2.png</icon>
+        <icon_id>legs_leather_2</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Boots</Slot>
+        <Type>Leather</Type>
+        <Name>Rugged Leather Boots</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <ArmorAmt>3</ArmorAmt>
+        <Stamina>2</Stamina>
+        <Strength>0</Strength>
+        <Agility>5</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/leather/boots_2.png</icon>
+        <icon_id>boots_leather_2</icon_id>
+    </Armor>
+    <!--Plate -->
+    <Armor>
+        <Slot>Chest</Slot>
+        <Type>Plate</Type>
+        <Name>Titanium Breastplate</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <ArmorAmt>8</ArmorAmt>
+        <Stamina>4</Stamina>
+        <Strength>3</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/chest_2.png</icon>
+        <icon_id>chest_plate_2</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Helm</Slot>
+        <Type>Plate</Type>
+        <Name>Titanium Mail Coif</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <ArmorAmt>8</ArmorAmt>
+        <Stamina>4</Stamina>
+        <Strength>3</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/helm_2.png</icon>
+        <icon_id>helm_plate_2</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Legs</Slot>
+        <Type>Plate</Type>
+        <Name>Titanium Cuisses</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <ArmorAmt>9</ArmorAmt>
+        <Stamina>5</Stamina>
+        <Strength>2</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/legs_2.png</icon>
+        <icon_id>legs_plate_2</icon_id>
+    </Armor>
+    <Armor>
+        <Slot>Boots</Slot>
+        <Type>Plate</Type>
+        <Name>Titanium Plate Boots</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <ArmorAmt>5</ArmorAmt>
+        <Stamina>3</Stamina>
+        <Strength>4</Strength>
+        <Agility>0</Agility>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/plate/boots_2.png</icon>
+        <icon_id>boots_plate_2</icon_id>
+    </Armor>
+    <!--Basic Weapons -->
+    <Weapon>
+        <Name>Titanium Broadsword</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <DamageLow>6</DamageLow>
+        <DamageHigh>12</DamageHigh>
+        <Type>Sword</Type>
+        <Agility>0</Agility>
+        <Stamina>4</Stamina>
+        <Strength>4</Strength>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/sword_4.png</icon>
+        <icon_id>sword_4</icon_id>
+    </Weapon>
+    <Weapon>
+        <Name>Heartstriker</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>4</Level>
+        <DamageLow>6</DamageLow>
+        <DamageHigh>15</DamageHigh>
+        <Type>Dagger</Type>
+        <Agility>4</Agility>
+        <Stamina>4</Stamina>
+        <Strength>0</Strength>
+        <Intellect>0</Intellect>
+        <icon>images/icons/items/dagger_4.png</icon>
+        <icon_id>dagger_4</icon_id>
+    </Weapon>
+    <Weapon>
+        <Name>Doomward</Name>
+        <Weight>0</Weight>
+        <Durability>-1</Durability>
+        <Level>1</Level>
+        <DamageLow>6</DamageLow>
+        <DamageHigh>12</DamageHigh>
+        <Type>Staff</Type>
+        <Agility>0</Agility>
+        <Stamina>5</Stamina>
+        <Strength>0</Strength>
+        <Intellect>3</Intellect>
+        <icon>images/icons/items/staff_4.png</icon>
+        <icon_id>staff_4</icon_id>
+    </Weapon>
+    <!-- End Basic Gear -->
 
 </Items>

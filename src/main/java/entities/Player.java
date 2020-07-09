@@ -8,6 +8,7 @@ import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import spells.AutoAttack;
+import ui.Backpack;
 import util.FileUtil;
 import items.*;
 import javafx.scene.image.Image;
@@ -40,7 +41,7 @@ public class Player extends Entity {
     private Weapon equippedWeapon;
     private Weapon equippedOffHand;
     
-    private List<Item> backPack;
+    
     private Spell[] equippedSpells;
     private List<Spell> learnedSpells;
     private Resource resource;
@@ -51,6 +52,7 @@ public class Player extends Entity {
     private int level;
     private boolean inBattle = false;
     private boolean isTurn;
+    private final Backpack backPack;
     
     
     //animation constants
@@ -63,12 +65,13 @@ public class Player extends Entity {
     private final SpriteAnimation attackAnimation;
     private final SpriteAnimation idleAnimation;
     private final SpriteAnimation walkingAnimation;
+    private final SpriteAnimation deathAnimation;
     
     
     public Player(Class chosenClass, String name, int health) {
         super(chosenClass, name, health, health, null);
     
-        backPack = new ArrayList<>();
+        
         learnedSpells = new ArrayList<>();
         equippedSpells = new Spell[4];
         faceForward = true;
@@ -78,37 +81,37 @@ public class Player extends Entity {
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Mage/mage.png");
                 resource = new Resource(Resource.Type.MANA);
                 attackAnimation = createClassSpriteAnimation("/images/Mage/Attack/attack.png", 7, Duration.millis(1000), 7);
-                idleAnimation = null;
-                walkingAnimation = null;
+                idleAnimation = createClassSpriteAnimation("/images/Mage/Idle/idle.png", 14, Duration.millis(1680), 14);
+                walkingAnimation = createClassSpriteAnimation("/images/Mage/Walk/walk.png", 6, Duration.millis(700), 6);
+                deathAnimation = createClassSpriteAnimation("/images/Mage/Death/death.png", 10, Duration.millis(1100), 10);
                 break;
             case ROGUE:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Rogue/rogue.png");
                 resource = new Resource(Resource.Type.ENERGY);
                 attackAnimation = createClassSpriteAnimation("/images/Rogue/Attack/attack.png", 7, Duration.millis(1000), 7);
-                idleAnimation = createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 18, Duration.millis(2400), IDLE_COL);
+                idleAnimation = createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 18, Duration.millis(2400), 18);
                 walkingAnimation = createClassSpriteAnimation("/images/Rogue/Walk/walk.png", 6, Duration.millis(700), 6);
+                deathAnimation = createClassSpriteAnimation("/images/Rogue/Death/death.png", 10, Duration.millis(1100), 10);
                 break;
             case WARRIOR:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Knight/knight.png");
                 resource = new Resource(Resource.Type.RAGE);
-                attackAnimation = createClassSpriteAnimation("/images/Knight/Attack/attack.png", 5, Duration.millis(1000), ATTACK_COL);
-                idleAnimation = null;
-                walkingAnimation = null;
+                attackAnimation = createClassSpriteAnimation("/images/Knight/Attack/attack.png", 5, Duration.millis(1000), 5);
+                idleAnimation = createClassSpriteAnimation("images/Knight/Idle/idle.png", 12, Duration.millis(1800), 12);
+                walkingAnimation = createClassSpriteAnimation("images/Knight/Walk/walk.png", 6, Duration.millis(700), 6);
+                deathAnimation = createClassSpriteAnimation("/images/Knight/Death/death.png", 10, Duration.millis(1100), 10);
                 break;
             default:
                 model = null;
                 attackAnimation = null;
                 idleAnimation = null;
+                deathAnimation = null;
                 walkingAnimation = null;
                 break;
         }
-
+        backPack = new Backpack(this);
         attackAnimation.setCycleCount(1);
         idleAnimation.setCycleCount(Animation.INDEFINITE);
-    
-        
-        
-        
     }
     
     /**
@@ -125,19 +128,22 @@ public class Player extends Entity {
     }
     
     /**
-     * tell player to play their attack animation
+     * animation helpers
+     * @param group animation
      */
     public void playAttackAnimation(Group group) {
         idleAnimation.hide();
         
         attackAnimation.setScene(group);
         attackAnimation.setLoc(xLoc, yLoc);
-        attackAnimation.setOnFinished(event -> {
-            idleAnimation.unHide();
-            attackAnimation.hide();
-            idleAnimation.playFromStart();
-        });
+        
         attackAnimation.play();
+    }
+    public void playDeathAnimation(Group group) {
+        idleAnimation.hide();
+        deathAnimation.setScene(group);
+        deathAnimation.setLoc(xLoc, yLoc);
+        deathAnimation.play();
     }
     public void initWalkingAnim(Group group) {
         walkingAnimation.setScene(group);
@@ -299,8 +305,6 @@ public class Player extends Entity {
      */
     public int getDamFromSpellName(String s) {
         int baseDamage = -1;
-        System.out.println(equippedSpells[0]);
-        System.out.println(s);
         for (Spell spell : equippedSpells) {
             if (spell != null) {
                 if (spell.getName().equals(s)) {
@@ -314,6 +318,7 @@ public class Player extends Entity {
             case MAGE: baseDamage += getIntellect() * MAIN_STAT_SCALING;
             break;
             case WARRIOR: baseDamage += getStrength() * MAIN_STAT_SCALING;
+                    resource.generateResource(10);
             break;
             default:
             break;
@@ -356,6 +361,14 @@ public class Player extends Entity {
         intel += equippedLegs.getIntellect();
         intel += equippedWeapon.getIntellect();
         return intel;
+    }
+    public int getArmor() {
+        int armor = 0;
+        armor += equippedBoots.getArmor();
+        armor += equippedChest.getArmor();
+        armor += equippedHelm.getArmor();
+        armor += equippedLegs.getArmor();
+        return armor;
     }
     public void heal() {
         setCurHealth(getMaxHealth());

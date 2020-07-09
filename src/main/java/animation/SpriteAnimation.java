@@ -8,7 +8,6 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import lombok.Getter;
 
-import java.io.IOException;
 
 @Getter
 public class SpriteAnimation extends Transition {
@@ -23,7 +22,7 @@ public class SpriteAnimation extends Transition {
     private final Duration duration;
     private int lastIndex;
     
-    public SpriteAnimation(ImageView imageView, Duration duration, int count,   int columns, int offsetX, int offsetY, int width, int height) {
+    public SpriteAnimation(ImageView imageView, Duration duration, int count, int columns, int offsetX, int offsetY, int width, int height) {
         this.duration = duration;
         this.imageView = imageView;
         this.count     = count;
@@ -65,4 +64,5 @@ public class SpriteAnimation extends Transition {
     public void removeFromScene(Group group) {
         group.getChildren().remove(imageView);
     }
+    
 }

@@ -1,5 +1,6 @@
 package items;
 
+import javafx.scene.image.Image;
 import lombok.*;
 
 @Getter
@@ -13,5 +14,6 @@ public abstract class Item {
     private final double durability;
     private final int level;
     private final int stamina, strength, agility, intellect;
+    private final String iconId;
 
 }

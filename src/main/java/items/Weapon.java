@@ -1,5 +1,6 @@
 package items;
 
+import javafx.scene.image.Image;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -14,8 +15,8 @@ public class Weapon extends Item {
 
     @Builder
     public Weapon(String name, double weight, double durability, int level, double damageLow, double damageHigh,
-                  Type type, int agility, int stamina, int strength, int intellect) {
-        super(name, weight, durability, level, stamina,strength,agility,intellect);
+                  Type type, int agility, int stamina, int strength, int intellect, String iconId) {
+        super(name, weight, durability, level, stamina,strength,agility,intellect, iconId);
         this.damageHigh = damageHigh;
         this.damageLow = damageLow;
         this.type = type;

@@ -1,7 +1,28 @@
+@font-face {
+    -fx-font-family: Immortal;
+    src: url("immortal.ttf");
+}
 #main_menu {
     -fx-background-image: url("images/menuBackground.png");
     -fx-background-repeat: no-repeat;
     -fx-background-size: 1440 810;
+    -fx-background-position: center center;
+}
+#instruction_label {
+    -fx-font-family: Immortal;
+    -fx-font-size: 15;
+    -fx-fill: #ffffff;
+    -fx-text-fill: white;
+    -fx-text-alignment: center;
+}
+#death_screen {
+    -fx-background-image: url("images/death.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 1440 811;
+    -fx-min-width: 1440;
+    -fx-min-height: 811;
+    -fx-max-height: 1440;
+    -fx-max-width: 811;
     -fx-background-position: center center;
 }
 
@@ -12,6 +33,9 @@
     -fx-font-smoothing-type: lcd;
     -fx-background-position: center;
     -fx-background-size: stretch;
+    -fx-text-fill: white;
+    -fx-font-family: Immortal;
+    -fx-font-size: 40px;
 }
 
 #start_button:hover {
@@ -73,6 +97,7 @@
     -fx-pref-width: 1440;
     -fx-pref-height: 660;
 }
+
 
 
 

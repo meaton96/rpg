@@ -19,24 +19,16 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/beta" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="animating">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Rogue/Walk/walk.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="fixed death screen still working on adding backpack">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/HUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/armor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/armor.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +102,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -119,8 +112,14 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.344" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mike\IdeaProjects\rpg\src\main\resources\images" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="RPGgame [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -164,7 +163,8 @@
       <workItem from="1593668878630" duration="4660000" />
       <workItem from="1593719843026" duration="20080000" />
       <workItem from="1593927341982" duration="2545000" />
-      <workItem from="1593976536750" duration="12657000" />
+      <workItem from="1593976536750" duration="26582000" />
+      <workItem from="1594081294429" duration="16440000" />
     </task>
     <task id="LOCAL-00001" summary="working on adding enemies">
       <created>1593638057692</created>
@@ -201,7 +201,28 @@
       <option name="project" value="LOCAL" />
       <updated>1593802335187</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added animations for rogue">
+      <created>1593990283310</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593990283310</updated>
+    </task>
+    <task id="LOCAL-00007" summary="working on adding backpack">
+      <created>1594101338653</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1594101338653</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixed death screen still working on adding backpack">
+      <created>1594235209866</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1594235209866</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +264,10 @@
     <MESSAGE value="fixed getting into battle need to run the battle init button listeners and provide ability to change them" />
     <MESSAGE value="working on how to implement listeners" />
     <MESSAGE value="animating" />
-    <option name="LAST_COMMIT_MESSAGE" value="animating" />
+    <MESSAGE value="added animations for rogue" />
+    <MESSAGE value="working on adding backpack" />
+    <MESSAGE value="fixed death screen still working on adding backpack" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed death screen still working on adding backpack" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593638262430">
@@ -255,59 +279,72 @@
     </state>
     <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593986919035" />
     <state x="868" y="322" key="#com.intellij.ide.util.MemberChooser/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593805294928" />
+    <state x="996" y="518" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1594098380167">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="996" y="518" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594098380167" />
+    <state x="822" y="424" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1594229993306">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="1027" y="534" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594098358070" />
+    <state x="822" y="424" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594229993306" />
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog" timestamp="1594102824178">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="92" y="92" width="2376" height="1216" key="DiffContextDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594102824178" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1593638285111">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1593990029332">
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1594227738858">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738858" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1594227738857">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738857" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1594227738857">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738857" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1594227738858">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738858" />
+    <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1594103474763">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
-    <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830206" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1593990029332">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
-    <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830205" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1593990029332">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
-    <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830205" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1593990029332">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990029332" />
-    <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593807830206" />
-    <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1593734180809">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="2517" height="458" key="GridCell.Tab.1.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
+    <state width="2517" height="458" key="GridCell.Tab.1.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594103474763" />
     <state width="2005" height="376" key="GridCell.Tab.1.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
-    <state width="2517" height="458" key="GridCell.Tab.1.center" timestamp="1593734180809">
+    <state width="2517" height="458" key="GridCell.Tab.1.center" timestamp="1594103474763">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="458" key="GridCell.Tab.1.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
+    <state width="2517" height="458" key="GridCell.Tab.1.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594103474763" />
     <state width="2005" height="376" key="GridCell.Tab.1.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
-    <state width="2517" height="458" key="GridCell.Tab.1.left" timestamp="1593734180809">
+    <state width="2517" height="458" key="GridCell.Tab.1.left" timestamp="1594103474763">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="458" key="GridCell.Tab.1.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
+    <state width="2517" height="458" key="GridCell.Tab.1.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594103474763" />
     <state width="2005" height="376" key="GridCell.Tab.1.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
-    <state width="2517" height="458" key="GridCell.Tab.1.right" timestamp="1593734180809">
+    <state width="2517" height="458" key="GridCell.Tab.1.right" timestamp="1594103474763">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="458" key="GridCell.Tab.1.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593734180809" />
+    <state width="2517" height="458" key="GridCell.Tab.1.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594103474763" />
     <state width="2005" height="376" key="GridCell.Tab.1.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593632468948" />
     <state x="1614" y="243" key="MultipleFileMergeDialog" timestamp="1593670082172">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1614" y="243" key="MultipleFileMergeDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593670082172" />
-    <state x="698" y="344" key="Vcs.Push.Dialog.v2" timestamp="1593802336942">
+    <state x="698" y="344" key="Vcs.Push.Dialog.v2" timestamp="1594235215894">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593673451735" />
-    <state x="698" y="344" key="Vcs.Push.Dialog.v2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593802336942" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593990293136" />
+    <state x="698" y="344" key="Vcs.Push.Dialog.v2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594235215894" />
     <state x="-131" y="245" width="2376" height="1216" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593465226698">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

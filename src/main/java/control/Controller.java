@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import jdk.dynalink.beans.StaticClass;
 import lombok.RequiredArgsConstructor;
 
 /**
@@ -22,11 +23,9 @@ public class Controller {
     public static final int WIDTH = 1440;
     public static final int HEIGHT = 810;
     
-    private Font gameFont;
+    Font font;
 
-    //private final Application app;
     private final Stage primaryStage;
-    private Player player;
     private String styleSheet;
     
     
@@ -34,19 +33,18 @@ public class Controller {
      * start the controller, get the menu font and init the style sheet
      */
     public void start() {
-        gameFont = Font.loadFont(getClass().getResourceAsStream("/immortal.ttf"), 40);
         
+        font = Font.font("/immortal.ttf");
         styleSheet = getClass().getResource("/style.css").toExternalForm();
         mainMenu();
         primaryStage.show();
-        //loadBattleStage();
     }
     
     /**
      * make controls and add them to the main menu
      */
     private void mainMenu() {
-        VBox mainMenuPane = new VBox(50);
+        VBox mainMenuPane = new VBox(150);
         mainMenuPane.setId("main_menu");
         mainMenuPane.setAlignment(Pos.CENTER);
 
@@ -54,12 +52,10 @@ public class Controller {
         Button start = new Button("Start");
         start.setId("start_button");
         start.setPrefSize(WIDTH / 8.0, HEIGHT / 8.0);
-        start.setFont(gameFont);
-        start.setTextFill(Color.rgb(255, 255, 255));
         
         
-        Label rules = new Label("Insert rules/instructions here!!");
-        mainMenuPane.getChildren().addAll(start, rules);
+        Label rules = makeInstructionLabel();
+        mainMenuPane.getChildren().addAll(new Label(), new Label(), start, rules);
 
 
         Scene menuScene = new Scene(mainMenuPane, WIDTH, HEIGHT);
@@ -69,6 +65,19 @@ public class Controller {
         start.setOnAction(actionEvent -> {
             characterSelect(menuScene);
         });
+    }
+    private Label makeInstructionLabel() {
+        String instructions = "Welcome to my mini RPG game. Use the menu to begin and select a class to play with."
+                + "\nAfter selecting a class enter the name for your character and hit begin."
+                + "\nUse the D key to move across the screen. You will encounter enemies along the way."
+                + "\nCombat is turn based. Use the buttons at the bottom of the screen to use your abilities to defeat the enemies"
+                + "\nHitting B while not in combat will open up the backpack and skill tree to allow you to equip new items (drop from enemies)"
+                + "\nand new spells (drop from bosses and gained when you level up) (Backpack NYI)";
+        Label label = new Label(instructions);
+        label.setId("instruction_label");
+        label.setLayoutY(HEIGHT - 150);
+
+        return label;
     }
     
     /**
@@ -121,9 +130,20 @@ public class Controller {
             customizeCharacter(scene, 3, mageName);
         });
 
-        Label warriorDesc = new Label("Insert info about the class");
-        Label rogueDesc = new Label("Insert info about the class");
-        Label mageDesc = new Label("Insert info about the class");
+        Label warriorDesc = new Label("Warriors use swords and physical \ndamage attacks to defeat their enemies."
+                                        + "\nThey use rage as a resource \nthat they generate with attacks." +
+                                            "\nWarriors use plate armor and \nare the strongest class defensively but they \ndo less damage because of this");
+        warriorDesc.setId("info_label");
+        Label rogueDesc = new Label("Rogues use daggers and deal physical and \npoison damage" +
+                                    "They spend energy to deal \nlarge damage. Energy regenerates between \nturns Rogues use leather armor and therefore" +
+                                    "\ntake more damage than warriors but \nhave a chance to dodge");
+        rogueDesc.setId("info_label");
+        Label mageDesc = new Label("Mages use staves and magical attacks.\n"+
+                                    "They use mana to unleash spells against \ntheir enemies. Mages use cloth armor\n" +
+                                    "which is the weakest armor available \n but they use magic to absorb a portion of damage" +
+                                    "\nto compensate for this");
+
+        mageDesc.setId("info_label");
 
         warriorVBox.getChildren().addAll(warriorName, warriorButton, warriorDesc);
         rogueVBox.getChildren().addAll(rogueName, rogueButton, rogueDesc);
@@ -156,14 +176,10 @@ public class Controller {
         Button beginButton = new Button("Begin");
         beginButton.setId("start_button");
         beginButton.setPrefSize(WIDTH / 8.0, HEIGHT / 8.0);
-        beginButton.setFont(gameFont);
-        beginButton.setTextFill(Color.rgb(255, 255, 255));
         
         Button returnButton = new Button("Back");
         returnButton.setId("start_button");
         returnButton.setPrefSize(WIDTH / 8.0, HEIGHT / 8.0);
-        returnButton.setFont(gameFont);
-        returnButton.setTextFill(Color.rgb(255, 255, 255));
         
         Label noNameEnteredLabel = new Label("You must enter a name for the character");
         noNameEnteredLabel.setId("no_name_toast_invis");
@@ -189,5 +205,6 @@ public class Controller {
         scene.setRoot(vBox);
         
     }
+
 
 }

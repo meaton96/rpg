@@ -1,12 +1,16 @@
+@font-face {
+    -fx-font-family: Immortal;
+    src: url("immortal.ttf");
+}
 #hud_style {
     -fx-background-image: url("images/hud/hud_background.png");
     -fx-pref-width: 1440;
-    -fx-pref-height: 150;
+    -fx-pref-height: 151;
 }
 #hud_label {
     -fx-font-family: Immortal;
     -fx-font-size: 15;
-    -fx-fill: #ffffff;
+
 }
 #warrior_auto {
     -fx-background-image: url("images/sword_100.png");

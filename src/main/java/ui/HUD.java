@@ -16,28 +16,28 @@ import spells.Spell;
 @Getter
 public class HUD extends Pane {
     
-    public final static double HEALTH_Y = 7.5;
-    public final static double SPELL_Y = 25;
-
-    public final static int HEALTH_X = 30;
-    public final static int MANA_X = 1320;
-    public final static int SPELL_ONE_X = 525;
-    public final static int SPELL_TWO_X = 715;
-    public final static int SPELL_THREE_X = 906;
-    public final static int AUTO_ATTACK_X = 385;
+    private final static double HEALTH_Y = 7.5;
+    private final static double SPELL_Y = 25;
     
-    public final static int SPELL_ICON_SIZE = 100;
+    private final static int HEALTH_X = 30;
+    private final static int MANA_X = 1320;
+    private final static int SPELL_ONE_X = 525;
+    private final static int SPELL_TWO_X = 715;
+    private final static int SPELL_THREE_X = 906;
+    private final static int AUTO_ATTACK_X = 385;
     
-    public final static int HEALTH_BAR_WIDTH = 90;
-    public final static int HEALTH_BAR_HEIGHT = 135;
+    private final static int SPELL_ICON_SIZE = 100;
     
-    public final static int ENEMY_HEALTH_BAR_HEIGHT = 30;
-    public final static int ENEMY_HEALTH_BAR_MAX_WIDTH = 800;
+    private final static int HEALTH_BAR_WIDTH = 90;
+    private final static int HEALTH_BAR_HEIGHT = 135;
+    
+    private final static int ENEMY_HEALTH_BAR_HEIGHT = 30;
+    private final static int ENEMY_HEALTH_BAR_MAX_WIDTH = 800;
     
     private final static int CANVAS_WIDTH = 1440;
     
     
-    private final static int HUD_HEIGHT = 150;
+    private final static int HUD_HEIGHT = 151;
     private final Player player;
     private Rectangle health, mana;
     private Button aaButton, spellOneButton, spellTwoButton, spellThreeButton;

@@ -4,197 +4,422 @@
     <enemy>
         <name>Snake</name>
         <model_path>images/enemies/desert/snake/Snake.png</model_path>
+        <attack_animation>images/enemies/desert/snake/Snake_attack.png</attack_animation>
+        <death_animation>images/enemies/desert/snake/Snake_death.png</death_animation>
+        <idle_animation>images/enemies/desert/snake/Snake_idle.png</idle_animation>
         <biome>desert</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Deceased</name>
         <model_path>images/enemies/desert/deceased/Deceased.png</model_path>
+        <attack_animation>images/enemies/desert/deceased/Deceased_attack.png</attack_animation>
+        <death_animation>images/enemies/desert/deceased/Deceased_death.png</death_animation>
+        <idle_animation>images/enemies/desert/deceased/Deceased_idle.png</idle_animation>
+        <attack_frames>4</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
         <biome>desert</biome>
     </enemy>
     <enemy>
         <name>Hyena</name>
         <model_path>images/enemies/desert/hyena/Hyena.png</model_path>
+        <attack_animation>images/enemies/desert/hyena/Hyena_attack.png</attack_animation>
+        <death_animation>images/enemies/desert/hyena/Hyena_death.png</death_animation>
+        <idle_animation>images/enemies/desert/hyena/Hyena_idle.png</idle_animation>
+        <attack_frames>6</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
         <biome>desert</biome>
     </enemy>
     <enemy>
         <name>Mummy</name>
         <model_path>images/enemies/desert/mummy/Mummy.png</model_path>
+        <attack_animation>images/enemies/desert/mummy/Mummy_attack.png</attack_animation>
+        <death_animation>images/enemies/desert/mummy/Mummy_death.png</death_animation>
+        <idle_animation>images/enemies/desert/mummy/Mummy_idle.png</idle_animation>
+        <attack_frames>6</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
         <biome>desert</biome>
     </enemy>
     <enemy>
         <name>Scorpion</name>
         <model_path>images/enemies/desert/scorpion/Scorpio.png</model_path>
+        <attack_animation>images/enemies/desert/scorpion/Scorpio_attack.png</attack_animation>
+        <death_animation>images/enemies/desert/scorpion/Scorpio_death.png</death_animation>
+        <idle_animation>images/enemies/desert/scorpion/Scorpio_idle.png</idle_animation>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
         <biome>desert</biome>
     </enemy>
     <enemy>
         <name>Vulture</name>
         <model_path>images/enemies/desert/vulture/Vulture.png</model_path>
+        <attack_animation>images/enemies/desert/vulture/Vulture_attack.png</attack_animation>
+        <death_animation>images/enemies/desert/vulture/Vulture_death.png</death_animation>
+        <idle_animation>images/enemies/desert/vulture/Vulture_idle.png</idle_animation>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
         <biome>desert</biome>
     </enemy>
-    <enemy>
+    <!--<enemy>
         <name>Beetle</name>
         <model_path>images/enemies/field/beetle/Rhinoceros-beetle.png</model_path>
+        <attack_animation>images/enemies/field/beetle/Rhinoceros-beetle_attack.png</attack_animation>
+        <death_animation>images/enemies/field/beetle/Rhinoceros-beetle_death.png</death_animation>
+        <idle_animation>images/enemies/field/beetle/Rhinoceros-beetle_idle.png</idle_animation>
         <biome>field</biome>
-    </enemy>
+    </enemy>-->
     <enemy>
         <name>Melee Goblin</name>
         <model_path>images/enemies/field/goblin_melee/Goblin_melee.png</model_path>
+        <attack_animation>images/enemies/field/goblin_melee/Goblin_melee_attack.png</attack_animation>
+        <death_animation>images/enemies/field/goblin_melee/Goblin_melee_death.png</death_animation>
+        <idle_animation>images/enemies/field/goblin_melee/Goblin_melee_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Ranged Goblin</name>
         <model_path>images/enemies/field/goblin_range/Goblin_range.png</model_path>
+        <attack_animation>images/enemies/field/goblin_range/Goblin_range_attack.png</attack_animation>
+        <death_animation>images/enemies/field/goblin_range/Goblin_range_death.png</death_animation>
+        <idle_animation>images/enemies/field/goblin_range/Goblin_range_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Slime</name>
         <model_path>images/enemies/field/slime/Slime.png</model_path>
+        <attack_animation>images/enemies/field/slime/Slime_attack.png</attack_animation>
+        <death_animation>images/enemies/field/slime/Slime_death.png</death_animation>
+        <idle_animation>images/enemies/field/slime/Slime_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Toad</name>
         <model_path>images/enemies/field/toad/Toad.png</model_path>
+        <attack_animation>images/enemies/field/toad/Toad_attack.png</attack_animation>
+        <death_animation>images/enemies/field/toad/Toad_death.png</death_animation>
+        <idle_animation>images/enemies/field/toad/Toad_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
-    <enemy>
+    <!--<enemy>
         <name>Toad King</name>
         <model_path>images/enemies/field/toad_king/Toad_king.png</model_path>
+        <attack_animation>images/enemies/field/toad_king/Toad_king_attack.png</attack_animation>
+        <death_animation>images/enemies/field/toad_king/Toad_king_death.png</death_animation>
+        <idle_animation>images/enemies/field/toad_king/Toad_king_idle.png</idle_animation>
         <biome>field</biome>
     </enemy>
     <enemy>
         <name>Troll</name>
         <model_path>images/enemies/field/troll/Troll.png</model_path>
+        <attack_animation>images/enemies/field/toad_king/Toad_king_attack.png</attack_animation>
+        <death_animation>images/enemies/field/toad_king/Toad_king_death.png</death_animation>
+        <idle_animation>images/enemies/field/toad_king/Toad_king_idle.png</idle_animation>
         <biome>field</biome>
-    </enemy>
+    </enemy>-->
     <enemy>
         <name>Wasp</name>
         <model_path>images/enemies/field/wasp/Wasp.png</model_path>
+        <attack_animation>images/enemies/field/wasp/Wasp_attack.png</attack_animation>
+        <death_animation>images/enemies/field/wasp/Wasp_death.png</death_animation>
+        <idle_animation>images/enemies/field/wasp/Wasp_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Wolf</name>
         <model_path>images/enemies/field/wolf/Wolf.png</model_path>
+        <attack_animation>images/enemies/field/wolf/Wolf_attack.png</attack_animation>
+        <death_animation>images/enemies/field/wolf/Wolf_death.png</death_animation>
+        <idle_animation>images/enemies/field/wolf/Wolf_idle.png</idle_animation>
         <biome>field</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Bear</name>
         <model_path>images/enemies/mine/bear/Bear.png</model_path>
+        <attack_animation>images/enemies/mine/bear/Bear_attack.png</attack_animation>
+        <death_animation>images/enemies/mine/bear/Bear_death.png</death_animation>
+        <idle_animation>images/enemies/mine/bear/Bear_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Mimic</name>
         <model_path>images/enemies/mine/mimic/Mimic.png</model_path>
+        <attack_animation>images/enemies/mine/mimic/Mimic_attack.png</attack_animation>
+        <death_animation>images/enemies/mine/mimic/Mimic_death.png</death_animation>
+        <idle_animation>images/enemies/mine/mimic/Mimic_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Spider</name>
         <model_path>images/enemies/mine/spider/Spider.png</model_path>
+        <attack_animation>images/enemies/mine/spider/Spider_attack.png</attack_animation>
+        <death_animation>images/enemies/mine/spider/Spider_death.png</death_animation>
+        <idle_animation>images/enemies/mine/spider/Spider_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Toadman</name>
         <model_path>images/enemies/mine/toadman/Toadman.png</model_path>
+        <attack_animation>images/enemies/mine/toadman/Toadman_attack.png</attack_animation>
+        <death_animation>images/enemies/mine/toadman/Toadman_death.png</death_animation>
+        <idle_animation>images/enemies/mine/toadman/Toadman_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Toadman Voodoo</name>
         <model_path>images/enemies/mine/toadman_voodoo/voodoo.png</model_path>
+        <attack_animation>images/enemies/mine/toadman_voodoo/voodoo_attack.png</attack_animation>
+        <death_animation>images/enemies/mine/toadman_voodoo/voodoo_death.png</death_animation>
+        <idle_animation>images/enemies/mine/toadman_voodoo/voodoo_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Wisp</name>
         <model_path>images/enemies/mine/wisp/Wisp.png</model_path>
+        <attack_animation>images/enemies/mine/wisp/Wisp_attack.png</attack_animation>
+        <death_animation>images/enemies/mine/wisp/Wisp_death.png</death_animation>
+        <idle_animation>images/enemies/mine/wisp/Wisp_idle.png</idle_animation>
         <biome>mine</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Boar</name>
         <model_path>images/enemies/ruin/boar/Boar.png</model_path>
+        <attack_animation>images/enemies/ruin/boar/Boar_attack.png</attack_animation>
+        <death_animation>images/enemies/ruin/boar/Boar_death.png</death_animation>
+        <idle_animation>images/enemies/ruin/boar/Boar_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Brigand</name>
         <model_path>images/enemies/ruin/brigand/Brigand.png</model_path>
+        <attack_animation>images/enemies/ruin/brigand/Brigand_attack.png</attack_animation>
+        <death_animation>images/enemies/ruin/brigand/Brigand_death.png</death_animation>
+        <idle_animation>images/enemies/ruin/brigand/Brigand_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Bug</name>
         <model_path>images/enemies/ruin/bug/Bug.png</model_path>
+        <attack_animation>images/enemies/ruin/bug/Bug_attack.png</attack_animation>
+        <death_animation>images/enemies/ruin/bug/Bug_death.png</death_animation>
+        <idle_animation>images/enemies/ruin/bug/Bug_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Golem</name>
         <model_path>images/enemies/ruin/golem/Golem.png</model_path>
+        <attack_animation>images/enemies/ruin/golem/Golem_attack.png</attack_animation>
+        <death_animation>images/enemies/ruin/golem/Golem_death.png</death_animation>
+        <idle_animation>images/enemies/ruin/golem/Golem_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Raven</name>
         <model_path>images/enemies/ruin/raven/Raven.png</model_path>
+        <attack_animation>images/enemies/ruin/raven/Raven_attack.png</attack_animation>
+        <death_animation>images/enemies/ruin/raven/Raven_death.png</death_animation>
+        <idle_animation>images/enemies/ruin/raven/Raven_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Shooter</name>
         <model_path>images/enemies/ruin/shooter/Shooter.png</model_path>
+        <attack_animation>images/enemies/ruin/shooter/Shooter_attack.png</attack_animation>
+        <death_animation>images/enemies/ruin/shooter/Shooter_death.png</death_animation>
+        <idle_animation>images/enemies/ruin/shooter/Shooter_idle.png</idle_animation>
         <biome>ruin</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Elkman</name>
         <model_path>images/enemies/snow/elkman/Elkman.png</model_path>
+        <attack_animation>images/enemies/snow/elkman/Elkman_attack.png</attack_animation>
+        <death_animation>images/enemies/snow/elkman/Elkman_death.png</death_animation>
+        <idle_animation>images/enemies/snow/elkman/Elkman_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Frost Golem</name>
         <model_path>images/enemies/snow/frost_golem/Frost_golem.png</model_path>
+        <attack_animation>images/enemies/snow/frost_golem/Frost_golem_attack.png</attack_animation>
+        <death_animation>images/enemies/snow/frost_golem/Frost_golem_death.png</death_animation>
+        <idle_animation>images/enemies/snow/frost_golem/Frost_golem_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Northerner</name>
         <model_path>images/enemies/snow/northerner/Northern.png</model_path>
+        <attack_animation>images/enemies/snow/northerner/Northern_attack.png</attack_animation>
+        <death_animation>images/enemies/snow/northerner/Northern_death.png</death_animation>
+        <idle_animation>images/enemies/snow/northerner/Northern_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Northerner Two</name>
         <model_path>images/enemies/snow/northerner_two/Northerner.png</model_path>
+        <attack_animation>images/enemies/snow/northerner_two/Northerner_attack.png</attack_animation>
+        <death_animation>images/enemies/snow/northerner_two/Northerner_death.png</death_animation>
+        <idle_animation>images/enemies/snow/northerner_two/Northerner_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>6</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Snowy</name>
         <model_path>images/enemies/snow/snowy/Snowy.png</model_path>
+        <attack_animation>images/enemies/snow/snowy/Snowy_attack.png</attack_animation>
+        <death_animation>images/enemies/snow/snowy/Snowy_death.png</death_animation>
+        <idle_animation>images/enemies/snow/snowy/Snowy_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>6</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Spiked Slime</name>
         <model_path>images/enemies/snow/spiked_slime/Spiked_slime.png</model_path>
+        <attack_animation>images/enemies/snow/spiked_slime/Spiked_slime_attack.png</attack_animation>
+        <death_animation>images/enemies/snow/spiked_slime/Spiked_slime_death.png</death_animation>
+        <idle_animation>images/enemies/snow/spiked_slime/Spiked_slime_idle.png</idle_animation>
         <biome>snow</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Bat</name>
         <model_path>images/enemies/swamp/bat/Bat.png</model_path>
+        <attack_animation>images/enemies/swamp/bat/Bat_attack.png</attack_animation>
+        <death_animation>images/enemies/swamp/bat/Bat_death.png</death_animation>
+        <idle_animation>images/enemies/swamp/bat/Bat_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Bloat</name>
         <model_path>images/enemies/swamp/bloat/Bloat.png</model_path>
+        <attack_animation>images/enemies/swamp/bloat/Bloat_attack.png</attack_animation>
+        <death_animation>images/enemies/swamp/bloat/Bloat_death.png</death_animation>
+        <idle_animation>images/enemies/swamp/bloat/Bloat_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Drowned</name>
         <model_path>images/enemies/swamp/drowned/Drowned.png</model_path>
+        <attack_animation>images/enemies/swamp/drowned/Drowned_attack.png</attack_animation>
+        <death_animation>images/enemies/swamp/drowned/Drowned_death.png</death_animation>
+        <idle_animation>images/enemies/swamp/drowned/Drowned_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Larva</name>
         <model_path>images/enemies/swamp/larva/Larva.png</model_path>
+        <attack_animation>images/enemies/swamp/larva/Larva_attack.png</attack_animation>
+        <death_animation>images/enemies/swamp/larva/Larva_death.png</death_animation>
+        <idle_animation>images/enemies/swamp/larva/Larva_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Ooze</name>
         <model_path>images/enemies/swamp/ooze/Ooze.png</model_path>
+        <attack_animation>images/enemies/swamp/ooze/Ooze_attack.png</attack_animation>
+        <death_animation>images/enemies/swamp/ooze/Ooze_death.png</death_animation>
+        <idle_animation>images/enemies/swamp/ooze/Ooze_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
     <enemy>
         <name>Turtle</name>
         <model_path>images/enemies/swamp/turtle/Turtle.png</model_path>
+        <attack_animation>images/enemies/swamp/turtle/Turtle_attack.png</attack_animation>
+        <death_animation>images/enemies/swamp/turtle/Turtle_death.png</death_animation>
+        <idle_animation>images/enemies/swamp/turtle/Turtle_idle.png</idle_animation>
         <biome>swamp</biome>
+        <attack_frames>4</attack_frames>
+        <death_frames>4</death_frames>
+        <idle_frames>4</idle_frames>
     </enemy>
 
 </Enemies>
