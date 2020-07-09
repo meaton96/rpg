@@ -16,19 +16,16 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/beta" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="fixed death screen still working on adding backpack">
+    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="animating">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Backpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Backpack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/backpack.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/backpack.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +110,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.344" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
@@ -296,24 +293,28 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
-    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1594227738858">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1324" height="202" key="GridCell.Tab.0.bottom" timestamp="1594291273273">
+      <screen x="0" y="0" width="1366" height="705" />
     </state>
+    <state width="1324" height="202" key="GridCell.Tab.0.bottom/0.0.1366.705@0.0.1366.705" timestamp="1594291273273" />
     <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
     <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738858" />
-    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1594227738857">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1324" height="202" key="GridCell.Tab.0.center" timestamp="1594291273271">
+      <screen x="0" y="0" width="1366" height="705" />
     </state>
+    <state width="1324" height="202" key="GridCell.Tab.0.center/0.0.1366.705@0.0.1366.705" timestamp="1594291273271" />
     <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
     <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738857" />
-    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1594227738857">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1324" height="202" key="GridCell.Tab.0.left" timestamp="1594291273271">
+      <screen x="0" y="0" width="1366" height="705" />
     </state>
+    <state width="1324" height="202" key="GridCell.Tab.0.left/0.0.1366.705@0.0.1366.705" timestamp="1594291273271" />
     <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
     <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738857" />
-    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1594227738858">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="1324" height="202" key="GridCell.Tab.0.right" timestamp="1594291273272">
+      <screen x="0" y="0" width="1366" height="705" />
     </state>
+    <state width="1324" height="202" key="GridCell.Tab.0.right/0.0.1366.705@0.0.1366.705" timestamp="1594291273272" />
     <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594185443319" />
     <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594227738858" />
     <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1594103474763">
@@ -340,6 +341,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1614" y="243" key="MultipleFileMergeDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593670082172" />
+    <state x="192" y="0" width="982" height="705" key="SettingsEditor" timestamp="1594288522867">
+      <screen x="0" y="0" width="1366" height="705" />
+    </state>
+    <state x="192" y="0" width="982" height="705" key="SettingsEditor/0.0.1366.705@0.0.1366.705" timestamp="1594288522867" />
     <state x="698" y="344" key="Vcs.Push.Dialog.v2" timestamp="1594235215894">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>

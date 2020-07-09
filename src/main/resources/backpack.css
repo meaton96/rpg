@@ -1,182 +1,138 @@
 #background {
-    -fx-background-image: url(images/backpack/backpackBackground.png);
+    -fx-background-image: url("images/backpack/backpackBackground.png");
     -fx-pref-width: 470;
     -fx-pref-height: 470;
 }
 
 
 #dagger_1 {
-    -fx-background-image: url(images/icons/items/dagger_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/dagger_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #dagger_2 {
-    -fx-background-image: url(images/icons/items/dagger_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/dagger_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #dagger_3 {
-    -fx-background-image: url(images/icons/items/dagger_3.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/dagger_3.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #dagger_4 {
-    -fx-background-image: url(images/icons/items/dagger_4.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/dagger_4.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #dagger_5 {
-     -fx-background-image: url(images/icons/items/dagger_5.png);
-     -fx-pref-width: 100px;
-     -fx-pref-height: 100px;
+     -fx-background-image: url("images/icons/items/dagger_5.png");
      -fx-background-size: stretch;
      -fx-background-repeat: no-repeat;
      -fx-background-position: center center;
 }
 #sword_1 {
-    -fx-background-image: url(images/icons/items/sword_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/sword_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #sword_2 {
-    -fx-background-image: url(images/icons/items/sword_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/sword_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #sword_3 {
-    -fx-background-image: url(images/icons/items/sword_3.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/sword_3.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #sword_4 {
-    -fx-background-image: url(images/icons/items/sword_4.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/sword_4.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #sword_5 {
-    -fx-background-image: url(images/icons/items/sword_5.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/sword_5.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #staff_1 {
-    -fx-background-image: url(images/icons/items/staff_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/staff_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #staff_2 {
-    -fx-background-image: url(images/icons/items/staff_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/staff_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #staff_3 {
-    -fx-background-image: url(images/icons/items/staff_3.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/staff_3.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #staff_4 {
-    -fx-background-image: url(images/icons/items/staff_4.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/staff_4.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #chest_plate_1 {
-    -fx-background-image: url(images/icons/items/plate/chest_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/plate/chest_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #chest_plate_2 {
-    -fx-background-image: url(images/icons/items/plate/chest_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/plate/chest_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #helm_plate_1 {
-    -fx-background-image: url(images/icons/items/plate/helm_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/plate/helm_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #helm_plate_2 {
-    -fx-background-image: url(images/icons/items/plate/helm_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/plate/helm_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #legs_plate_1 {
-    -fx-background-image: url(images/icons/items/plate/legs_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/plate/legs_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #legs_plate_2 {
-    -fx-background-image: url(images/icons/items/plate/legs_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/plate/legs_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #boots_plate_1 {
-    -fx-background-image: url(images/icons/items/plate/boots_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/plate/boots_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #boots_plate_2 {
-    -fx-background-image: url(images/icons/items/plate/boots_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/plate/boots_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
@@ -184,65 +140,49 @@
 
 
 #chest_leather_1 {
-    -fx-background-image: url(images/icons/items/leather/chest_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/leather/chest_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #chest_leather_2 {
-    -fx-background-image: url(images/icons/items/leather/chest_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/leather/chest_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #helm_leather_1 {
-    -fx-background-image: url(images/icons/items/leather/helm_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/leather/helm_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #helm_leather_2 {
-    -fx-background-image: url(images/icons/items/leather/helm_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/leather/helm_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #legs_leather_1 {
-    -fx-background-image: url(images/icons/items/leather/legs_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/leather/legs_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #legs_leather_2 {
-    -fx-background-image: url(images/icons/items/leather/legs_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/leather/legs_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #boots_leather_1 {
-    -fx-background-image: url(images/icons/items/leather/boots_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/leather/boots_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #boots_leather_2 {
-    -fx-background-image: url(images/icons/items/leather/boots_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/leather/boots_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
@@ -251,65 +191,49 @@
 
 
 #chest_cloth_1 {
-    -fx-background-image: url(images/icons/items/cloth/chest_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/cloth/chest_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #chest_cloth_2 {
-    -fx-background-image: url(images/icons/items/cloth/chest_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/cloth/chest_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #helm_cloth_1 {
-    -fx-background-image: url(images/icons/items/cloth/helm_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/cloth/helm_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #helm_cloth_2 {
-    -fx-background-image: url(images/icons/items/cloth/helm_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/cloth/helm_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #legs_cloth_1 {
-    -fx-background-image: url(images/icons/items/cloth/legs_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/cloth/legs_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #legs_cloth_2 {
-    -fx-background-image: url(images/icons/items/cloth/legs_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/cloth/legs_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #boots_cloth_1 {
-    -fx-background-image: url(images/icons/items/cloth/boots_1.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/cloth/boots_1.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
 }
 #boots_cloth_2 {
-    -fx-background-image: url(images/icons/items/cloth/boots_2.png);
-    -fx-pref-width: 100px;
-    -fx-pref-height: 100px;
+    -fx-background-image: url("images/icons/items/cloth/boots_2.png");
     -fx-background-size: stretch;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
