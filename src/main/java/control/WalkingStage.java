@@ -125,7 +125,7 @@ public class WalkingStage {
     }
     
     /**
-     * create listeners for player movement also checks for the player encountering enemies or
+     * create listeners for player movement also checks for the player encountering enemies or edge of the screen
      */
     private void initListeners() {
         mainPane.setOnKeyPressed(keyListener -> {
@@ -138,7 +138,7 @@ public class WalkingStage {
                         startBattle();                              //player encountered an enemy so start the battle
                     }
                     if (endStage()) {
-                        if (numStages % 2 == 0)                     //level player up every other stage
+                        if (numStages % 2 == 0 && numStages != 0)                     //level player up every other stage
                             player.levelUp();
                         numScene++;                                 //player got to the end of the scene so make a new scene
                         numStages++;
@@ -148,9 +148,6 @@ public class WalkingStage {
             }
             
         });
-
-
-
         mainPane.setOnKeyReleased(keyListener -> {
             if (keyListener.getCode() == KeyCode.RIGHT || keyListener.getCode() == KeyCode.D) {
                 if (!player.isInBattle()) {
@@ -167,8 +164,8 @@ public class WalkingStage {
                     else {
                         System.out.println("hiding backpack");
                         backPackShown = false;
-                        mainPane.getChildren().remove(player.getBackPack().getBox());
-                      //  player.getBackPack().hide(getMainPane());
+                        player.getBackPack().hide(getMainPane());
+                        updateDraw();
                     }
                 }
             }

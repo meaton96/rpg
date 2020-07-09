@@ -154,33 +154,33 @@ public class Enemy extends Entity {
         return availableSpells.get(rand.nextInt(availableSpells.size()));
     }
     public double getDamageDone(Player player) {
-        final double damageMulti = 30;
-        final double armorMulti = .35;
-        final double mageAbsorb = .28;
-        final double dodgeChance = .4;
+        
+        final double damageMulti = 3,               //adjust for balancing
+                     armorMulti = .35,
+                     mageAbsorb = .28,
+                     dodgeChance = .4;
 
-        double damageDone = castSpell().getDamageDone() * damageMulti;
-        System.out.println("Enemy base damage: " + damageDone);
-        double armorReduction = player.getArmor() * armorMulti;
-        System.out.println("Armor reduced damage by: " + armorReduction);
+        double damageDone = castSpell().getDamageDone() * damageMulti;                          //get base damage done
+      //  System.out.println("Enemy base damage: " + damageDone);
+        double armorReduction = player.getArmor() * armorMulti;                                 //apply armor reduction
+      //  System.out.println("Armor reduced damage by: " + armorReduction);
         damageDone -= armorReduction;
-        switch (player.getEntityClass()) {
+        switch (player.getEntityClass()) {                                                      //if its a rogue or mage apply those damage reductions specific to the class
             case MAGE:
-                System.out.println("Mage absorbed: " + mageAbsorb * damageDone);
+            //    System.out.println("Mage absorbed: " + mageAbsorb * damageDone);
                 damageDone -= (mageAbsorb * damageDone);
                 break;
             case ROGUE:
-                Random rand = new Random();
                 if (rand.nextDouble() <= dodgeChance)
                     damageDone = 0;
-                System.out.println("The rogue " + (damageDone == 0 ? "did" : "did not") + " dodge");
+             //   System.out.println("The rogue " + (damageDone == 0 ? "did" : "did not") + " dodge");
                 break;
             default:
                 break;
         }
-        if (damageDone < 0)
+        if (damageDone < 0)                                                 //no negative damage values
             damageDone = 0;
-        System.out.println("Final damage done to player is: " + damageDone);
+      //  System.out.println("Final damage done to player is: " + damageDone);
         return damageDone;
     }
 
