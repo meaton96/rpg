@@ -84,10 +84,12 @@ public class WalkingStage {
         enemyLocations = new ArrayList<>();
         initEnemyLocations();
         primaryStage.setScene(getScene());
+        player.getBackPack().setDisplayGroup(mainPane);
         //for testing backpack remove
         player.getBackPack().add(ArmorFileReader.getItemByName("Doomward"));
         player.getBackPack().add(ArmorFileReader.getItemByName("Starting Cloth Chest"));
         player.getBackPack().updateBackpack();
+        player.getBackPack().updateCharacterWindow();
     }
     
     /**
@@ -162,11 +164,11 @@ public class WalkingStage {
                 if (!player.isInBattle()) {
                     if (!backPackShown) {
                         backPackShown = true;
-                        player.getBackPack().show(getMainPane());
+                        player.getBackPack().show();
                     }
                     else {
                         backPackShown = false;
-                        player.getBackPack().hide(getMainPane());
+                        player.getBackPack().hide();
                         updateDraw();
                     }
                 }

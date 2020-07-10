@@ -1,9 +1,23 @@
+@font-face {
+    -fx-font-family: Immortal;
+    src: url("immortal.ttf");
+}
 #background {
     -fx-background-image: url("images/backpack/backpackBackground.png");
     -fx-pref-width: 470;
     -fx-pref-height: 470;
 }
-
+.label {
+    -fx-font-family: Immortal;
+    -fx-font-size: 15pt;
+    -fx-text-fill: #ffffff;
+}
+.button {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+.button:hover{
+    -fx-background-color: rgba(94, 94, 94, 0.5);
+}
 
 #dagger_1 {
     -fx-background-image: url("images/icons/items/dagger_1.png");

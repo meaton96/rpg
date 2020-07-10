@@ -31,6 +31,7 @@ public class Game implements Runnable{
     private final int ENEMY_BASE_HEALTH = 20; //adjust here for enemy base health
 
     
+    
     /**
      * game constructor
      *
