@@ -1,5 +1,6 @@
 package items;
 
+import entities.Player;
 import javafx.scene.image.Image;
 import lombok.*;
 
@@ -15,5 +16,8 @@ public abstract class Item {
     private final int level;
     private final int stamina, strength, agility, intellect;
     private final String iconId;
+
+    public boolean typeMatchPlayer(Player p) {return true;}
+
 
 }

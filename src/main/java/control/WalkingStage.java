@@ -85,8 +85,9 @@ public class WalkingStage {
         initEnemyLocations();
         primaryStage.setScene(getScene());
         player.getBackPack().setDisplayGroup(mainPane);
+
         //for testing backpack remove
-        player.getBackPack().add(ArmorFileReader.getItemByName("Doomward"));
+        player.getBackPack().add(ArmorFileReader.getItemByName("Basic Staff"));
         player.getBackPack().add(ArmorFileReader.getItemByName("Starting Cloth Chest"));
         player.getBackPack().updateBackpack();
         player.getBackPack().updateCharacterWindow();
@@ -135,7 +136,7 @@ public class WalkingStage {
      */
     private void initListeners() {
         mainPane.setOnKeyPressed(keyListener -> {
-            if (keyListener.getCode() == KeyCode.RIGHT || keyListener.getCode() == KeyCode.D) {
+            if (keyListener.getCode() == KeyCode.D && !backPackShown) {
                 if (!player.isInBattle()) {                         //player is allowed to move foward if they arent in a battle
                     player.startWalking();
                     player.moveForward();                           //move the player and update the draw
@@ -155,12 +156,13 @@ public class WalkingStage {
             
         });
         mainPane.setOnKeyReleased(keyListener -> {
-            if (keyListener.getCode() == KeyCode.RIGHT || keyListener.getCode() == KeyCode.D) {
+            if (keyListener.getCode() == KeyCode.D) {
                 if (!player.isInBattle()) {
                     player.pauseWalking();
                 }
             }
-            if (keyListener.getCode() == KeyCode.B) {
+            if (keyListener.getCode() == KeyCode.B) {               //show or hide the backpack depending if its already
+                                                                    //on the screen or not
                 if (!player.isInBattle()) {
                     if (!backPackShown) {
                         backPackShown = true;
@@ -198,18 +200,10 @@ public class WalkingStage {
     }
     
     /**
-     * update the screen, clears cavas and redraws the player and updates the hud
+     * update the screen, clears canvas and updates the hud
      */
     public void updateDraw() {
         clearDraw();
-        /*
-        gc.drawImage(
-                player.getModel(),
-                player.getXLoc(),
-                player.getYLoc()
-        );
-        */
-        
         hud.updateHUD();
     }
     public void clearDraw() {

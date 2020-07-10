@@ -2,6 +2,7 @@ package control;
 
 import entities.Enemy;
 import entities.Player;
+import items.Item;
 import javafx.animation.FadeTransition;
 import javafx.animation.SequentialTransition;
 import javafx.animation.Timeline;
@@ -20,6 +21,9 @@ import lombok.Getter;
 import ui.HUD;
 
 import java.awt.*;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * class representing one battle between the player and a single enemy
@@ -147,7 +151,16 @@ public class Battle {
             );
             player.unHideWalkingAnimation();                //add the walking animation back
         });
-        
+        Random r = new Random();
+        List<Item> possibleDrops = enemy.getDrops()
+                .stream()
+                .filter(x -> x.typeMatchPlayer(player))
+                .collect(Collectors.toList());
+
+        Item i = possibleDrops.get(r.nextInt(possibleDrops.size()));
+        //todo a level 1 enemy dropped level 2 gear
+        player.giveItem(i);
+        player.updateBackpack();
         enemy.playDeathAnimation();
     }
     
@@ -175,7 +188,7 @@ public class Battle {
                             player.setInBattle(false);
                     }
                 });
-                
+                //todo add toast displays for damage during battle
             }
             //add other spells here
             if (x == 1) {

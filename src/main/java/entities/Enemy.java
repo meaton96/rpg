@@ -44,15 +44,6 @@ public class Enemy extends Entity {
     private final SpriteAnimation idleAnimation;
     private final SpriteAnimation deathAnimation;
 
-    /*public Enemy(Class entityClass, String name, int maxHealth, List<Spell> availableSpells, List<Item> drops, int level, Image model, String biome) {
-        super(entityClass, name, maxHealth, maxHealth, null);
-        this.availableSpells = Collections.unmodifiableList(availableSpells);
-        this.drops = drops;
-        this.level = level;
-        this.biome = biome;
-        this.model = model;
-        rand = new Random();
-    }*/
     @Builder
     public Enemy(Class entityClass, String name, int maxHealth, int level, Image model, String biome, String attackPath, String idlePath,
                  String deathPath, int attackFrames, int idleFrames, int deathFrames) {

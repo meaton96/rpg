@@ -1,5 +1,6 @@
 package items;
 
+import entities.Player;
 import javafx.scene.image.Image;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -52,6 +53,14 @@ public class Weapon extends Item {
         if (typeString.equals("sword"))
             return Type.SWORD;
         return null;
+    }
+    public boolean typeMatchPlayer(Player p) {
+        switch (p.getEntityClass()) {
+            case WARRIOR: return type == Type.SWORD;
+            case MAGE: return type == Type.STAFF;
+            case ROGUE: return type == Type.DAGGER;
+        }
+        return false;
     }
 
 }

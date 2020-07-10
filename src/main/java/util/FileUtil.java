@@ -35,6 +35,14 @@ public final class FileUtil {
             throw new IllegalArgumentException(path, e);
         }
     }
+    public static Image getScaledImageFromStream(final Class<?> c, final String path, final double width, final double height) {
+        try {
+            return new Image(c.getResourceAsStream(path), width, height, true, true);
+        }
+        catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException(path, e);
+        }
+    }
 
     /**
      * get a GameScene instance from the xml file

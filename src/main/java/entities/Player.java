@@ -212,7 +212,39 @@ public class Player extends Entity {
         equippedWeapon = weapon;
         equippedSpells[0] = new AutoAttack(Spell.DamageType.PHYSICAL, equippedWeapon);
     }
-    
+
+    /**
+     * determines whether or not an item is equippable
+     * @param i the item to be tested
+     * @return true if the item is the right type for the class and is not too high level
+     */
+    public boolean canEquip(Item i) {
+        if (i.getLevel() > level)
+            return false;
+        return i.typeMatchPlayer(this);
+
+        /*if (i instanceof Weapon) {
+            switch (getEntityClass()) {
+                case ROGUE:
+                    return ((Weapon) i).getType() == Weapon.Type.DAGGER;
+                case MAGE:
+                    return ((Weapon) i).getType() == Weapon.Type.STAFF;
+                case WARRIOR:
+                    return ((Weapon) i).getType() == Weapon.Type.SWORD;
+            }
+        }
+        else {
+            switch (getEntityClass()) {
+                case WARRIOR:
+                    return ((Armor) i).getType() == Armor.Type.PLATE;
+                case MAGE:
+                    return ((Armor) i).getType() == Armor.Type.CLOTH;
+                case ROGUE:
+                    return ((Armor) i).getType() == Armor.Type.LEATHER;
+            }
+        }
+        return false;*/
+    }
     /**
      * level up the player
      */
@@ -324,6 +356,13 @@ public class Player extends Entity {
             break;
         }
         return baseDamage;
+    }
+    public void giveItem(Item i) {
+        backPack.add(i);
+    }
+    public void updateBackpack() {
+        backPack.updateBackpack();
+        backPack.updateCharacterWindow();
     }
     
     public int getStamina() {

@@ -4,6 +4,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.Transition;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import lombok.Getter;

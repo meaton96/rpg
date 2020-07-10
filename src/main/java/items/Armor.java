@@ -1,5 +1,6 @@
 package items;
 
+import entities.Player;
 import javafx.scene.image.Image;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -48,5 +49,13 @@ public abstract class Armor extends Item {
         if (typeString.equals("plate"))
             return Type.PLATE;
         return null;
+    }
+    public boolean typeMatchPlayer(Player p) {
+        switch (p.getEntityClass()) {
+            case WARRIOR: return type == Type.PLATE;
+            case MAGE: return type == Type.CLOTH;
+            case ROGUE: return type == Type.LEATHER;
+        }
+        return false;
     }
 }
