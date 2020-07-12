@@ -26,22 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="animating">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/backpack/tooltip.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_5_20__7_06_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_5_20__7_06_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/items/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Armor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/items/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Weapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Backpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Backpack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/backpack.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/backpack.css" afterDir="false" />
-    </list>
+    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="finished Backpack working out bugs with item drops&#10;todo: add in a spell for each class&#10;todo: add in toast display for damage during a fight&#10;todo: add in taking damage animations for battle" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -235,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594235209866</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="finished Backpack working out bugs with item drops&#10;todo: add in a spell for each class&#10;todo: add in toast display for damage during a fight&#10;todo: add in taking damage animations for battle">
+      <created>1594413428551</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1594413428551</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +272,8 @@
     <MESSAGE value="added animations for rogue" />
     <MESSAGE value="working on adding backpack" />
     <MESSAGE value="fixed death screen still working on adding backpack" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed death screen still working on adding backpack" />
+    <MESSAGE value="finished Backpack working out bugs with item drops&#10;todo: add in a spell for each class&#10;todo: add in toast display for damage during a fight&#10;todo: add in taking damage animations for battle" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished Backpack working out bugs with item drops&#10;todo: add in a spell for each class&#10;todo: add in toast display for damage during a fight&#10;todo: add in taking damage animations for battle" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593638262430">
@@ -309,30 +302,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
-    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1594413260735">
+    <state width="2005" height="302" key="GridCell.Tab.0.bottom" timestamp="1594413453797">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.bottom/0.0.1366.705@0.0.1366.705" timestamp="1594291273273" />
     <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594348058576" />
-    <state width="2005" height="305" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413260735" />
-    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1594413260735">
+    <state width="2005" height="302" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453797" />
+    <state width="2005" height="302" key="GridCell.Tab.0.center" timestamp="1594413453796">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.center/0.0.1366.705@0.0.1366.705" timestamp="1594291273271" />
     <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594348058576" />
-    <state width="2005" height="305" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413260735" />
-    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1594413260735">
+    <state width="2005" height="302" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453796" />
+    <state width="2005" height="302" key="GridCell.Tab.0.left" timestamp="1594413453796">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.left/0.0.1366.705@0.0.1366.705" timestamp="1594291273271" />
     <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594348058576" />
-    <state width="2005" height="305" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413260734" />
-    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1594413260735">
+    <state width="2005" height="302" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453796" />
+    <state width="2005" height="302" key="GridCell.Tab.0.right" timestamp="1594413453796">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.right/0.0.1366.705@0.0.1366.705" timestamp="1594291273272" />
     <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594348058576" />
-    <state width="2005" height="305" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413260735" />
+    <state width="2005" height="302" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453796" />
     <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1594103474763">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
