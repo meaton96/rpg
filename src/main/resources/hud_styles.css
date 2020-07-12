@@ -2,6 +2,7 @@
     -fx-font-family: Immortal;
     src: url("immortal.ttf");
 }
+
 #hud_style {
     -fx-background-image: url("images/hud/hud_background.png");
     -fx-pref-width: 1440;

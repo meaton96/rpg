@@ -19,14 +19,22 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/beta" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="finished Backpack working out bugs with item drops&#10;todo: add in a spell for each class&#10;todo: add in toast display for damage during a fight&#10;todo: add in taking damage animations for battle" />
+    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="finished Backpack working out bugs with item drops&#10;todo: add in a spell for each class&#10;todo: add in toast display for damage during a fight&#10;todo: add in taking damage animations for battle">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_5_20__7_06_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_5_20__7_06_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/HUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ArmorFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ArmorFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hud_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hud_styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,6 +171,7 @@
       <workItem from="1593976536750" duration="26582000" />
       <workItem from="1594081294429" duration="16440000" />
       <workItem from="1594336169424" duration="11199000" />
+      <workItem from="1594584144590" duration="2880000" />
     </task>
     <task id="LOCAL-00001" summary="working on adding enemies">
       <created>1593638057692</created>
@@ -302,29 +311,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
-    <state width="2005" height="302" key="GridCell.Tab.0.bottom" timestamp="1594413453797">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1594586677710">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.bottom/0.0.1366.705@0.0.1366.705" timestamp="1594291273273" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594348058576" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594586677710" />
     <state width="2005" height="302" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453797" />
-    <state width="2005" height="302" key="GridCell.Tab.0.center" timestamp="1594413453796">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1594586677710">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.center/0.0.1366.705@0.0.1366.705" timestamp="1594291273271" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594348058576" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594586677710" />
     <state width="2005" height="302" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453796" />
-    <state width="2005" height="302" key="GridCell.Tab.0.left" timestamp="1594413453796">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1594586677710">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.left/0.0.1366.705@0.0.1366.705" timestamp="1594291273271" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594348058576" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594586677710" />
     <state width="2005" height="302" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453796" />
-    <state width="2005" height="302" key="GridCell.Tab.0.right" timestamp="1594413453796">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1594586677710">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.right/0.0.1366.705@0.0.1366.705" timestamp="1594291273272" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594348058576" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594586677710" />
     <state width="2005" height="302" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453796" />
     <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1594103474763">
       <screen x="0" y="0" width="2560" height="1400" />

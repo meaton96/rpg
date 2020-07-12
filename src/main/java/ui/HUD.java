@@ -2,14 +2,19 @@ package ui;
 
 import control.Controller;
 import entities.Enemy;
+import entities.Entity;
 import entities.Player;
+import javafx.animation.FadeTransition;
+import javafx.animation.TranslateTransition;
 import javafx.concurrent.Worker;
+import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 import lombok.Getter;
 import spells.Spell;
 
@@ -52,6 +57,7 @@ public class HUD extends Pane {
         setWidth(Controller.WIDTH);
         setMaxHeight(HUD_HEIGHT);
         getStylesheets().add(getClass().getResource("/hud_styles.css").toExternalForm());
+        getStylesheets().add(getClass().getResource("/backpack.css").toExternalForm());
         setId("hud_style");
         drawBars();
         initLabels();
@@ -174,14 +180,10 @@ public class HUD extends Pane {
         spellOneButton = new Button();
         spellTwoButton = new Button();
         spellThreeButton = new Button();
-        switch (player.getEntityClass()) {
-            case WARRIOR: aaButton.setId("warrior_auto");
-                break;
-            case ROGUE: aaButton.setId("rogue_auto");
-                break;
-            case MAGE: aaButton.setId("mage_auto");
-                break;
-        }
+        aaButton.setId(player.getEquippedWeapon().getIconId());
+        aaButton.setPrefHeight(100);
+        aaButton.setPrefWidth(100);
+
         aaButton.setLayoutX(AUTO_ATTACK_X);
         aaButton.setLayoutY(SPELL_Y);
         
@@ -244,5 +246,32 @@ public class HUD extends Pane {
             case 3: spellThreeButton.setId(ID);
             break;
         }
+    }
+    public void playDamageToast(Group group, Entity entity, int damage) {
+        Label display = new Label("-" + damage);
+        if (entity instanceof Player) {
+            if (damage == 0 && entity.getEntityClass() == Entity.Class.ROGUE)
+                display.setText("Dodge");
+            display.setLayoutY(((Player)entity).getYLoc() + 5);
+            display.setLayoutX(((Player)entity).getXLoc() + 15);
+        }
+        else {
+            display.setLayoutY(((Enemy)entity).getYLoc() + 5);
+            display.setLayoutX(((Enemy)entity).getXLoc() + 30);
+        }
+        display.setTextFill(Color.RED);
+        display.setId("toastLabel");
+        
+        FadeTransition fadeOut = new FadeTransition();
+        fadeOut.setDuration(Duration.millis(1500));
+        fadeOut.setToValue(0);
+        fadeOut.setFromValue(1);
+        fadeOut.setNode(display);
+        
+        group.getChildren().add(display);
+        
+        fadeOut.play();
+        fadeOut.setOnFinished(e -> group.getChildren().remove(display));
+       
     }
 }

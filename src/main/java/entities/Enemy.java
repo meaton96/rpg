@@ -59,6 +59,7 @@ public class Enemy extends Entity {
         }
         availableSpells.add(new AutoAttack(damageType, ArmorFileReader.getWeaponByName("Starting Sword")));
         this.drops = ArmorFileReader.getArmorForLevel(level);
+        
         this.level = level;
         this.model = model;
         this.biome = biome;

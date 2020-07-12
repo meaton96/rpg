@@ -121,9 +121,7 @@ public class Battle {
         fadeIn.setToValue(1);
         fadeIn.setFromValue(0);
         
-        fadeIn.setOnFinished(e -> {
-            initScene.getPrimaryStage().setScene(getDeathScreen());
-        });
+        fadeIn.setOnFinished(e -> initScene.getPrimaryStage().setScene(getDeathScreen()));
         player.getDeathAnimation().setOnFinished(event -> {                 //fade to black
             initScene.getMainPane().getChildren().add(rec);
             fadeIn.play();
@@ -158,7 +156,6 @@ public class Battle {
                 .collect(Collectors.toList());
 
         Item i = possibleDrops.get(r.nextInt(possibleDrops.size()));
-        //todo a level 1 enemy dropped level 2 gear
         player.giveItem(i);
         player.updateBackpack();
         enemy.playDeathAnimation();
@@ -182,13 +179,14 @@ public class Battle {
                         player.playAttackAnimation(initScene.getMainPane());
 
                         enemy.reduceHealth(playerDamageDone);           //reduce enemy hp and update the hud
+                        hud.playDamageToast(initScene.getMainPane(), enemy, playerDamageDone);
                         hud.updateHUD();
                         
                         if (!enemy.isAlive())                         //do enemy turn if enemy didnt die from player attack
                             player.setInBattle(false);
                     }
                 });
-                //todo add toast displays for damage during battle
+                
             }
             //add other spells here
             if (x == 1) {
@@ -230,7 +228,7 @@ public class Battle {
             int enemyDamageDone = (int) Math.round(enemy.getDamageDone(player));
             
             Platform.runLater(enemy::playAttackAnimation);
-            
+            Platform.runLater(() -> hud.playDamageToast(initScene.getMainPane(), player, enemyDamageDone));
             player.reduceHealth(enemyDamageDone);       //reduce the hp of the player by that amount and update hud
             
             if (player.isAlive())

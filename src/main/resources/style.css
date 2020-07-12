@@ -2,6 +2,11 @@
     -fx-font-family: Immortal;
     src: url("immortal.ttf");
 }
+#toastLabel {
+    -fx-font-size: 20;
+    -fx-font-family: Immortal;
+    -fx-font-weight: bold;
+}
 #main_menu {
     -fx-background-image: url("images/menuBackground.png");
     -fx-background-repeat: no-repeat;

@@ -121,7 +121,7 @@ public final class ArmorFileReader {
         
         return items.values()
                 .stream()
-                .filter(x -> x.getLevel() != level)
+                .filter(x -> x.getLevel() == level)
                 .collect(Collectors.toList());      //filter out all the weapons that aren't the level provided
         
     }
