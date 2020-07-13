@@ -1,10 +1,12 @@
 package items;
 
-import javafx.scene.image.Image;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+/**
+ * class representing a boots armor piece
+ */
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class Boots extends Armor {

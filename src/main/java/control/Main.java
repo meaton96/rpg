@@ -13,13 +13,6 @@ public class Main extends Application {
         primaryStage.setTitle("RPG Game");
         Controller controller = new Controller(primaryStage);
         controller.start();
-        //todo
-        //
-        //4.add a few spells - wednesday ( might need to hand in this day)
-        //5.add gear drops - thursday
-        //6.addbackpack system to allow player to equip new gear - friday/saturday
-        //7.beta 1.0 finished ready to hand in :)
-        
     }
 
 

@@ -18,6 +18,11 @@ import javafx.util.Duration;
 import lombok.Getter;
 import spells.Spell;
 
+/**
+ * Class for displaying the heads up display showing information on
+ * player health, resources, and spells as well as
+ * enemy health bar
+ */
 @Getter
 public class HUD extends Pane {
     
@@ -51,6 +56,10 @@ public class HUD extends Pane {
     private Rectangle enemyHealthBar, enemyHealthBackdrop, enemyTextBackdrop;
     private Enemy enemy;
     
+    /**
+     * Hud constructor
+     * @param player the player of the game
+     */
     public HUD(Player player) {
         super();
         this.player = player;
@@ -66,6 +75,9 @@ public class HUD extends Pane {
         
     }
     
+    /**
+     * initialize the text labels on the hud
+     */
     private void initLabels() {
         healthAmtLabel = new Label(player.getMaxHealth() + "/" + player.getMaxHealth());
         healthAmtLabel.setId("hud_label");
@@ -106,6 +118,11 @@ public class HUD extends Pane {
         manaLabel.setTextFill(Color.WHITE);
         
     }
+    
+    /**
+     * setup the information about the enemy during a battle
+     * @param enemy the enemy object
+     */
     public void initEnemy(Enemy enemy) {
         this.enemy = enemy;
         enemyNameLabel = new Label("Level " + enemy.getLevel() + " " + enemy.getName());
@@ -143,14 +160,20 @@ public class HUD extends Pane {
         enemyHealthLabel.setId("hud_label");
         enemyHealthLabel.setTextFill(Color.WHITE);
         
-        
-        
         getChildren().addAll(enemyTextBackdrop,enemyHealthBackdrop, enemyHealthBar, enemyHealthLabel, enemyNameLabel);
         
     }
+    
+    /**
+     * remove all the enemy information labels/bars from the hud
+     */
     public void endBattle() {
        getChildren().removeAll(enemyHealthBar, enemyHealthBackdrop, enemyNameLabel, enemyHealthLabel, enemyTextBackdrop);
     }
+    
+    /**
+     * update the hud, updates the text and bars for the player and the enemy
+     */
     public void updateHUD() {
         updateButtons();
         updateHealth();
@@ -158,23 +181,41 @@ public class HUD extends Pane {
         if (player.isInBattle())
             updateEnemyHealth();
     }
+    
+    /**
+     * scales enemy health bar to be a % of the max size based on health
+     * also updates the text
+     */
     private void updateEnemyHealth() {
         double scale = 1.0 * enemy.getCurHealth() / enemy.getBaseHealth();
         enemyHealthBar.setWidth(scale * ENEMY_HEALTH_BAR_MAX_WIDTH);
         enemyHealthLabel.setText(enemy.getCurHealth() + "/" + enemy.getBaseHealth());
     }
+    
+    /**
+     * scales the player health bar to a % of max size based on the health of the player
+     * also updates the text
+     */
     private void updateHealth() {
         healthAmtLabel.setText(player.getCurHealth() + "/" + player.getMaxHealth());
         double scale = (double) player.getCurHealth() / player.getMaxHealth();
         health.setHeight(scale * HEALTH_BAR_HEIGHT);
         health.setLayoutY((1.0f - scale) * HEALTH_BAR_HEIGHT);
     }
+    
+    /**
+     * update the player resource bar to a % of max size based on the resource of the player
+     */
     private void updateMana() {
         manaAmtLabel.setText(player.getCurrentResource() + "/" + player.getMaxResource());
         double scale = (double) player.getCurrentResource() / player.getMaxResource();
         mana.setHeight(scale * HEALTH_BAR_HEIGHT);
         mana.setLayoutY((1.0f - scale) * HEALTH_BAR_HEIGHT);
     }
+    
+    /**
+     * initialize the spell buttons the player can use to interact with
+     */
     private void initButtons() {
         aaButton = new Button();
         spellOneButton = new Button();
@@ -197,6 +238,10 @@ public class HUD extends Pane {
         
         getChildren().add(aaButton);
     }
+    
+    /**
+     * draw player health and mana bars when the hud is created
+     */
     private void drawBars() {
         health = new Rectangle();
         health.setFill(Color.rgb(146,28,29));
@@ -224,8 +269,12 @@ public class HUD extends Pane {
             break;
         }
     }
+    
+    /**
+     * updates all the buttons based on what the player has for equipped spells
+     */
     public void updateButtons() {
-        getChildren().removeAll(aaButton, spellOneButton, spellThreeButton, spellTwoButton);        //updated
+        getChildren().removeAll(aaButton, spellOneButton, spellThreeButton, spellTwoButton);
         if (player.getEquippedSpells()[1] != null && !getChildren().contains(spellOneButton)) {
             getChildren().add(spellOneButton);
         }
@@ -235,18 +284,15 @@ public class HUD extends Pane {
         if (player.getEquippedSpells()[3] != null && !getChildren().contains(spellThreeButton)) {
             getChildren().add(spellThreeButton);
         }
-        getChildren().add(aaButton);                                //updated
+        getChildren().add(aaButton);
     }
-    public void changeSpellButtonId(int spellNum, String ID) {
-        switch (spellNum) {
-            case 1: spellOneButton.setId(ID);
-            break;
-            case 2: spellTwoButton.setId(ID);
-            break;
-            case 3: spellThreeButton.setId(ID);
-            break;
-        }
-    }
+    
+    /**
+     * show and animate a damage number display over the entities head for damage taken during a turn in battle
+     * @param group the display group to draw the label on
+     * @param entity the entity to set the x and y draw of the label
+     * @param damage the damage number to display
+     */
     public void playDamageToast(Group group, Entity entity, int damage) {
         Label display = new Label("-" + damage);
         if (entity instanceof Player) {
@@ -267,9 +313,8 @@ public class HUD extends Pane {
         fadeOut.setToValue(0);
         fadeOut.setFromValue(1);
         fadeOut.setNode(display);
-        
+
         group.getChildren().add(display);
-        
         fadeOut.play();
         fadeOut.setOnFinished(e -> group.getChildren().remove(display));
        

@@ -4,12 +4,15 @@ import javafx.animation.Interpolator;
 import javafx.animation.Transition;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import lombok.Getter;
 
 
+/**
+ * class representing a sprite animation
+ * sets up and plays an animation from a single png file
+ */
 @Getter
 public class SpriteAnimation extends Transition {
     
@@ -35,20 +38,6 @@ public class SpriteAnimation extends Transition {
         setCycleDuration(duration);
         setInterpolator(Interpolator.LINEAR);
     }
-    public SpriteAnimation(SpriteAnimation animation) {
-        this.duration = animation.duration;
-        this.imageView = animation.imageView;
-        this.count = animation.count;
-        this.columns = animation.columns;
-        this.offsetX = animation.offsetX;
-        this.offsetY = animation.offsetY;
-        this.width = animation.width;
-        this.height = animation.height;
-        setCycleDuration(duration);
-        setInterpolator(Interpolator.LINEAR);
-        lastIndex = animation.lastIndex;
-    }
-    
     public void interpolate(double k) {
         final int index = Math.min((int) Math.floor(k * count), count - 1);
         if (index != lastIndex) {

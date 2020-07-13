@@ -6,6 +6,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
+/**
+ * parent class for all different types of equip able armor pieces
+ */
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @Getter
@@ -26,20 +29,7 @@ public abstract class Armor extends Item {
 
     private final double armor;
     private final Type type;
-    
 
-    public static Type getTypeFromNumber(int typeNum) {
-        switch (typeNum) {
-            case 1:
-                return Type.CLOTH;
-            case 2:
-                return Type.LEATHER;
-            case 3:
-                return Type.PLATE;
-            default:
-                return null;
-        }
-    }
     public static Type getTypeFromString(String typeString) {
         typeString = typeString.toLowerCase();
         if (typeString.equals("cloth"))

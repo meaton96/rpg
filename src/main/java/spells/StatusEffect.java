@@ -3,6 +3,10 @@ package spells;
 
 import lombok.Value;
 
+/**
+ * class representing a status effect ie. freeze/set fire
+ * not currently implemented
+ */
 @Value
 public class StatusEffect {
 

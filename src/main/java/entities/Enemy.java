@@ -2,23 +2,22 @@ package entities;
 
 
 import animation.SpriteAnimation;
+import items.Item;
 import javafx.animation.Animation;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
-import util.ArmorFileReader;
-import items.Item;
-import javafx.scene.image.Image;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import spells.AutoAttack;
 import spells.Spell;
+import util.ArmorFileReader;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -43,7 +42,22 @@ public class Enemy extends Entity {
     private final SpriteAnimation attackAnimation;
     private final SpriteAnimation idleAnimation;
     private final SpriteAnimation deathAnimation;
-
+    
+    /**
+     * Enemy constructor
+     * @param entityClass class type of enemy
+     * @param name name of enemy
+     * @param maxHealth maximum health of the enemy
+     * @param level level of the enemy
+     * @param model base png model image of the enemy
+     * @param biome the biome the enemy belongs to ie. snow/forest/rock ect.
+     * @param attackPath string path to the attack animation image
+     * @param idlePath string path to the idle animation image
+     * @param deathPath string path to the death animation image
+     * @param attackFrames int number of frames in the attack animation
+     * @param idleFrames int number of frames in the idle animation
+     * @param deathFrames int number of frames inthe death animation
+     */
     @Builder
     public Enemy(Class entityClass, String name, int maxHealth, int level, Image model, String biome, String attackPath, String idlePath,
                  String deathPath, int attackFrames, int idleFrames, int deathFrames) {
@@ -73,6 +87,11 @@ public class Enemy extends Entity {
         idleAnimation.setCycleCount(Animation.INDEFINITE);
         deathAnimation.setCycleCount(1);
     }
+    
+    /**
+     * setup the x,y draw locations for the enemy animations when a battle starts
+     * @param group the group to add the animation to
+     */
     public void initAnimationLocation(Group group) {
         attackAnimation.setScene(group);
         attackAnimation.setLoc(xLoc, yLoc);
@@ -84,26 +103,45 @@ public class Enemy extends Entity {
         deathAnimation.hide();
         idleAnimation.hide();
         
-        
     }
+    
+    /**
+     * play the enemy idle animation
+     */
     public void playIdleAnimation() {
         hideAttackAnimation();
         idleAnimation.unHide();
         idleAnimation.play();
     }
+    
+    /**
+     * play the enemy attack animation
+     */
     public void playAttackAnimation() {
         hideIdleAnimation();
         attackAnimation.unHide();
         attackAnimation.play();
     }
+    
+    /**
+     * play the enemy death animation
+     */
     public void playDeathAnimation() {
         hideIdleAnimation();
         deathAnimation.unHide();
         deathAnimation.play();
     }
+    
+    /**
+     * hide the idle animation
+     */
     public void hideIdleAnimation() {
         idleAnimation.hide();
     }
+    
+    /**
+     * hide the attack animation
+     */
     public void hideAttackAnimation() {
         attackAnimation.hide();
     }

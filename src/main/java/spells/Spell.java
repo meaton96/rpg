@@ -7,6 +7,9 @@ import lombok.experimental.NonFinal;
 
 import java.util.Random;
 
+/**
+ * class representing a single spell/ability that the player or enemy can use
+ */
 @Value
 @EqualsAndHashCode
 @Builder

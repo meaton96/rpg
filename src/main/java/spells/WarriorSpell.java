@@ -3,6 +3,9 @@ package spells;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 
+/**
+ * child class of spell only difference is that it has a rage generation amount
+ */
 @EqualsAndHashCode(callSuper = true)
 public class WarriorSpell extends Spell {
 

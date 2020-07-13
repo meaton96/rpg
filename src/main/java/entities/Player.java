@@ -222,28 +222,6 @@ public class Player extends Entity {
         if (i.getLevel() > level)
             return false;
         return i.typeMatchPlayer(this);
-
-        /*if (i instanceof Weapon) {
-            switch (getEntityClass()) {
-                case ROGUE:
-                    return ((Weapon) i).getType() == Weapon.Type.DAGGER;
-                case MAGE:
-                    return ((Weapon) i).getType() == Weapon.Type.STAFF;
-                case WARRIOR:
-                    return ((Weapon) i).getType() == Weapon.Type.SWORD;
-            }
-        }
-        else {
-            switch (getEntityClass()) {
-                case WARRIOR:
-                    return ((Armor) i).getType() == Armor.Type.PLATE;
-                case MAGE:
-                    return ((Armor) i).getType() == Armor.Type.CLOTH;
-                case ROGUE:
-                    return ((Armor) i).getType() == Armor.Type.LEATHER;
-            }
-        }
-        return false;*/
     }
     /**
      * level up the player

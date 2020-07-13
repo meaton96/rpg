@@ -1,9 +1,12 @@
 package resource;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * class representing a resource of the player
+ * resources are used for casting spells and generated in different ways depending on the type
+ */
 @Getter
 @Setter
 public class Resource {
