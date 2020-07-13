@@ -90,6 +90,7 @@ public class Player extends Entity {
                 animations.put("idle", createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 14, Duration.millis(1680), 14));
                 animations.put("walking", createClassSpriteAnimation("/images/Rogue/Walk/walk.png", 6, Duration.millis(700), 6));
                 animations.put("death", createClassSpriteAnimation("/images/Rogue/Death/death.png", 10, Duration.millis(1100), 10));
+                animations.put("hurt", createClassSpriteAnimation("images/Rogue/Hurt/hurt.png", 4, Duration.millis(550), 4));
                 resource = new Resource(Resource.Type.ENERGY);
                 break;
             case WARRIOR:
@@ -99,6 +100,7 @@ public class Player extends Entity {
                 animations.put("idle", createClassSpriteAnimation("/images/Knight/Idle/idle.png", 14, Duration.millis(1680), 14));
                 animations.put("walking", createClassSpriteAnimation("/images/Knight/Walk/walk.png", 6, Duration.millis(700), 6));
                 animations.put("death", createClassSpriteAnimation("/images/Knight/Death/death.png", 10, Duration.millis(1100), 10));
+                animations.put("hurt", createClassSpriteAnimation("images/Knight/Hurt/hurt.png", 4, Duration.millis(550), 4));
                 break;
             default:
                 model = null;
@@ -138,8 +140,8 @@ public class Player extends Entity {
 
         animations.get("attack").setScene(group);
         animations.get("attack").setLoc(xLoc, yLoc);
-
         animations.get("attack").play();
+
     }
     public void playDeathAnimation(Group group) {
         animations.get("idle").hide();
@@ -150,6 +152,10 @@ public class Player extends Entity {
     public void initWalkingAnim(Group group) {
         animations.get("walking").setScene(group);
         animations.get("walking").setLoc(xLoc, yLoc);
+        animations.get("hurt").setOnFinished(e -> {
+            animations.get("hurt").hide();
+            playIdleFromStart();
+        });
     }
     public void startWalking() {
         animations.get("walking").play();
@@ -168,6 +174,7 @@ public class Player extends Entity {
     }
     public void hideAttackAnimation() { animations.get("attack").hide(); }
     public void playIdleFromStart() {
+
         animations.get("idle").unHide();                     //restart idle animation
         hideAttackAnimation();
         animations.get("idle").playFromStart();
@@ -182,7 +189,13 @@ public class Player extends Entity {
         animations.get("idle").unHide();
         animations.get("idle").play();
     }
-    
+    public void playHurtAnimation(Group group) {
+        animations.get("hurt").setScene(group);
+        animations.get("hurt").setLoc(xLoc, yLoc);
+        animations.get("idle").hide();
+        animations.get("hurt").unHide();
+        animations.get("hurt").playFromStart();
+    }
     /**
      * swap the player direction
      * for future implementation if you want the player to ever move the other direction

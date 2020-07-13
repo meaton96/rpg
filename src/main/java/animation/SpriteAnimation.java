@@ -12,6 +12,7 @@ import lombok.Getter;
 /**
  * class representing a sprite animation
  * sets up and plays an animation from a single png file
+ * credit to: https://netopyr.com/2012/03/09/creating-a-sprite-animation-with-javafx/
  */
 @Getter
 public class SpriteAnimation extends Transition {

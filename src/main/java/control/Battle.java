@@ -100,7 +100,8 @@ public class Battle {
             }
         });
         enemy.getAttackAnimation().setOnFinished(event -> {     //when the enemy animation has finished
-        hud.updateHUD();                                        //update hud
+
+            hud.updateHUD();                                        //update hud
             if (enemy.isAlive())
                 enemy.playIdleAnimation();                      //if enemy is alive go back to their idle animation otherwise play the death animation
             else
@@ -155,7 +156,12 @@ public class Battle {
                 .filter(x -> x.typeMatchPlayer(player))
                 .collect(Collectors.toList());
 
-        Item i = possibleDrops.get(r.nextInt(possibleDrops.size()));
+        Item i = possibleDrops.get(r.nextInt(possibleDrops.size())); //todo causing bounds must be positive IllegalArugmentException on level 3 enemies
+        while (player.getBackPack().contains(i)) {
+            i = possibleDrops.get(r.nextInt(possibleDrops.size()));
+        }
+        //todo
+        //enemy health is scaling strangley? level 3 enemies have 8 health
         player.giveItem(i);
         player.updateBackpack();
         enemy.playDeathAnimation();
@@ -229,7 +235,12 @@ public class Battle {
             try {
                 Thread.sleep(1000);
             } catch (Exception e) { e.printStackTrace(); }
-            Platform.runLater(enemy::playAttackAnimation);
+            Platform.runLater(() -> {
+                enemy.playAttackAnimation();
+                if (enemyDamageDone != 0)
+                    Platform.runLater(() -> player.playHurtAnimation(initScene.getMainPane()));
+            });
+
             Platform.runLater(() -> hud.playDamageToast(initScene.getMainPane(), player, enemyDamageDone));
             player.reduceHealth(enemyDamageDone);       //reduce the hp of the player by that amount and update hud
             

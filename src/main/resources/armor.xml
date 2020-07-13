@@ -795,7 +795,7 @@
         <Name>Rugged Leather Legs</Name>
         <Weight>0</Weight>
         <Durability>-1</Durability>
-        <Level>1</Level>
+        <Level>4</Level>
         <ArmorAmt>6</ArmorAmt>
         <Stamina>5</Stamina>
         <Strength>0</Strength>
@@ -810,7 +810,7 @@
         <Name>Rugged Leather Boots</Name>
         <Weight>0</Weight>
         <Durability>-1</Durability>
-        <Level>1</Level>
+        <Level>4</Level>
         <ArmorAmt>3</ArmorAmt>
         <Stamina>2</Stamina>
         <Strength>0</Strength>

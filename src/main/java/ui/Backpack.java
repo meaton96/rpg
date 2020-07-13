@@ -223,6 +223,8 @@ public class Backpack {
             characterWindowItems.getChildren().add(l);
         }
     }
+    public boolean contains(Item i) { return contents.contains(i); }
+
 
     /**
      * display the item information on the screen
@@ -233,13 +235,13 @@ public class Backpack {
         if (isEquipped) {
             if (equippedTooltip != null)
                 displayGroup.getChildren().remove(equippedTooltip.getTooltip());
-            equippedTooltip = new Tooltip(item, true);
+            equippedTooltip = new Tooltip(item, true, player.getLevel());
             displayGroup.getChildren().add(equippedTooltip.getTooltip());
         }
         else {
             if (currentTooltip != null)
                 displayGroup.getChildren().remove(currentTooltip.getTooltip());
-            currentTooltip = new Tooltip(item, false);
+            currentTooltip = new Tooltip(item, false, player.getLevel());
             displayGroup.getChildren().add(currentTooltip.getTooltip());
             displayTooltipButtons();
         }
@@ -258,7 +260,7 @@ public class Backpack {
      * attempt to equip an item from the backpack
      * updates the character window and the backpack if successfull, removes the item from the backpack
      * and equips it to the player, also updates the players hp by the amount increased by the new equipped item
-     * @param item
+     * @param item item to equip
      */
     private void attemptEquip(Item item) {
         if (player.canEquip(item)) {
@@ -291,7 +293,7 @@ public class Backpack {
         public final static double LAYOUT_X_EQUIPPED = Controller.WIDTH / 2.0 - 338;
         public final static double TOOLTIP_HEIGHT = 240;
 
-        public Tooltip(Item item, boolean isEquipped) {
+        public Tooltip(Item item, boolean isEquipped, int playerLevel) {
             this.item = item;
             tooltip = new VBox(10);
 
@@ -316,6 +318,10 @@ public class Backpack {
             Label stamLabel = new Label("Stamina: " + stam);
             Label mainStatLabel = new Label();
             Label typeSpecifcStat = new Label();
+            Label levelReq = new Label();
+            levelReq.setText("Level: " + item.getLevel());
+            if (item.getLevel() > playerLevel)
+                levelReq.setTextFill(Color.RED);
             if (item instanceof Weapon) {
                 int damHigh = (int)((Weapon) item).getDamageHigh();
                 int damLow = (int) ((Weapon) item).getDamageLow();
@@ -340,7 +346,7 @@ public class Backpack {
                         break;
                 }
             }
-            tooltip.getChildren().addAll(itemName, typeSpecifcStat, mainStatLabel, stamLabel);  //add all the labels to the main tooltip vbox
+            tooltip.getChildren().addAll(itemName, typeSpecifcStat, mainStatLabel, stamLabel, levelReq);  //add all the labels to the main tooltip vbox
             if (isEquipped)
                 tooltip.getChildren().add(new Label("(equipped)"));
         }

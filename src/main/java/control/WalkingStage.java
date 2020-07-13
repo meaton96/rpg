@@ -86,10 +86,6 @@ public class WalkingStage {
         primaryStage.setScene(getScene());
         player.getBackPack().setDisplayGroup(mainPane);
 
-        //for testing backpack remove
-        player.getBackPack().add(ArmorFileReader.getItemByName("Basic Staff"));
-        player.getBackPack().add(ArmorFileReader.getItemByName("Starting Cloth Chest"));
-        player.getBackPack().updateBackpack();
         player.getBackPack().updateCharacterWindow();
     }
     

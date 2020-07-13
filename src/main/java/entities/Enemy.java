@@ -163,8 +163,8 @@ public class Enemy extends Entity {
         double variance = 0.3;                      //adjust here for health variance and level scaling
         double levelHealthScaling = 0.2;
 
-        double levelScale = (getLevel() - 1) + (1 + levelHealthScaling);
-        double base = levelScale * getBaseHealth();
+        double levelScale = (getLevel() - 1) + (1 * levelHealthScaling);
+        double base = getBaseHealth() * (1 + levelScale);
 
         double healthMin = getBaseHealth() - variance * base;
         double healthMax = getBaseHealth() + variance * base;
@@ -188,7 +188,7 @@ public class Enemy extends Entity {
         final double damageMulti = 3,               //adjust for balancing
                      armorMulti = .35,
                      mageAbsorb = .28,
-                     dodgeChance = .4;
+                     dodgeChance = .2;
 
         double damageDone = castSpell().getDamageDone() * damageMulti;                          //get base damage done
       //  System.out.println("Enemy base damage: " + damageDone);
