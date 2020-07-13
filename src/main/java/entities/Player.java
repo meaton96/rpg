@@ -3,6 +3,8 @@ package entities;
 import animation.SpriteAnimation;
 import javafx.animation.Animation;
 import javafx.animation.SequentialTransition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.image.ImageView;
@@ -19,13 +21,14 @@ import resource.Resource;
 import spells.Spell;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
  * class representing the player character
  */
-@Getter
-@Setter
+
 @EqualsAndHashCode(callSuper = true)
 public class Player extends Entity {
     
@@ -39,38 +42,33 @@ public class Player extends Entity {
     private Boots equippedBoots;
 
     private Weapon equippedWeapon;
-    private Weapon equippedOffHand;
     
     
-    private Spell[] equippedSpells;
+    @Getter private Spell[] equippedSpells;
     private List<Spell> learnedSpells;
     private Resource resource;
-    private Image model;
+    @Getter  private Image model;
     
-    private double xLoc, yLoc;
+    @Getter @Setter private double xLoc, yLoc;
     private boolean faceForward;
-    private int level;
-    private boolean inBattle = false;
-    private boolean isTurn;
-    private final Backpack backPack;
+    @Getter private int level;
+    @Getter @Setter private boolean inBattle = false;
+    @Getter @Setter private boolean isTurn;
+    @Getter private final Backpack backPack;
     
     
     //animation constants
-    private static final int ATTACK_COL = 5;
-    private static final int IDLE_COL = 18;
     private static final int ANIM_X_OFFSET = 0;
     private static final int ANIM_Y_OFFSET = 0;
     private static final int ANIM_WIDTH = 128;
     private static final int ANIM_HEIGHT = 128;
-    private final SpriteAnimation attackAnimation;
-    private final SpriteAnimation idleAnimation;
-    private final SpriteAnimation walkingAnimation;
-    private final SpriteAnimation deathAnimation;
+
+    private final HashMap<String, SpriteAnimation> animations;
     
     
     public Player(Class chosenClass, String name, int health) {
         super(chosenClass, name, health, health, null);
-    
+        animations = new LinkedHashMap<>();
         
         learnedSpells = new ArrayList<>();
         equippedSpells = new Spell[4];
@@ -80,38 +78,36 @@ public class Player extends Entity {
             case MAGE:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Mage/mage.png");
                 resource = new Resource(Resource.Type.MANA);
-                attackAnimation = createClassSpriteAnimation("/images/Mage/Attack/attack.png", 7, Duration.millis(1000), 7);
-                idleAnimation = createClassSpriteAnimation("/images/Mage/Idle/idle.png", 14, Duration.millis(1680), 14);
-                walkingAnimation = createClassSpriteAnimation("/images/Mage/Walk/walk.png", 6, Duration.millis(700), 6);
-                deathAnimation = createClassSpriteAnimation("/images/Mage/Death/death.png", 10, Duration.millis(1100), 10);
+                animations.put("attack", createClassSpriteAnimation("/images/Mage/Attack/attack.png", 7, Duration.millis(1000), 7));
+                animations.put("idle", createClassSpriteAnimation("/images/Mage/Idle/idle.png", 14, Duration.millis(1680), 14));
+                animations.put("walking", createClassSpriteAnimation("/images/Mage/Walk/walk.png", 6, Duration.millis(700), 6));
+                animations.put("death", createClassSpriteAnimation("/images/Mage/Death/death.png", 10, Duration.millis(1100), 10));
+                animations.put("hurt", createClassSpriteAnimation("images/Mage/Hurt/hurt.png", 4, Duration.millis(550), 4));
                 break;
             case ROGUE:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Rogue/rogue.png");
+                animations.put("attack", createClassSpriteAnimation("/images/Rogue/Attack/attack.png", 7, Duration.millis(1000), 7));
+                animations.put("idle", createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 14, Duration.millis(1680), 14));
+                animations.put("walking", createClassSpriteAnimation("/images/Rogue/Walk/walk.png", 6, Duration.millis(700), 6));
+                animations.put("death", createClassSpriteAnimation("/images/Rogue/Death/death.png", 10, Duration.millis(1100), 10));
                 resource = new Resource(Resource.Type.ENERGY);
-                attackAnimation = createClassSpriteAnimation("/images/Rogue/Attack/attack.png", 7, Duration.millis(1000), 7);
-                idleAnimation = createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 18, Duration.millis(2400), 18);
-                walkingAnimation = createClassSpriteAnimation("/images/Rogue/Walk/walk.png", 6, Duration.millis(700), 6);
-                deathAnimation = createClassSpriteAnimation("/images/Rogue/Death/death.png", 10, Duration.millis(1100), 10);
                 break;
             case WARRIOR:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Knight/knight.png");
                 resource = new Resource(Resource.Type.RAGE);
-                attackAnimation = createClassSpriteAnimation("/images/Knight/Attack/attack.png", 5, Duration.millis(1000), 5);
-                idleAnimation = createClassSpriteAnimation("images/Knight/Idle/idle.png", 12, Duration.millis(1800), 12);
-                walkingAnimation = createClassSpriteAnimation("images/Knight/Walk/walk.png", 6, Duration.millis(700), 6);
-                deathAnimation = createClassSpriteAnimation("/images/Knight/Death/death.png", 10, Duration.millis(1100), 10);
+                animations.put("attack", createClassSpriteAnimation("/images/Knight/Attack/attack.png", 7, Duration.millis(1000), 7));
+                animations.put("idle", createClassSpriteAnimation("/images/Knight/Idle/idle.png", 14, Duration.millis(1680), 14));
+                animations.put("walking", createClassSpriteAnimation("/images/Knight/Walk/walk.png", 6, Duration.millis(700), 6));
+                animations.put("death", createClassSpriteAnimation("/images/Knight/Death/death.png", 10, Duration.millis(1100), 10));
                 break;
             default:
                 model = null;
-                attackAnimation = null;
-                idleAnimation = null;
-                deathAnimation = null;
-                walkingAnimation = null;
                 break;
         }
         backPack = new Backpack(this);
-        attackAnimation.setCycleCount(1);
-        idleAnimation.setCycleCount(Animation.INDEFINITE);
+        animations.get("attack").setCycleCount(1);
+        animations.get("idle").setCycleCount(Animation.INDEFINITE);
+
     }
     
     /**
@@ -126,51 +122,65 @@ public class Player extends Entity {
         imageView.setViewport(new Rectangle2D(0, 0, ANIM_WIDTH, ANIM_HEIGHT));
         return new SpriteAnimation(imageView, duration, frameCount, numCol, ANIM_X_OFFSET, ANIM_Y_OFFSET, ANIM_WIDTH, ANIM_HEIGHT);
     }
+    public SpriteAnimation getAnimationByName(String name) {
+        return animations.get(name);
+    }
+    public ImageView getImageViewByName(String name) {
+        return animations.get(name).getImageView();
+    }
     
     /**
      * animation helpers
      * @param group animation
      */
     public void playAttackAnimation(Group group) {
-        idleAnimation.hide();
-        
-        attackAnimation.setScene(group);
-        attackAnimation.setLoc(xLoc, yLoc);
-        
-        attackAnimation.play();
+        animations.get("idle").hide();
+
+        animations.get("attack").setScene(group);
+        animations.get("attack").setLoc(xLoc, yLoc);
+
+        animations.get("attack").play();
     }
     public void playDeathAnimation(Group group) {
-        idleAnimation.hide();
-        deathAnimation.setScene(group);
-        deathAnimation.setLoc(xLoc, yLoc);
-        deathAnimation.play();
+        animations.get("idle").hide();
+        animations.get("death").setScene(group);
+        animations.get("death").setLoc(xLoc, yLoc);
+        animations.get("death").play();
     }
     public void initWalkingAnim(Group group) {
-        walkingAnimation.setScene(group);
-        walkingAnimation.setLoc(xLoc, yLoc);
+        animations.get("walking").setScene(group);
+        animations.get("walking").setLoc(xLoc, yLoc);
     }
     public void startWalking() {
-        walkingAnimation.play();
+        animations.get("walking").play();
     }
     public void pauseWalking() {
-        walkingAnimation.pause();
+        animations.get("walking").pause();
     }
     public void hideWalkingAnimation() {
-        walkingAnimation.hide();
+        animations.get("walking").hide();
     }
     public void unHideWalkingAnimation() {
-        walkingAnimation.unHide();
+        animations.get("walking").unHide();
     }
     public void unHideBattleAnimations() {
-        attackAnimation.unHide();
+        animations.get("attack").unHide();
     }
-    
+    public void hideAttackAnimation() { animations.get("attack").hide(); }
+    public void playIdleFromStart() {
+        animations.get("idle").unHide();                     //restart idle animation
+        hideAttackAnimation();
+        animations.get("idle").playFromStart();
+    }
+    public void setAttackOnFinish(EventHandler<ActionEvent> event) {
+        animations.get("attack").setOnFinished(event);
+    }
     public void playIdleAnimation(Group group) {
-        
-        idleAnimation.setLoc(xLoc, yLoc);
-        idleAnimation.setScene(group);
-        idleAnimation.unHide();
-        idleAnimation.play();
+
+        animations.get("idle").setLoc(xLoc, yLoc);
+        animations.get("idle").setScene(group);
+        animations.get("idle").unHide();
+        animations.get("idle").play();
     }
     
     /**
@@ -289,10 +299,16 @@ public class Player extends Entity {
     
     public void moveForward() {
         xLoc += 3.5;
-        walkingAnimation.setLoc(xLoc, yLoc);
+        animations.get("walking").setLoc(xLoc, yLoc);
     }
     public void moveForward(int amt) {
         xLoc =+ amt;
+    }
+    public String getWeaponIconId() {
+        return equippedWeapon.getIconId();
+    }
+    public Resource.Type getResorceType() {
+        return resource.getType();
     }
     
     public String toString() {

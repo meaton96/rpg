@@ -65,8 +65,9 @@ public class HUD extends Pane {
         this.player = player;
         setWidth(Controller.WIDTH);
         setMaxHeight(HUD_HEIGHT);
-        getStylesheets().add(getClass().getResource("/hud_styles.css").toExternalForm());
+
         getStylesheets().add(getClass().getResource("/backpack.css").toExternalForm());
+        getStylesheets().add(getClass().getResource("/hud_styles.css").toExternalForm());
         setId("hud_style");
         drawBars();
         initLabels();
@@ -221,7 +222,7 @@ public class HUD extends Pane {
         spellOneButton = new Button();
         spellTwoButton = new Button();
         spellThreeButton = new Button();
-        aaButton.setId(player.getEquippedWeapon().getIconId());
+        aaButton.setId(player.getWeaponIconId());
         aaButton.setPrefHeight(100);
         aaButton.setPrefWidth(100);
 
@@ -256,7 +257,7 @@ public class HUD extends Pane {
         mana.setX(MANA_X);
         mana.setY(HEALTH_Y);
         
-        switch (player.getResource().getType()) {
+        switch (player.getResorceType()) {
             case MANA:
                 mana.setFill(Color.BLUE);
             break;
@@ -265,7 +266,7 @@ public class HUD extends Pane {
                 mana.setHeight(HEALTH_BAR_HEIGHT);
             break;
             case ENERGY:
-                mana.setFill(Color.YELLOW);
+                mana.setFill(Color.rgb(187,151,7));
             break;
         }
     }

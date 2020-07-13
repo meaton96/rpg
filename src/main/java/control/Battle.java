@@ -88,14 +88,14 @@ public class Battle {
             case 4 : setButtonListeners("", player.getEquippedSpells()[1].getName(), player.getEquippedSpells()[2].getName(), player.getEquippedSpells()[3].getName());
             break;
         }
-        player.getAttackAnimation().setOnFinished(event -> {        //after player has attacked
-            player.getIdleAnimation().unHide();                     //restart idle animation
-            player.getAttackAnimation().hide();
-            player.getIdleAnimation().playFromStart();
+        player.setAttackOnFinish(event -> {        //after player has attacked
+
+            player.playIdleFromStart();
             if (!player.isInBattle()) {                             //if the battle ended call the cleanup method
                 cleanUpBattle();
             }
             else {
+
                 new EnemyTurn().start();                        //otherwise the enemy starts a turn
             }
         });
@@ -122,7 +122,7 @@ public class Battle {
         fadeIn.setFromValue(0);
         
         fadeIn.setOnFinished(e -> initScene.getPrimaryStage().setScene(getDeathScreen()));
-        player.getDeathAnimation().setOnFinished(event -> {                 //fade to black
+        player.getAnimationByName("death").setOnFinished(event -> {                 //fade to black
             initScene.getMainPane().getChildren().add(rec);
             fadeIn.play();
 
@@ -141,8 +141,8 @@ public class Battle {
             hud.updateHUD();
             initScene.updateDraw();
             initScene.getMainPane().getChildren().removeAll(                        //remove all animations
-                    player.getAttackAnimation().getImageView(),
-                    player.getIdleAnimation().getImageView(),
+                    player.getImageViewByName("attack"),
+                    player.getImageViewByName("idle"),
                     enemy.getAttackAnimation().getImageView(),
                     enemy.getDeathAnimation().getImageView(),
                     enemy.getIdleAnimation().getImageView()
@@ -226,7 +226,9 @@ public class Battle {
         @Override
         public void run() {
             int enemyDamageDone = (int) Math.round(enemy.getDamageDone(player));
-            
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) { e.printStackTrace(); }
             Platform.runLater(enemy::playAttackAnimation);
             Platform.runLater(() -> hud.playDamageToast(initScene.getMainPane(), player, enemyDamageDone));
             player.reduceHealth(enemyDamageDone);       //reduce the hp of the player by that amount and update hud

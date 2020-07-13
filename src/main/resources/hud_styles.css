@@ -11,7 +11,7 @@
 #hud_label {
     -fx-font-family: Immortal;
     -fx-font-size: 15;
-
+    -fx-text-fill: #ffffff;
 }
 #warrior_auto {
     -fx-background-image: url("images/sword_100.png");
