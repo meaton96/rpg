@@ -73,6 +73,7 @@ public class WalkingStage {
         this.xmlPath = xmlPath;
         this.enemyList = enemyList;
         mainPane = new Group();                                                             //create a new vbox to add the canvas (game scene) and hud to
+        
         this.player = player;
         player.setInBattle(false);
         canvas = new Canvas(1440, 659);
@@ -227,8 +228,10 @@ public class WalkingStage {
         hud.setLayoutX(0);
         hud.setLayoutY(canvas.getHeight() + 1);
         mainPane.getChildren().addAll(content, hud);
-        player.initWalkingAnim(mainPane);
+        
         scene.setRoot(mainPane);
+        player.setAnimationScenes(mainPane);
+        player.initWalkingAnim();
     }
 
     

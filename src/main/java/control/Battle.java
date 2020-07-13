@@ -88,10 +88,8 @@ public class Battle {
             case 4 : setButtonListeners("", player.getEquippedSpells()[1].getName(), player.getEquippedSpells()[2].getName(), player.getEquippedSpells()[3].getName());
             break;
         }
-        player.getAttackAnimation().setOnFinished(event -> {        //after player has attacked
-            player.getIdleAnimation().unHide();                     //restart idle animation
-            player.getAttackAnimation().hide();
-            player.getIdleAnimation().playFromStart();
+        player.getAnimationByName("attack").setOnFinished(event -> {        //after player has attacked
+            player.playIdleFromStart();
             if (!player.isInBattle()) {                             //if the battle ended call the cleanup method
                 cleanUpBattle();
             }
@@ -106,7 +104,7 @@ public class Battle {
             else
                 enemy.playDeathAnimation();
             if (!player.isAlive()) {                            //if the player is killed play their death animation
-                player.playDeathAnimation(initScene.getMainPane());
+                player.playDeathAnimation();
             }
         });
 
@@ -122,7 +120,7 @@ public class Battle {
         fadeIn.setFromValue(0);
         
         fadeIn.setOnFinished(e -> initScene.getPrimaryStage().setScene(getDeathScreen()));
-        player.getDeathAnimation().setOnFinished(event -> {                 //fade to black
+        player.getAnimationByName("death").setOnFinished(event -> {                 //fade to black
             initScene.getMainPane().getChildren().add(rec);
             fadeIn.play();
 
@@ -141,8 +139,8 @@ public class Battle {
             hud.updateHUD();
             initScene.updateDraw();
             initScene.getMainPane().getChildren().removeAll(                        //remove all animations
-                    player.getAttackAnimation().getImageView(),
-                    player.getIdleAnimation().getImageView(),
+                    player.getAnimationByName("attack").getImageView(),
+                    player.getAnimationByName("idle").getImageView(),
                     enemy.getAttackAnimation().getImageView(),
                     enemy.getDeathAnimation().getImageView(),
                     enemy.getIdleAnimation().getImageView()
@@ -176,7 +174,7 @@ public class Battle {
                         int playerDamageDone = player.getDamFromSpellName("Auto Attack");           //if its the players turn get the damage of the spell (basic attack)
                         player.setTurn(false);
                         
-                        player.playAttackAnimation(initScene.getMainPane());
+                        player.playAttackAnimation();
 
                         enemy.reduceHealth(playerDamageDone);           //reduce enemy hp and update the hud
                         hud.playDamageToast(initScene.getMainPane(), enemy, playerDamageDone);
@@ -213,7 +211,7 @@ public class Battle {
      */
     private void draw() {
         initScene.clearDraw();
-        player.playIdleAnimation(initScene.getMainPane());
+        player.playIdleAnimation();
         enemy.playIdleAnimation();
         hud.updateHUD();
     }

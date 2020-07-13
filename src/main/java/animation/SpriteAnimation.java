@@ -67,5 +67,5 @@ public class SpriteAnimation extends Transition {
     public void removeFromScene(Group group) {
         group.getChildren().remove(imageView);
     }
-    
+    public boolean isHidden() { return imageView.getOpacity() == 0; }
 }

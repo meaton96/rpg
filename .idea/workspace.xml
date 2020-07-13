@@ -26,26 +26,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="todo: add in a spell for each class&#10;todo: add in taking damage animations for battle">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Knight/Hurt/hurt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Mage/Hurt/hurt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Rogue/Hurt/hurt.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/items/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Armor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/items/Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Boots.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/items/Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Chest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/items/Helm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Helm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/items/Legs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Legs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/items/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/items/Weapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resource/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resource/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spells/AutoAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spells/AutoAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spells/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spells/Spell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spells/StatusEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spells/StatusEffect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spells/WarriorSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spells/WarriorSpell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/HUD.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +203,8 @@
       <workItem from="1594081294429" duration="16440000" />
       <workItem from="1594336169424" duration="11199000" />
       <workItem from="1594584144590" duration="5609000" />
-      <workItem from="1594594698321" duration="6586000" />
+      <workItem from="1594594698321" duration="6710000" />
+      <workItem from="1594623434857" duration="2922000" />
     </task>
     <task id="LOCAL-00001" summary="working on adding enemies">
       <created>1593638057692</created>
@@ -287,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594587067670</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="todo: add in a spell for each class&#10;todo: add in taking damage animations for battle">
+      <created>1594603918290</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1594603918290</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,29 +359,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1594598865717">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1594626250745">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.bottom/0.0.1366.705@0.0.1366.705" timestamp="1594291273273" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594598865717" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594626250745" />
     <state width="2005" height="302" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453797" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1594598865717">
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1594626250745">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.center/0.0.1366.705@0.0.1366.705" timestamp="1594291273271" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594598865717" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594626250745" />
     <state width="2005" height="302" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453796" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1594598865716">
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1594626250745">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.left/0.0.1366.705@0.0.1366.705" timestamp="1594291273271" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594598865716" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594626250745" />
     <state width="2005" height="302" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453796" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1594598865717">
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1594626250745">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.right/0.0.1366.705@0.0.1366.705" timestamp="1594291273272" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594598865717" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594626250745" />
     <state width="2005" height="302" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594413453796" />
     <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1594103474763">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -416,10 +412,10 @@
     </state>
     <state x="192" y="0" width="982" height="705" key="SettingsEditor/0.0.1366.705@0.0.1366.705" timestamp="1594288522867" />
     <state x="360" y="0" key="SettingsEditor/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594587694531" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1594587074132">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1594603926878">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594587074132" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594603926878" />
     <state x="698" y="344" key="Vcs.Push.Dialog.v2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594235215894" />
     <state x="-131" y="245" width="2376" height="1216" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1593465226698">
       <screen x="0" y="0" width="2560" height="1400" />
