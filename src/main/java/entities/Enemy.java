@@ -161,16 +161,15 @@ public class Enemy extends Entity {
      */
     private void randomizeHealth() {
         double variance = 0.3;                      //adjust here for health variance and level scaling
-        double levelHealthScaling = 0.2;
+        double levelHealthScaling = 1.5;
+        double levelScale = levelHealthScaling * (getLevel() - 1);
 
-        double levelScale = (getLevel() - 1) + (1 * levelHealthScaling);
         double base = getBaseHealth() * (1 + levelScale);
-
-        double healthMin = getBaseHealth() - variance * base;
-        double healthMax = getBaseHealth() + variance * base;
+        double healthMin = base - variance * base;
+        double healthMax = base + variance * base;
 
         double health = rand.nextInt((int)Math.round(healthMax - healthMin)) + healthMin;
-
+        
 
         setBaseHealth((int)health);
         setCurHealth((int)health);
@@ -186,11 +185,12 @@ public class Enemy extends Entity {
     public double getDamageDone(Player player) {
         
         final double damageMulti = 3,               //adjust for balancing
-                     armorMulti = .35,
+                     armorMulti = .3,
                      mageAbsorb = .28,
-                     dodgeChance = .2;
+                     dodgeChance = .2,
+                     damageLevelScale = .5;
 
-        double damageDone = castSpell().getDamageDone() * damageMulti;                          //get base damage done
+        double damageDone = castSpell().getDamageDone() * (damageMulti + (level - 1) * damageLevelScale);                          //get base damage done
       //  System.out.println("Enemy base damage: " + damageDone);
         double armorReduction = player.getArmor() * armorMulti;                                 //apply armor reduction
       //  System.out.println("Armor reduced damage by: " + armorReduction);

@@ -86,5 +86,51 @@ public class Weapon extends Item {
         }
         return false;
     }
+    @Override
+    public Weapon scaleItem(int level) {
+        double stamina = 0;
+        double agility = 0;
+        double strength = 0;
+        double intellect = 0;
+        double damageLow = 0;
+        double damageHigh = 0;
+        super.scaleItem(level);
+        
+        damageLow = getDamageLow() + ((level - 1) * 1.2);
+        damageHigh = getDamageHigh() + ((level - 1) * 2.4);
+        
+        String name = "Level " + level + " " + getType().name().toLowerCase();
+        switch (getType()) {
+            case STAFF: name = name + " staff";
+            break;
+            case SWORD: name = name + " sword";
+            break;
+            case DAGGER: name = name + " dagger";
+            break;
+        }
+        
+        stamina = getStamina() + 1.1 * (level - 1);
+        if (getAgility() != 0)
+            agility = getAgility() + 1.1 * (level - 1);
+        else if (getIntellect() != 0)
+            intellect = getIntellect() + 1.1 * (level - 1);
+        else if (getStrength() != 0)
+            strength = getStrength() * 1.1 + (level - 1);
+        
+        return Weapon.builder()
+                .agility((int)(Math.round(agility)))
+                .strength((int)(Math.round(strength)))
+                .durability(getDurability())
+                .weight(getWeight())
+                .intellect((int)Math.round(intellect))
+                .level(level)
+                .iconId(getIconId())
+                .type(getType())
+                .name(name)
+                .stamina((int)Math.round(stamina))
+                .damageHigh(damageHigh)
+                .damageLow(damageLow)
+                .build();
+    }
 
 }

@@ -26,18 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="finished Backpack working out bugs with item drops&#10;todo: add in a spell for each class&#10;todo: add in toast display for damage during a fight&#10;todo: add in taking damage animations for battle">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Knight/Hurt/hurt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Mage/Hurt/hurt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Rogue/Hurt/hurt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/animation/SpriteAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WalkingStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Enemy.java" afterDir="false" />
+    <list default="true" id="88677458-2049-4ecd-9baa-bba203d18855" name="Default Changelist" comment="bug fixing balancing">
       <change beforePath="$PROJECT_DIR$/src/main/java/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Backpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Backpack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/armor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/armor.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,6 +204,7 @@
       <workItem from="1594336169424" duration="11199000" />
       <workItem from="1594584144590" duration="5609000" />
       <workItem from="1594594698321" duration="6586000" />
+      <workItem from="1594684502293" duration="5568000" />
     </task>
     <task id="LOCAL-00001" summary="working on adding enemies">
       <created>1593638057692</created>
@@ -284,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594587067670</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="bug fixing balancing">
+      <created>1594704031171</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1594704031171</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,17 +331,18 @@
     <MESSAGE value="finished Backpack working out bugs with item drops&#10;todo: add in a spell for each class&#10;todo: add in toast display for damage during a fight&#10;todo: add in taking damage animations for battle" />
     <MESSAGE value="todo: add in a spell for each class&#10;todo: add in taking damage animations for battle" />
     <MESSAGE value="adding hurt anim" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding hurt anim" />
+    <MESSAGE value="bug fixing balancing" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixing balancing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593638262430">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638262430" />
-    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1593986919035">
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser" timestamp="1594684892309">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593986919035" />
+    <state x="1085" y="406" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594684892309" />
     <state x="868" y="322" key="#com.intellij.ide.util.MemberChooser/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1593805294928" />
     <state x="996" y="518" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1594098380167">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -362,29 +362,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1593638285111" />
-    <state width="2005" height="302" key="GridCell.Tab.0.bottom" timestamp="1594668375220">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1594702779461">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.bottom/0.0.1366.705@0.0.1366.705" timestamp="1594291273273" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594598865717" />
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594702779461" />
     <state width="2005" height="302" key="GridCell.Tab.0.bottom/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594668375220" />
-    <state width="2005" height="302" key="GridCell.Tab.0.center" timestamp="1594668375220">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1594702779460">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.center/0.0.1366.705@0.0.1366.705" timestamp="1594291273271" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594598865717" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594702779460" />
     <state width="2005" height="302" key="GridCell.Tab.0.center/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594668375220" />
-    <state width="2005" height="302" key="GridCell.Tab.0.left" timestamp="1594668375220">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1594702779460">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.left/0.0.1366.705@0.0.1366.705" timestamp="1594291273271" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594598865716" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594702779460" />
     <state width="2005" height="302" key="GridCell.Tab.0.left/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594668375220" />
-    <state width="2005" height="302" key="GridCell.Tab.0.right" timestamp="1594668375220">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1594702779460">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1324" height="202" key="GridCell.Tab.0.right/0.0.1366.705@0.0.1366.705" timestamp="1594291273272" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594598865717" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594702779460" />
     <state width="2005" height="302" key="GridCell.Tab.0.right/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594668375220" />
     <state width="2517" height="458" key="GridCell.Tab.1.bottom" timestamp="1594103474763">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -415,10 +415,10 @@
     </state>
     <state x="192" y="0" width="982" height="705" key="SettingsEditor/0.0.1366.705@0.0.1366.705" timestamp="1594288522867" />
     <state x="360" y="0" key="SettingsEditor/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594587694531" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1594587074132">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1594704034324">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594587074132" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-3840.0.2560.1400@0.0.2560.1400" timestamp="1594704034324" />
     <state x="698" y="344" key="Vcs.Push.Dialog.v2/2560.0.1920.1030/-1920.0.1920.1040/0.0.2048.1112@0.0.2048.1112" timestamp="1594235215894" />
     <state x="767" y="290" key="VcsDiffUtil.ChangesDialog" timestamp="1594660228057">
       <screen x="0" y="0" width="2048" height="1112" />

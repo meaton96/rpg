@@ -68,7 +68,7 @@ public class WalkingStage {
     public WalkingStage(Stage primaryStage, Player player, int numScene, String xmlPath, List<Enemy> enemyList) {
         this.primaryStage = primaryStage;
         this.numScene = numScene;
-        if (numScene > FileUtil.getNumBattleScenes(xmlPath))
+        if (numScene >= FileUtil.getNumBattleScenes(xmlPath))
             numScene = 0;
         this.xmlPath = xmlPath;
         this.enemyList = enemyList;

@@ -915,9 +915,9 @@
         <Name>Doomward</Name>
         <Weight>0</Weight>
         <Durability>-1</Durability>
-        <Level>1</Level>
+        <Level>4</Level>
         <DamageLow>6</DamageLow>
-        <DamageHigh>12</DamageHigh>
+        <DamageHigh>15</DamageHigh>
         <Type>Staff</Type>
         <Agility>0</Agility>
         <Stamina>5</Stamina>

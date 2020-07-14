@@ -1,6 +1,5 @@
 package ui;
 
-import animation.SpriteAnimation;
 import control.Controller;
 import entities.Player;
 import items.Armor;
@@ -10,7 +9,6 @@ import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -19,7 +17,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import lombok.Getter;
 import lombok.Setter;
-import util.FileUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -267,7 +264,7 @@ public class Backpack {
             int curHP = player.getCurHealth();
             int maxHpBefore = player.getMaxHealth();            //get these values for updating hp difference
             if (item instanceof Armor)
-                player.equipArmor((Armor)item);
+                player.equipArmor((Armor) item);
             else
                 player.equipWeapon((Weapon) item);
             int newMaxHp = player.getMaxHealth();
@@ -278,7 +275,6 @@ public class Backpack {
             hideEquippedTooltip();                              //remove it form the backpack and hide the tooltip
             remove(item);
         }
-        System.out.println("Cannot equip: " + item.getName());
     }
 
     /**
@@ -291,7 +287,7 @@ public class Backpack {
 
         public final static double LAYOUT_X_BACKPACK = Controller.WIDTH / 2.0 - 100;
         public final static double LAYOUT_X_EQUIPPED = Controller.WIDTH / 2.0 - 338;
-        public final static double TOOLTIP_HEIGHT = 240;
+        public final static double TOOLTIP_HEIGHT = 280;
 
         public Tooltip(Item item, boolean isEquipped, int playerLevel) {
             this.item = item;
@@ -315,13 +311,16 @@ public class Backpack {
             int inte = item.getIntellect();
             int stam = item.getStamina();
             int str = item.getStrength();
+            
             Label stamLabel = new Label("Stamina: " + stam);
             Label mainStatLabel = new Label();
             Label typeSpecifcStat = new Label();
             Label levelReq = new Label();
             levelReq.setText("Level: " + item.getLevel());
+            
             if (item.getLevel() > playerLevel)
                 levelReq.setTextFill(Color.RED);
+            
             if (item instanceof Weapon) {
                 int damHigh = (int)((Weapon) item).getDamageHigh();
                 int damLow = (int) ((Weapon) item).getDamageLow();
