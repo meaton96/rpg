@@ -119,11 +119,25 @@ public final class ArmorFileReader {
      */
     public static List<Item> getArmorForLevel(int level) {
         
-        return items.values()
-                .stream()
-                .filter(x -> x.getLevel() == level)
-                .collect(Collectors.toList());      //filter out all the weapons that aren't the level provided
-        
+        switch (level) {
+            case 1:
+            case 2:
+            case 4:
+                return items.values()
+                        .stream()
+                        .filter(x -> (x.getLevel() == level && !x.getName().contains("Starting")))
+                        .collect(Collectors.toList());      //filter out all the items that aren't the level provided
+            default:
+                List<Item> drops = items.values()
+                        .stream()
+                        .filter(x -> (x.getName().contains("Basic")))
+                        .collect(Collectors.toList());      //filter out all the items that aren't the level provided
+                List<Item> temp = new ArrayList<>();
+                for (Item i : drops) {
+                    temp.add(i.scaleItem(level));
+                }
+                return temp;
+        }
     }
 
     /**

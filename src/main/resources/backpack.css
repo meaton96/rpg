@@ -25,10 +25,11 @@
 }
 #tooltip {
     -fx-background-image: url("images/backpack/tooltip.png");
-    -fx-min-height: 240;
+    -fx-min-height: 270;
     -fx-min-width: 228;
     -fx-max-width: 228;
-    -fx-max-height: 240;
+    -fx-max-height: 270;
+    -fx-background-size: stretch;
 }
 #tooltip_itemName {
     -fx-font-size: 18pt;

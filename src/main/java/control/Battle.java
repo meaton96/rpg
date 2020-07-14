@@ -156,12 +156,8 @@ public class Battle {
                 .filter(x -> x.typeMatchPlayer(player))
                 .collect(Collectors.toList());
 
-        Item i = possibleDrops.get(r.nextInt(possibleDrops.size())); //todo causing bounds must be positive IllegalArugmentException on level 3 enemies
-        while (player.getBackPack().contains(i)) {
-            i = possibleDrops.get(r.nextInt(possibleDrops.size()));
-        }
-        //todo
-        //enemy health is scaling strangley? level 3 enemies have 8 health
+        Item i = possibleDrops.get(r.nextInt(possibleDrops.size()));
+        
         player.giveItem(i);
         player.updateBackpack();
         enemy.playDeathAnimation();

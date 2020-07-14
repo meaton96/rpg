@@ -79,7 +79,7 @@ public class Player extends Entity {
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Mage/mage.png");
                 resource = new Resource(Resource.Type.MANA);
                 animations.put("attack", createClassSpriteAnimation("/images/Mage/Attack/attack.png", 7, Duration.millis(1000), 7));
-                animations.put("idle", createClassSpriteAnimation("/images/Mage/Idle/idle.png", 14, Duration.millis(1680), 14));
+                animations.put("idle", createClassSpriteAnimation("/images/Mage/Idle/idle.png", 14, Duration.millis(2000), 14));
                 animations.put("walking", createClassSpriteAnimation("/images/Mage/Walk/walk.png", 6, Duration.millis(700), 6));
                 animations.put("death", createClassSpriteAnimation("/images/Mage/Death/death.png", 10, Duration.millis(1100), 10));
                 animations.put("hurt", createClassSpriteAnimation("images/Mage/Hurt/hurt.png", 4, Duration.millis(550), 4));
@@ -87,17 +87,17 @@ public class Player extends Entity {
             case ROGUE:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Rogue/rogue.png");
                 animations.put("attack", createClassSpriteAnimation("/images/Rogue/Attack/attack.png", 7, Duration.millis(1000), 7));
-                animations.put("idle", createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 14, Duration.millis(1680), 14));
+                animations.put("idle", createClassSpriteAnimation("/images/Rogue/Idle/idle.png", 18, Duration.millis(2500), 18));
                 animations.put("walking", createClassSpriteAnimation("/images/Rogue/Walk/walk.png", 6, Duration.millis(700), 6));
                 animations.put("death", createClassSpriteAnimation("/images/Rogue/Death/death.png", 10, Duration.millis(1100), 10));
-                animations.put("hurt", createClassSpriteAnimation("images/Rogue/Hurt/hurt.png", 4, Duration.millis(550), 4));
+                animations.put("hurt", createClassSpriteAnimation("images/Rogue/Hurt/hurt_t.png", 6, Duration.millis(800), 6));
                 resource = new Resource(Resource.Type.ENERGY);
                 break;
             case WARRIOR:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Knight/knight.png");
                 resource = new Resource(Resource.Type.RAGE);
                 animations.put("attack", createClassSpriteAnimation("/images/Knight/Attack/attack.png", 7, Duration.millis(1000), 7));
-                animations.put("idle", createClassSpriteAnimation("/images/Knight/Idle/idle.png", 14, Duration.millis(1680), 14));
+                animations.put("idle", createClassSpriteAnimation("/images/Knight/Idle/idle.png", 12, Duration.millis(1700), 12));
                 animations.put("walking", createClassSpriteAnimation("/images/Knight/Walk/walk.png", 6, Duration.millis(700), 6));
                 animations.put("death", createClassSpriteAnimation("/images/Knight/Death/death.png", 10, Duration.millis(1100), 10));
                 animations.put("hurt", createClassSpriteAnimation("images/Knight/Hurt/hurt.png", 4, Duration.millis(550), 4));

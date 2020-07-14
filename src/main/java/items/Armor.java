@@ -48,4 +48,5 @@ public abstract class Armor extends Item {
         }
         return false;
     }
+    
 }
