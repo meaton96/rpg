@@ -96,8 +96,8 @@ public class Weapon extends Item {
         double damageHigh = 0;
         super.scaleItem(level);
         
-        damageLow = getDamageLow() + ((level - 1) * 1.2);
-        damageHigh = getDamageHigh() + ((level - 1) * 2.4);
+        damageLow = getDamageLow() + ((level - 1) * 1.1);
+        damageHigh = getDamageHigh() + ((level - 1) * 2.2);
         
         String name = "Level " + level + " " + getType().name().toLowerCase();
         switch (getType()) {
@@ -109,13 +109,13 @@ public class Weapon extends Item {
             break;
         }
         
-        stamina = getStamina() + 1.1 * (level - 1);
+        stamina = getStamina() + (level - 1);
         if (getAgility() != 0)
-            agility = getAgility() + 1.1 * (level - 1);
+            agility = getAgility() + (level - 1);
         else if (getIntellect() != 0)
-            intellect = getIntellect() + 1.1 * (level - 1);
+            intellect = getIntellect() + (level - 1);
         else if (getStrength() != 0)
-            strength = getStrength() * 1.1 + (level - 1);
+            strength = getStrength() * (level - 1);
         
         return Weapon.builder()
                 .agility((int)(Math.round(agility)))

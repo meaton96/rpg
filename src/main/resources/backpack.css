@@ -35,6 +35,10 @@
     -fx-font-size: 18pt;
     -fx-text-fill: #ffffff;
 }
+#characterName {
+    -fx-font-size: 15pt;
+    -fx-text-fill: #ffffff;
+}
 #dagger_1 {
     -fx-background-image: url("images/icons/items/dagger_1.png");
     -fx-background-size: stretch;

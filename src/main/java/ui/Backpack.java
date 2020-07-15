@@ -6,6 +6,7 @@ import items.Armor;
 import items.Item;
 import items.Weapon;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,7 +27,7 @@ import java.util.List;
  * also contains the character window to show equipped gear as well as tooltips for gear
  * and gives the ability to equip/drop gear from backpack
  */
-@Getter
+
 public class Backpack {
     
     private final List<Item> contents;
@@ -40,7 +41,7 @@ public class Backpack {
     private Tooltip currentTooltip;
     private Tooltip equippedTooltip;
     private final VBox toolTipButtonBox;
-    private final Button equip, drop;
+    private final Label playerTitle;
     @Setter private Group displayGroup;
 
     /**
@@ -66,7 +67,15 @@ public class Backpack {
         characterWindowItems.setLayoutX(10);
         
         characterWindow.getChildren().add(characterWindowItems);
+        playerTitle = new Label(
+                player.getName() + "\nLevel " + player.getLevel() + " "
+                + player.getEntityClass().name().toLowerCase()
+        );
+        playerTitle.setLayoutX(100);
+        playerTitle.setLayoutY(10);
+        playerTitle.setWrapText(true);
 
+        characterWindow.getChildren().add(playerTitle);
 
         ImageView imageView = new ImageView(player.getModel());
         imageView.setScaleY(2.5);
@@ -99,11 +108,13 @@ public class Backpack {
         backpackPane.getStylesheets().addAll(getClass().getResource("/backpack.css").toExternalForm());         //setup css style sheets
         characterWindow.getStylesheets().addAll(getClass().getResource("/backpack.css").toExternalForm());
 
+        playerTitle.setId("characterName");
+
         toolTipButtonBox = new VBox(10);
         toolTipButtonBox.getStylesheets().addAll(getClass().getResource("/backpack.css").toExternalForm());
 
-        equip = new Button("Equip");                    //setup equip and drop buttons
-        drop = new Button("Drop");
+        Button equip = new Button("Equip");                    //setup equip and drop buttons
+        Button drop = new Button("Drop");
 
         equip.setPrefWidth(240);
         drop.setPrefWidth(240);
@@ -179,7 +190,7 @@ public class Backpack {
 
     /**
      * update the buttons to display on the backpack by iterating through the items and creating new buttons
-     * to be more efficient this should really only update buttons that chnaged
+     * to be more efficient this should really only update buttons that changed
      */
     public void updateBackpack() {
         itemPane.getChildren().clear();
@@ -210,6 +221,10 @@ public class Backpack {
      * once again to be more efficient this should only check for differences
      */
     public void updateCharacterWindow() {
+        playerTitle.setText(
+                player.getName() + "\nLevel " + player.getLevel() + " "
+                        + player.getEntityClass().name().toLowerCase()
+        );
         characterWindowItems.getChildren().removeAll(characterWindowItems.getChildren());
         for (Item i : player.getEquippedItems()) {
             Button l = new Button();

@@ -25,21 +25,16 @@ public class Legs extends Armor {
         double intellect = 0;
         
         super.scaleItem(level);
-        switch (getType()) {
-            case CLOTH: armor = getArmor() + (1.1 * (level - 1));
-                break;
-            case PLATE: armor = getArmor() + 1.5 * (level - 1);
-                break;
-            case LEATHER: armor = getArmor() + (1.2 * (level - 1));
-                break;
-        }
-        stamina = getStamina() + 1.8 * (level - 1);
+
+        armor = getArmor() + 1.2 * (level - 1);
+
+        stamina = getStamina() + 1.4 * (level - 1);
         if (getAgility() != 0)
-            agility = getAgility() + 1.3 * (level - 1);
+            agility = getAgility() + (level - 1);
         else if (getIntellect() != 0)
-            intellect = getIntellect() + 1.3 * (level - 1);
+            intellect = getIntellect() + (level - 1);
         else if (getStrength() != 0)
-            strength = getStrength() * 1.3 + (level - 1);
+            strength = getStrength() * (level - 1);
         
         return Legs.builder()
                 .agility((int)(Math.round(agility)))

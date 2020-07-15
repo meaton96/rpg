@@ -124,6 +124,7 @@ public class Battle {
         
         fadeIn.setOnFinished(e -> initScene.getPrimaryStage().setScene(getDeathScreen()));
         player.getAnimationByName("death").setOnFinished(event -> {                 //fade to black
+            player.removeAllAnimations(initScene.getMainPane());
             initScene.getMainPane().getChildren().add(rec);
             fadeIn.play();
 

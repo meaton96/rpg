@@ -79,7 +79,7 @@ public final class FileUtil {
     /**
      * read the xml battle scene file and count the total number of options
      * @param path path to the xml file
-     * @return integer number of different scene ins the xml file
+     * @return integer number of different scenes in the xml file
      */
     public static int getNumBattleScenes(final String path) {
         SAXBuilder builder = new SAXBuilder();
@@ -120,7 +120,7 @@ public final class FileUtil {
             List<Element> enemyElements = root.getChildren();
             List<Enemy> enemies = new ArrayList<>();
             for (Element e : enemyElements) {                               //iterate all xml nodes and create an enemy from the xml data
-                for (int x = 1; x < 6; x++) {
+                for (int x = 1; x < 11; x++) {
                     String name = e.getChildText("name");
                     Image model = new Image(e.getChildText("model_path"));
                     String biome = e.getChildText("biome");

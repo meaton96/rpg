@@ -157,6 +157,11 @@ public class Player extends Entity {
             playIdleFromStart();
         });
     }
+    public void removeAllAnimations(Group group) {
+        for (SpriteAnimation s : animations.values()) {
+            group.getChildren().remove(s.getImageView());
+        }
+    }
     public void startWalking() {
         animations.get("walking").play();
     }
