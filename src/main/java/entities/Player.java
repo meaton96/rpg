@@ -96,7 +96,7 @@ public class Player extends Entity {
             case WARRIOR:
                 model = FileUtil.getResourceStreamFromClass(getClass(), "/images/Knight/knight.png");
                 resource = new Resource(Resource.Type.RAGE);
-                animations.put("attack", createClassSpriteAnimation("/images/Knight/Attack/attack.png", 7, Duration.millis(1000), 7));
+                animations.put("attack", createClassSpriteAnimation("/images/Knight/Attack/attack.png", 4, Duration.millis(600), 4));
                 animations.put("idle", createClassSpriteAnimation("/images/Knight/Idle/idle.png", 12, Duration.millis(1700), 12));
                 animations.put("walking", createClassSpriteAnimation("/images/Knight/Walk/walk.png", 6, Duration.millis(700), 6));
                 animations.put("death", createClassSpriteAnimation("/images/Knight/Death/death.png", 10, Duration.millis(1100), 10));
@@ -156,6 +156,11 @@ public class Player extends Entity {
             animations.get("hurt").hide();
             playIdleFromStart();
         });
+    }
+    public void removeAllAnimations(Group group) {
+        for (SpriteAnimation s : animations.values()) {
+            group.getChildren().remove(s.getImageView());
+        }
     }
     public void startWalking() {
         animations.get("walking").play();

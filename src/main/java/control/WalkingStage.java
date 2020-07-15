@@ -69,10 +69,10 @@ public class WalkingStage {
         this.primaryStage = primaryStage;
         this.numScene = numScene;
         if (numScene >= FileUtil.getNumBattleScenes(xmlPath))
-            numScene = 0;
+            this.numScene = 0;
         this.xmlPath = xmlPath;
         this.enemyList = enemyList;
-        mainPane = new Group();                                                             //create a new vbox to add the canvas (game scene) and hud to
+        mainPane = new Group();                                                             //create a new group to add the canvas (game scene) and hud to
         this.player = player;
         player.setInBattle(false);
         canvas = new Canvas(1440, 659);
@@ -95,7 +95,7 @@ public class WalkingStage {
     private void initEnemyLocations() {
         Random rand = new Random();
         for (int x = 0; x <= player.getLevel(); x++) {
-            enemyLocations.add(rand.nextInt(Controller.WIDTH - 150) + 50);
+            enemyLocations.add(rand.nextInt(Controller.WIDTH - 250) + 50);
         }
         Collections.sort(enemyLocations);
     }
@@ -133,7 +133,7 @@ public class WalkingStage {
     private void initListeners() {
         mainPane.setOnKeyPressed(keyListener -> {
             if (keyListener.getCode() == KeyCode.D && !backPackShown) {
-                if (!player.isInBattle()) {                         //player is allowed to move foward if they arent in a battle
+                if (!player.isInBattle()) {                         //player is allowed to move forward if they arent in a battle
                     player.startWalking();
                     player.moveForward();                           //move the player and update the draw
                     updateDraw();
@@ -141,7 +141,7 @@ public class WalkingStage {
                         startBattle();                              //player encountered an enemy so start the battle
                     }
                     if (endStage()) {
-                        if (numStages % 3 == 0 && numStages != 0)                     //level player up every other stage
+                        if (numStages % 3 == 0 && numStages != 0)                     //level player up every 3 stages
                             player.levelUp();
                         numScene++;                                 //player got to the end of the scene so make a new scene
                         numStages++;
@@ -151,7 +151,7 @@ public class WalkingStage {
             }
             
         });
-        mainPane.setOnKeyReleased(keyListener -> {
+        mainPane.setOnKeyReleased(keyListener -> {              //pause waking when forward key is released
             if (keyListener.getCode() == KeyCode.D) {
                 if (!player.isInBattle()) {
                     player.pauseWalking();

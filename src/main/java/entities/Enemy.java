@@ -161,7 +161,7 @@ public class Enemy extends Entity {
      */
     private void randomizeHealth() {
         double variance = 0.3;                      //adjust here for health variance and level scaling
-        double levelHealthScaling = 1.5;
+        double levelHealthScaling = .8;
         double levelScale = levelHealthScaling * (getLevel() - 1);
 
         double base = getBaseHealth() * (1 + levelScale);
