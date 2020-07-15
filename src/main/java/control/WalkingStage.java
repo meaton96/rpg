@@ -78,7 +78,7 @@ public class WalkingStage {
         canvas = new Canvas(1440, 659);
         gc = canvas.getGraphicsContext2D();                                                 //init graphics objects for drawing images
         player.heal();
-        scene = FileUtil.getSceneFromXML(mainPane, numScene, xmlPath);                      //get the scene from the xml file
+        scene = FileUtil.getSceneFromXML(mainPane, this.numScene, xmlPath);                      //get the scene from the xml file
         assert scene != null;                                                               //removes warnings but this wont be null unless the xml path is incorrect
         scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());  //set styles
         enemyLocations = new ArrayList<>();

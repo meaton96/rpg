@@ -44,10 +44,10 @@ public class Player extends Entity {
     private Weapon equippedWeapon;
     
     
-    @Getter private Spell[] equippedSpells;
-    private List<Spell> learnedSpells;
+    @Getter private final Spell[] equippedSpells;
+    private final List<Spell> learnedSpells;
     private Resource resource;
-    @Getter  private Image model;
+    @Getter  private final Image model;
     
     @Getter @Setter private double xLoc, yLoc;
     private boolean faceForward;
