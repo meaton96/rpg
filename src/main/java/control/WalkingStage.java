@@ -141,7 +141,7 @@ public class WalkingStage {
                         startBattle();                              //player encountered an enemy so start the battle
                     }
                     if (endStage()) {
-                        if (numStages % 2 == 0 && numStages != 0)                     //level player up every other stage
+                        if (numStages % 3 == 0 && numStages != 0)                     //level player up every other stage
                             player.levelUp();
                         numScene++;                                 //player got to the end of the scene so make a new scene
                         numStages++;
